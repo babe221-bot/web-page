@@ -1,0 +1,54 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+
+const LogoAnimation = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [isFading, setIsFading] = useState(false);
+  const [shouldRender, setShouldRender] = useState(false);
+
+  useEffect(() => {
+    setShouldRender(true);
+
+    const fadeTimer = setTimeout(() => {
+      setIsFading(true);
+    }, 4000);
+
+    const hideTimer = setTimeout(() => {
+      setIsVisible(false);
+    }, 5000);
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(hideTimer);
+    };
+  }, []);
+
+  if (!shouldRender || !isVisible) {
+    return null;
+  }
+
+  return (
+    <div
+      className={cn(
+        "fixed inset-0 z-50 flex items-center justify-center bg-background transition-opacity duration-1000",
+        isFading ? "opacity-0" : "opacity-100"
+      )}
+    >
+      <div className="w-64 animate-fadeInOut">
+        <Image
+          src="/images/logo.png"
+          alt="DaorsForge AI Systems Logo"
+          width={256}
+          height={256}
+          priority
+          className="filter hue-rotate-[190deg] saturate-200"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default LogoAnimation;

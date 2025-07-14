@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 236 48% 10%;
+    --foreground: 210 40% 98%;
+    --card: 0 0% 100% / 0.05;
+    --card-foreground: 210 40% 98%;
+    --popover: 236 48% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 192 100% 50%;
+    --primary-foreground: 236 48% 10%;
+    --secondary: 264 84% 58%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 264 84% 58%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 100% / 0.1;
+    --input: 236 100% 4%;
+    --ring: 192 100% 50%;
+    --radius: 12px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply -translate-y-2 shadow-2xl border-primary/50;
+  }
+}
