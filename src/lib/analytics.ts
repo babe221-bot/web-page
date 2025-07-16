@@ -6,7 +6,7 @@ import { event } from './gtag';
  * @param formData - The data submitted by the user.
  */
 export const trackContactFormSubmission = (formData: { name:string; email: string; message: string }) => {
-  console.log('Analytics: Contact form submitted', formData);
+  console.log('Analytics: Contact form submitted', JSON.stringify(formData, null, 2));
   event({
     action: 'submit_form',
     category: 'Contact',
@@ -50,7 +50,7 @@ export const trackCTAClick = (ctaName: string) => {
  * @param eventData - The data associated with the event.
  */
 export const logServerEvent = (eventName: string, eventData: { category: string; label: string; }) => {
-    console.log(`Analytics: Server event '${eventName}'`, eventData);
+    console.log(`Analytics: Server event '${eventName}'`, JSON.stringify(eventData, null, 2));
     event({
         action: eventName,
         category: eventData.category,
