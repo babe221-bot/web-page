@@ -66,3 +66,18 @@ Learn more about internationalization in App Router: https://nextjs.org/docs/app
 
 [info]    Creating an optimized production build ...
 
+[info]  ✓ Compiled successfully in 51s
+
+[info]    Skipping validation of types
+   Skipping linting
+
+[info]    Collecting page data ...
+
+[info] unhandledRejection [Error [PageNotFoundError]: Cannot find module for page: /_document] {
+  type: 'PageNotFoundError',
+  code: 'ENOENT'
+}
+
+[debug] [2025-07-16T16:07:11.877Z] Error: ENOENT: no such file or directory, open '/home/user/studio/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
