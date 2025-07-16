@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const LogoAnimation = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -37,7 +38,13 @@ const LogoAnimation = () => {
       )}
     >
       <div className="w-64 animate-fadeInOut flex flex-col items-center gap-4">
-        
+        <Image
+          src="/logo.svg"
+          alt="DaorsForge AI Systems Logo"
+          width={150}
+          height={150}
+          className="filter brightness-0 invert"
+        />
         <h1 className="text-4xl font-bold font-headline gradient-text text-center">DaorsForge AI</h1>
       </div>
     </div>
