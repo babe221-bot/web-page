@@ -79,10 +79,12 @@ const Header = () => {
                               height={40}
                               className="h-10 w-auto filter hue-rotate-[190deg] saturate-200"
                             />
-                            <SheetDescription className="sr-only">A menu of links to navigate the page.</SheetDescription>
                         </Link>
+                        <SheetTitle className="sr-only">Main Menu</SheetTitle>
+                        <SheetDescription className="sr-only">A list of navigation links for the page.</SheetDescription>
                         <Button variant="ghost" size="icon" onClick={() => setIsSheetOpen(false)}>
                             <X className="h-6 w-6" />
+                            <span className="sr-only">Close menu</span>
                         </Button>
                     </div>
                     <nav aria-labelledby="mobile-menu-title" className="flex-1 flex flex-col items-start gap-6 p-6">
