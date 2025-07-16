@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "početna": "Početna",
+    "usluge": "Usluge",
+    "industrije": "Industrije",
+    "metodologija": "Metodologija",
+    "kontakt": "Kontakt",
+    "openMenu": "Otvori meni",
+    "mainMenu": "Glavni meni",
+    "menuDescription": "Navigacioni linkovi za glavne sekcije sajta.",
+    "closeMenu": "Zatvori meni"
+  },
+  "hero": {
+    "title": "Kujemo Budućnost Proizvodnje",
+    "subtitle": "Eliminišemo uska grla, automatizujemo kompleksnost i otključavamo puni potencijal vaše industrije kroz napredna AI rješenja.",
+    "button": "Započnite Transformaciju"
+  }
+}
