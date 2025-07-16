@@ -46,6 +46,7 @@ const Header = ({ lng }: { lng: string }) => {
               width={40}
               height={40}
               className="filter brightness-0 invert"
+              style={{ height: "auto" }}
             />
             <h1 className="text-xl font-bold font-headline gradient-text">DaorsForge AI</h1>
           </Link>
@@ -80,6 +81,7 @@ const Header = ({ lng }: { lng: string }) => {
                               width={32}
                               height={32}
                               className="filter brightness-0 invert"
+                              style={{ height: "auto" }}
                             />
                            <h1 className="text-lg font-bold font-headline gradient-text">DaorsForge AI</h1>
                         </Link>
