@@ -35,17 +35,17 @@ export const metadata: Metadata = {
   description: "Pružamo napredna AI rješenja za optimizaciju proizvodnje, automatizaciju procesa i kontrolu kvaliteta u klesarskoj, muzičkoj i klasičnoj industriji.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: {
     lng
   }
-}: Readonly<{
+}: {
   children: React.ReactNode;
   params: {
     lng: string;
   }
-}>) {
+}) {
 
   return (
     <html lang={lng} dir={dir(lng)}>
