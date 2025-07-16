@@ -9,7 +9,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
   },
   "dependencies": {
     "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
@@ -62,12 +63,14 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
+    "@types/jest": "^29.5.12",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "9.31.0",
     "eslint-config-next": "15.4.1",
     "genkit-cli": "^1.13.0",
-    "jest-environment-jsdom": "^30.0.4",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
