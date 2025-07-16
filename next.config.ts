@@ -19,18 +19,6 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'storage.googleapis.com',
-        port: '',
-        pathname: '/daorsmusic-app.firebasestorage.app/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'storage.googleapis.com',
-        port: '',
-        pathname: '/website3324/**',
-      },
-      {
-        protocol: 'https',
         hostname: 'images.unsplash.com',
       },
       {

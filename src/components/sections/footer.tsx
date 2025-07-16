@@ -22,7 +22,7 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-4">
               <div>
                 <h4 className="text-lg font-bold font-headline">DaorsForge AI Systems</h4>
-                <p className="text-sm text-foreground/60">Managed by daorsforgealsystems.com</p>
+                <p className="text-sm text-foreground/60">Managed by daors.com</p>
               </div>
             </div>
             <p className="text-foreground/80 mb-6 text-sm">
@@ -30,20 +30,20 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors">
                 <Globe className="w-5 h-5" />
-                <Link href="https://daorsforgealsystems.com">daorsforgealsystems.com</Link>
+                <Link href="https://daors.com">daors.com</Link>
             </div>
             <div className="flex gap-2 mt-auto">
               <Button variant="ghost" size="icon" asChild>
-                <Link href="https://www.linkedin.com/company/daorsforge" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><Linkedin className="w-5 h-5" /></Link>
+                <Link href="https://www.linkedin.com/company/daors" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><Linkedin className="w-5 h-5" /></Link>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <Link href="https://x.com/daorsforge" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><Twitter className="w-5 h-5" /></Link>
+                <Link href="https://x.com/daors" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><Twitter className="w-5 h-5" /></Link>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <Link href="https://www.facebook.com/daorsforge" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><Facebook className="w-5 h-5" /></Link>
+                <Link href="https://www.facebook.com/daors" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><Facebook className="w-5 h-5" /></Link>
               </Button>
                <Button variant="ghost" size="icon" asChild>
-                <Link href="https://www.youtube.com/@DaorsForge" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube channel"><Youtube className="w-5 h-5" /></Link>
+                <Link href="https://www.youtube.com/@Daors" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube channel"><Youtube className="w-5 h-5" /></Link>
               </Button>
             </div>
           </div>
@@ -101,8 +101,8 @@ const Footer = () => {
             <div className="space-y-4 text-foreground/80">
               <p className="flex items-start gap-3"><MapPin className="w-5 h-5 text-primary mt-1 shrink-0" /><span>Stolac, BiH 88360</span></p>
               <p className="flex items-start gap-3"><Mail className="w-5 h-5 text-primary mt-1 shrink-0" />
-                <a href="mailto:bakir@daorsforgealsystems.com" className="hover:text-primary transition-colors">
-                  bakir@daorsforgealsystems.com
+                <a href="mailto:bakir@daors.com" className="hover:text-primary transition-colors">
+                  bakir@daors.com
                 </a>
               </p>
             </div>
