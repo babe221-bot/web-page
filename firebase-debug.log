@@ -1,0 +1,68 @@
+[debug] [2025-07-16T16:05:43.664Z] ----------------------------------------------------------------------
+[debug] [2025-07-16T16:05:43.670Z] Command:       /nix/store/rbdrkcs5kkwpalxcd7c6bnm33lk2955n-nodejs-20.19.0/bin/node /home/user/.global_modules/bin/firebase deploy --only hosting
+[debug] [2025-07-16T16:05:43.671Z] CLI Version:   14.10.1
+[debug] [2025-07-16T16:05:43.671Z] Platform:      linux
+[debug] [2025-07-16T16:05:43.672Z] Node Version:  v20.19.0
+[debug] [2025-07-16T16:05:43.672Z] Time:          Wed Jul 16 2025 16:05:43 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-07-16T16:05:43.672Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-16T16:05:44.187Z] Object "/hosting" in "firebase.json" has unknown property: {"additionalProperty":"webFrameworks"}
+[debug] [2025-07-16T16:05:44.187Z] Field "/hosting" in "firebase.json" is possibly invalid: must be array
+[debug] [2025-07-16T16:05:44.187Z] Field "/hosting" in "firebase.json" is possibly invalid: must match a schema in anyOf
+[debug] [2025-07-16T16:05:44.192Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-16T16:05:44.193Z] > authorizing via signed-in user (bakirbehmen@gmail.com)
+[debug] [2025-07-16T16:05:44.193Z] [iam] checking project website-5a18c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-07-16T16:05:44.195Z] Checked if tokens are valid: false, expires at: 1752666946890
+[debug] [2025-07-16T16:05:44.195Z] Checked if tokens are valid: false, expires at: 1752666946890
+[debug] [2025-07-16T16:05:44.196Z] > refreshing access token with scopes: []
+[debug] [2025-07-16T16:05:44.198Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-07-16T16:05:44.198Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-07-16T16:05:44.341Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-07-16T16:05:44.342Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-07-16T16:05:44.363Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions [none]
+[debug] [2025-07-16T16:05:44.363Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions x-goog-quota-user=projects/website-5a18c
+[debug] [2025-07-16T16:05:44.364Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-07-16T16:05:45.023Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions 200
+[debug] [2025-07-16T16:05:45.023Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-07-16T16:05:45.027Z] Checked if tokens are valid: true, expires at: 1752685543342
+[debug] [2025-07-16T16:05:45.030Z] Checked if tokens are valid: true, expires at: 1752685543342
+[debug] [2025-07-16T16:05:45.030Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/website-5a18c [none]
+[debug] [2025-07-16T16:05:45.240Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/website-5a18c 200
+[debug] [2025-07-16T16:05:45.240Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/website-5a18c {"projectId":"website-5a18c","projectNumber":"636702053767","displayName":"website","name":"projects/website-5a18c","resources":{"hostingSite":"website-5a18c"},"state":"ACTIVE","etag":"1_a6122a7f-7df1-4ea8-844b-57f64ef44324"}
+[debug] [2025-07-16T16:05:54.053Z] defaultcredentials: writing to file /home/user/.config/firebase/bakirbehmen_gmail_com_application_default_credentials.json
+[debug] [2025-07-16T16:05:54.066Z] Checked if tokens are valid: true, expires at: 1752685543342
+[debug] [2025-07-16T16:05:54.066Z] Checked if tokens are valid: true, expires at: 1752685543342
+[debug] [2025-07-16T16:05:54.072Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites pageToken=&pageSize=10
+[debug] [2025-07-16T16:05:55.204Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites 200
+[debug] [2025-07-16T16:05:55.204Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites {"sites":[{"name":"projects/website-5a18c/sites/website-5a18c","defaultUrl":"https://website-5a18c.web.app","appId":"1:636702053767:web:0de2259025db8c0bbd6f22","type":"DEFAULT_SITE"}]}
+[debug] [2025-07-16T16:05:55.205Z] Checked if tokens are valid: true, expires at: 1752685543342
+[debug] [2025-07-16T16:05:55.205Z] Checked if tokens are valid: true, expires at: 1752685543342
+[debug] [2025-07-16T16:05:55.206Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:636702053767:web:0de2259025db8c0bbd6f22/config [none]
+[debug] [2025-07-16T16:05:55.712Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:636702053767:web:0de2259025db8c0bbd6f22/config 200
+[debug] [2025-07-16T16:05:55.712Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:636702053767:web:0de2259025db8c0bbd6f22/config {"projectId":"website-5a18c","appId":"1:636702053767:web:0de2259025db8c0bbd6f22","storageBucket":"website-5a18c.firebasestorage.app","apiKey":"AIzaSyDxwAQf6RX8UHlbjPpnjMVX-0jS85K3bvw","authDomain":"website-5a18c.firebaseapp.com","messagingSenderId":"636702053767","measurementId":"G-WGPRNHDM9Q"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2025-07-16T16:06:06.144Z] Checked if tokens are valid: true, expires at: 1752685543342
+[debug] [2025-07-16T16:06:06.147Z] Checked if tokens are valid: true, expires at: 1752685543342
+[debug] [2025-07-16T16:06:06.147Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites/website-5a18c [none]
+[debug] [2025-07-16T16:06:07.100Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites/website-5a18c 200
+[debug] [2025-07-16T16:06:07.102Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites/website-5a18c {"name":"projects/website-5a18c/sites/website-5a18c","defaultUrl":"https://website-5a18c.web.app","appId":"1:636702053767:web:0de2259025db8c0bbd6f22","type":"DEFAULT_SITE"}
+[info]  ⚠ i18n configuration in next.config.ts is unsupported in App Router.
+Learn more about internationalization in App Router: https://nextjs.org/docs/app/building-your-application/routing/internationalization
+
+[info]    ▲ Next.js 15.3.3
+
+[info]    - Environments: .env.local, .env
+
+
+[info]    Creating an optimized production build ...
+
