@@ -39,7 +39,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           <Link href="#home" className="flex items-center gap-3">
              <Image
-              src="https://storage.googleapis.com/daorsmusic-app.firebasestorage.app/website/generated-image%20(6).png"
+              src="https://storage.googleapis.com/website3324/generated-image%20(6).png"
               width={40}
               height={40}
               alt="DaorsForge AI Logo"
@@ -73,7 +73,7 @@ const Header = () => {
                     <div className="p-4 flex justify-between items-center border-b border-white/10">
                         <Link href="#home" className="flex items-center gap-2" onClick={() => setIsSheetOpen(false)}>
                             <Image
-                              src="https://storage.googleapis.com/daorsmusic-app.firebasestorage.app/website/generated-image%20(6).png"
+                              src="https://storage.googleapis.com/website3324/generated-image%20(6).png"
                               width={32}
                               height={32}
                               alt="DaorsForge AI Logo"

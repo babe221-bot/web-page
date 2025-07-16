@@ -39,7 +39,7 @@ const LogoAnimation = () => {
     >
       <div className="w-64 animate-fadeInOut flex flex-col items-center gap-4">
         <Image
-          src="https://storage.googleapis.com/daorsmusic-app.firebasestorage.app/website/generated-image%20(6).png"
+          src="https://storage.googleapis.com/website3324/generated-image%20(6).png"
           width={128}
           height={128}
           alt="DaorsForge AI Loading Logo"
