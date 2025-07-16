@@ -1,10 +1,13 @@
 "use client";
+import { useTranslation } from "@/app/i18n-client";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Briefcase } from "lucide-react";
 import Link from "next/link";
 import { trackCTAClick } from "@/lib/analytics";
 
-const Hero = () => {
+const Hero = ({ lng }: { lng: string }) => {
+  const { t } = useTranslation(lng, "common");
+
   const handleCTAClick = (ctaName: string) => {
     trackCTAClick(ctaName);
   };
@@ -22,23 +25,23 @@ const Hero = () => {
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h1 id="hero-heading" className="text-4xl sm:text-5xl md:text-6xl font-bold font-headline mb-6 leading-tight">
               <span className="gradient-text block">
-                Inteligentna Automatizacija za Industrijsku Proizvodnju
+                {t("hero.title")}
               </span>
               <span className="text-foreground block mt-2">
                 DaorsForge AI Systems
               </span>
             </h1>
             <p className="max-w-xl text-lg md:text-xl text-foreground/80 mb-10">
-              Pružamo napredna AI rješenja za optimizaciju proizvodnje, automatizaciju složenih procesa i osiguranje beskompromisnog kvaliteta. Transformišemo industrijske operacije za postizanje maksimalne efikasnosti.
+              {t("hero.subtitle")}
             </p>
             <div className="flex justify-center md:justify-start flex-wrap gap-4">
               <Button
                 size="lg"
                 asChild
-                onClick={() => handleCTAClick("Zatražite Konsultacije")}
+                onClick={() => handleCTAClick(t("hero.button"))}
               >
-                <Link href="#contact" aria-label="Zatražite konsultacije">
-                  Zatražite Konsultacije
+                <Link href="#contact" aria-label={t("hero.button") || ""}>
+                  {t("hero.button")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

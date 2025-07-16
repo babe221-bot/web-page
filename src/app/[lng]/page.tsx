@@ -8,11 +8,11 @@ const Industries = dynamic(() => import('@/components/sections/industries'))
 const Methodology = dynamic(() => import('@/components/sections/methodology'))
 const ContactSection = dynamic(() => import('@/components/sections/contact-section'))
 
-export default function Home() {
+export default function Home({ params: { lng } }: { params: { lng: string } }) {
   return (
     <main className="flex min-h-screen flex-col">
-      <Header />
-      <Hero />
+      <Header lng={lng} />
+      <Hero lng={lng} />
       <Services />
       <Industries />
       <Methodology />

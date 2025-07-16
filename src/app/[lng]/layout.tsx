@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import '../globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import BackgroundEffects from '@/components/background-effects';
 import LogoAnimation from '@/components/logo-animation';
@@ -7,6 +7,12 @@ import { cn } from '@/lib/utils';
 import { Space_Grotesk, Inter, Source_Code_Pro } from 'next/font/google';
 import Script from 'next/script';
 import { GA_TRACKING_ID } from '@/lib/gtag';
+import { dir } from 'i18next'
+import { locales } from '../settings'
+
+export async function generateStaticParams() {
+  return locales.map((lng) => ({ lng }))
+}
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -30,12 +36,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: {
+    lng
+  }
 }: Readonly<{
   children: React.ReactNode;
+  params: {
+    lng: string;
+  }
 }>) {
 
   return (
-    <html lang="sr">
+    <html lang={lng} dir={dir(lng)}>
       <head>
         {GA_TRACKING_ID && (
           <>

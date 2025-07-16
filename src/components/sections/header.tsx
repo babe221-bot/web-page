@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useTranslation } from "@/app/i18n-client";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { Menu, Home, Settings, Factory, Waypoints, Mail, X } from "lucide-react";
@@ -16,7 +17,8 @@ const navLinks = [
   { href: "#contact", label: "Kontakt", icon: Mail },
 ];
 
-const Header = () => {
+const Header = ({ lng }: { lng: string }) => {
+  const { t } = useTranslation(lng, "common");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
@@ -55,7 +57,7 @@ const Header = () => {
                 href={link.href}
                 className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
               >
-                {link.label}
+                {t(`nav.${link.label.toLowerCase()}`)}
               </Link>
             ))}
           </nav>
@@ -65,7 +67,7 @@ const Header = () => {
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" aria-controls="mobile-menu">
                   <Menu className="h-6 w-6" />
-                  <span className="sr-only">Otvori meni</span>
+                  <span className="sr-only">{t("nav.openMenu")}</span>
                 </Button>
               </SheetTrigger>
               <SheetContent id="mobile-menu" side="left" className="bg-background/90 backdrop-blur-xl border-r-white/10 p-0">
@@ -81,11 +83,11 @@ const Header = () => {
                             />
                            <h1 className="text-lg font-bold font-headline gradient-text">DaorsForge AI</h1>
                         </Link>
-                        <SheetTitle className="sr-only">Glavni Meni</SheetTitle>
-                        <SheetDescription className="sr-only">Lista navigacionih linkova za stranicu.</SheetDescription>
+                        <SheetTitle className="sr-only">{t("nav.mainMenu")}</SheetTitle>
+                        <SheetDescription className="sr-only">{t("nav.menuDescription")}</SheetDescription>
                         <Button variant="ghost" size="icon" onClick={() => setIsSheetOpen(false)}>
                             <X className="h-6 w-6" />
-                            <span className="sr-only">Zatvori meni</span>
+                            <span className="sr-only">{t("nav.closeMenu")}</span>
                         </Button>
                     </div>
                     <nav aria-labelledby="mobile-menu-title" className="flex-1 flex flex-col items-start gap-6 p-6">
@@ -97,7 +99,7 @@ const Header = () => {
                             className="flex items-center gap-4 text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
                         >
                             <link.icon className="h-5 w-5" />
-                            {link.label}
+                            {t(`nav.${link.label.toLowerCase()}`)}
                         </Link>
                         ))}
                     </nav>
