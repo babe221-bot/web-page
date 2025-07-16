@@ -8,10 +8,10 @@ import { Space_Grotesk, Inter, Source_Code_Pro } from 'next/font/google';
 import Script from 'next/script';
 import { GA_TRACKING_ID } from '@/lib/gtag';
 import { dir } from 'i18next'
-import { locales } from '../settings'
+import { locales } from '../i18n/settings'
 
 export async function generateStaticParams() {
-  return locales.map((lng) => ({ lng }))
+  return locales.map((lng: string) => ({ lng }))
 }
 
 const spaceGrotesk = Space_Grotesk({

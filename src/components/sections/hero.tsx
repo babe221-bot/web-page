@@ -1,5 +1,5 @@
 "use client";
-import { useTranslation } from "@/app/i18n-client";
+import { useTranslation } from "@/app/i18n/client";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Briefcase } from "lucide-react";
 import Link from "next/link";

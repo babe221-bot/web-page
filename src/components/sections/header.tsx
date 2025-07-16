@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useTranslation } from "@/app/i18n-client";
+import { useTranslation } from "@/app/i18n/client";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { Menu, Home, Settings, Factory, Waypoints, Mail, X } from "lucide-react";
