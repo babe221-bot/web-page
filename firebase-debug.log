@@ -1,0 +1,25 @@
+[debug] [2025-07-16T23:49:34.014Z] ----------------------------------------------------------------------
+[debug] [2025-07-16T23:49:34.017Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /home/user/.global_modules/bin/firebase deploy --only hosting
+[debug] [2025-07-16T23:49:34.018Z] CLI Version:   14.10.1
+[debug] [2025-07-16T23:49:34.018Z] Platform:      linux
+[debug] [2025-07-16T23:49:34.018Z] Node Version:  v20.19.1
+[debug] [2025-07-16T23:49:34.019Z] Time:          Wed Jul 16 2025 23:49:34 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-07-16T23:49:34.019Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-16T23:49:34.599Z] Object "/hosting" in "firebase.json" has unknown property: {"additionalProperty":"webFrameworks"}
+[debug] [2025-07-16T23:49:34.600Z] Field "/hosting" in "firebase.json" is possibly invalid: must be array
+[debug] [2025-07-16T23:49:34.600Z] Field "/hosting" in "firebase.json" is possibly invalid: must match a schema in anyOf
+[debug] [2025-07-16T23:49:34.606Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-16T23:49:34.607Z] > authorizing via signed-in user (bakirbehmen@gmail.com)
+[debug] [2025-07-16T23:49:34.607Z] [iam] checking project website-5a18c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-07-16T23:49:34.609Z] Checked if tokens are valid: true, expires at: 1752713130783
+[debug] [2025-07-16T23:49:34.609Z] Checked if tokens are valid: true, expires at: 1752713130783
+[debug] [2025-07-16T23:49:34.611Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions [none]
+[debug] [2025-07-16T23:49:34.611Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions x-goog-quota-user=projects/website-5a18c
+[debug] [2025-07-16T23:49:34.611Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-07-16T23:49:35.336Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions 200
+[debug] [2025-07-16T23:49:35.337Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-07-16T23:49:35.338Z] Checked if tokens are valid: true, expires at: 1752713130783
+[debug] [2025-07-16T23:49:35.338Z] Checked if tokens are valid: true, expires at: 1752713130783
+[debug] [2025-07-16T23:49:35.339Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/website-5a18c [none]
+[debug] [2025-07-16T23:49:35.578Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/website-5a18c 200
