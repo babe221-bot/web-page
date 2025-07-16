@@ -39,13 +39,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           <Link href="#home" className="flex items-center gap-3">
-            <Image
-              src="/images/logo.png"
-              alt="DaorsForge AI Systems Logo"
-              width={48}
-              height={48}
-              className="h-12 w-auto filter hue-rotate-[190deg] saturate-200"
-            />
+            
           </Link>
 
           <nav role="navigation" aria-label="Main navigation" className="hidden lg:flex items-center gap-8">
@@ -72,13 +66,7 @@ const Header = () => {
                  <div className="flex flex-col h-full">
                     <div className="p-4 flex justify-between items-center border-b border-white/10">
                         <Link href="#home" className="flex items-center gap-2" onClick={() => setIsSheetOpen(false)}>
-                            <Image
-                              src="/images/logo.png"
-                              alt="DaorsForge AI Systems Logo"
-                              width={40}
-                              height={40}
-                              className="h-10 w-auto filter hue-rotate-[190deg] saturate-200"
-                            />
+                            
                         </Link>
                         <SheetTitle className="sr-only">Main Menu</SheetTitle>
                         <SheetDescription className="sr-only">A list of navigation links for the page.</SheetDescription>

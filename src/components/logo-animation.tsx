@@ -38,14 +38,7 @@ const LogoAnimation = () => {
       )}
     >
       <div className="w-64 animate-fadeInOut">
-        <Image
-          src="/images/logo.png"
-          alt="DaorsForge AI Systems Logo"
-          width={256}
-          height={256}
-          priority
-          className="filter hue-rotate-[190deg] saturate-200"
-        />
+        
       </div>
     </div>
   );
