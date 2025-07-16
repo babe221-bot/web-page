@@ -50,11 +50,3 @@ export const industriesData = [
     ],
   },
 ];
-
-export const logoShowcaseData = [
-    { src: 'https://placehold.co/128x64.png', alt: 'Partner Logo 1', "data-ai-hint": "tech company" },
-    { src: 'https://placehold.co/128x64.png', alt: 'Partner Logo 2', "data-ai-hint": "startup logo" },
-    { src: 'https://placehold.co/128x64.png', alt: 'Partner Logo 3', "data-ai-hint": "saas company" },
-    { src: 'https://placehold.co/128x64.png', alt: 'Partner Logo 4', "data-ai-hint": "software logo" },
-    { src: 'https://placehold.co/128x64.png', alt: 'Partner Logo 5', "data-ai-hint": "ai company" },
-];
