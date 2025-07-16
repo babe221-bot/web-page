@@ -41,7 +41,6 @@ const LogoAnimation = () => {
           width={150}
           height={150}
           className="filter brightness-0 invert"
-          priority
         />
         <h1 className="text-4xl font-bold font-headline gradient-text text-center">DaorsForge AI</h1>
       </div>
