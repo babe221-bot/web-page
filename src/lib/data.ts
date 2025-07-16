@@ -29,6 +29,7 @@ export const industriesData = [
   {
     title: "Vinarije",
     description: "AI rješenja za optimizaciju procesa proizvodnje vina, od vinograda do boce. Unaprijedite kvalitet, smanjite troškove i povećajte prinose uz pomoć pametne tehnologije.",
+    icon: Factory,
     dataAiHint: "winery production",
     features: [
       "Prediktivna analiza zrelosti grožđa",
