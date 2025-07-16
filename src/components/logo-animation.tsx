@@ -37,13 +37,7 @@ const LogoAnimation = () => {
       )}
     >
       <div className="w-64 animate-fadeInOut flex flex-col items-center gap-4">
-        <img
-          src="https://storage.googleapis.com/website3324/generated-image%20(6).png"
-          width={128}
-          height={128}
-          alt="DaorsForge AI Loading Logo"
-          className="filter hue-rotate-[200deg] brightness-125 saturate-150"
-        />
+        
         <h1 className="text-4xl font-bold font-headline gradient-text text-center">DaorsForge AI</h1>
       </div>
     </div>

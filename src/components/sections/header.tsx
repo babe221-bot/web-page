@@ -37,13 +37,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           <Link href="#home" className="flex items-center gap-3">
-             <img
-              src="https://storage.googleapis.com/website3324/generated-image%20(6).png"
-              width={40}
-              height={40}
-              alt="DaorsForge AI Logo"
-              className="filter hue-rotate-[200deg] brightness-125 saturate-150"
-            />
+            
             <h1 className="text-xl font-bold font-headline gradient-text">DaorsForge AI</h1>
           </Link>
 
@@ -71,13 +65,7 @@ const Header = () => {
                  <div className="flex flex-col h-full">
                     <div className="p-4 flex justify-between items-center border-b border-white/10">
                         <Link href="#home" className="flex items-center gap-2" onClick={() => setIsSheetOpen(false)}>
-                            <img
-                              src="https://storage.googleapis.com/website3324/generated-image%20(6).png"
-                              width={32}
-                              height={32}
-                              alt="DaorsForge AI Logo"
-                              className="filter hue-rotate-[200deg] brightness-125 saturate-150"
-                            />
+                            
                            <h1 className="text-lg font-bold font-headline gradient-text">DaorsForge AI</h1>
                         </Link>
                         <SheetTitle className="sr-only">Glavni Meni</SheetTitle>
