@@ -1,8 +1,8 @@
-import Header from "@/components/sections/header";
-import Hero from "@/components/sections/hero";
 import Footer from "@/components/sections/footer";
 import dynamic from 'next/dynamic'
 
+const Header = dynamic(() => import('@/components/sections/header'), { ssr: false })
+const Hero = dynamic(() => import('@/components/sections/hero'), { ssr: false })
 const Services = dynamic(() => import('@/components/sections/services'))
 const Industries = dynamic(() => import('@/components/sections/industries'))
 const Methodology = dynamic(() => import('@/components/sections/methodology'))
