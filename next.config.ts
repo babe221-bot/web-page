@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'storage.googleapis.com',
         port: '',
-        pathname: '/**',
+        pathname: '/daorsmusic-app.firebasestorage.app/**',
       },
       {
         protocol: "https",
