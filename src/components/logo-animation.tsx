@@ -36,12 +36,13 @@ const LogoAnimation = () => {
     >
       <div className="w-64 animate-fadeInOut flex flex-col items-center gap-4">
         <Image
-          src="/logo.svg"
+          src="https://storage.googleapis.com/website-5a18c.firebasestorage.app/logo.svg"
           alt="DaorsForge AI Systems Logo"
           width={150}
           height={150}
           className="filter brightness-0 invert"
           style={{ height: "auto" }}
+          unoptimized
         />
         <h1 className="text-4xl font-bold font-headline gradient-text text-center">DaorsForge AI</h1>
       </div>
