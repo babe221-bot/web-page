@@ -39,7 +39,13 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           <Link href="#home" className="flex items-center gap-3">
-            
+            <Image
+              src="https://storage.googleapis.com/website-5a18c.firebasestorage.app/logo.png"
+              alt="DaorsForge AI Logo"
+              width={160}
+              height={40}
+              className="filter invert sepia-0 saturate-200 hue-rotate-180 brightness-100 contrast-100"
+            />
           </Link>
 
           <nav role="navigation" aria-label="Glavna navigacija" className="hidden lg:flex items-center gap-8">
@@ -66,7 +72,13 @@ const Header = () => {
                  <div className="flex flex-col h-full">
                     <div className="p-4 flex justify-between items-center border-b border-white/10">
                         <Link href="#home" className="flex items-center gap-2" onClick={() => setIsSheetOpen(false)}>
-                            
+                            <Image
+                              src="https://storage.googleapis.com/website-5a18c.firebasestorage.app/logo.png"
+                              alt="DaorsForge AI Logo"
+                              width={140}
+                              height={35}
+                              className="filter invert sepia-0 saturate-200 hue-rotate-180 brightness-100 contrast-100"
+                            />
                         </Link>
                         <SheetTitle className="sr-only">Glavni Meni</SheetTitle>
                         <SheetDescription className="sr-only">Lista navigacionih linkova za stranicu.</SheetDescription>
