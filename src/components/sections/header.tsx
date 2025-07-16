@@ -41,7 +41,7 @@ const Header = ({ lng }: { lng: string }) => {
         <div className="flex justify-between items-center h-20">
           <Link href="#home" className="flex items-center gap-3">
             <Image
-              src="https://storage.googleapis.com/website-5a18c.firebasestorage.app/logo.svg"
+              src="/logo.svg"
               alt="DaorsForge AI Systems Logo"
               width={40}
               height={40}
@@ -77,7 +77,7 @@ const Header = ({ lng }: { lng: string }) => {
                     <div className="p-4 flex justify-between items-center border-b border-white/10">
                         <Link href="#home" className="flex items-center gap-2" onClick={() => setIsSheetOpen(false)}>
                             <Image
-                              src="https://storage.googleapis.com/website-5a18c.firebasestorage.app/logo.svg"
+                              src="/logo.svg"
                               alt="DaorsForge AI Systems Logo"
                               width={32}
                               height={32}

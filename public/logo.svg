@@ -1,17 +1,44 @@
-<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M75 0L149.25 43.75V131.25L75 175L0.75 131.25V43.75L75 0Z" fill="white"/>
-<path d="M75 15L138.75 51.25V123.75L75 160L11.25 123.75V51.25L75 15Z" fill="#1E1E1E"/>
-<path d="M75 30L128.25 61.25V123.75L75 155L21.75 123.75V61.25L75 30Z" fill="url(#paint0_linear_1_2)"/>
-<path d="M75 52.5L106.5 70.625V106.875L75 125L43.5 106.875V70.625L75 52.5Z" fill="#1E1E1E"/>
-<path d="M75 63.75L96.75 76.5625V102.188L75 115L53.25 102.188V76.5625L75 63.75Z" fill="url(#paint1_linear_1_2)"/>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_401_2)">
+<path d="M100 0C44.77 0 0 44.77 0 100C0 155.23 44.77 200 100 200C155.23 200 200 155.23 200 100C200 44.77 155.23 0 100 0ZM100 180C55.89 180 20 144.11 20 100C20 55.89 55.89 20 100 20C144.11 20 180 55.89 180 100C180 144.11 144.11 180 100 180Z" fill="url(#paint0_linear_401_2)"/>
+<path d="M149.99 125.85C149.99 125.85 150.07 150.01 125.84 150.01C101.61 150.01 89.93 138.33 89.93 125.85C89.93 113.37 101.61 101.69 125.84 101.69C150.07 101.69 149.99 125.85 149.99 125.85Z" fill="url(#paint1_linear_401_2)"/>
+<path d="M49.93 74.07C49.93 74.07 49.85 49.91 74.08 49.91C98.31 49.91 109.99 61.59 109.99 74.07C109.99 86.55 98.31 98.23 74.08 98.23C49.85 98.23 49.93 74.07 49.93 74.07Z" fill="url(#paint2_linear_401_2)"/>
+<path d="M100 89.93C100 89.93 124.16 89.85 124.16 65.62C124.16 41.39 112.48 29.71 100 29.71C87.52 29.71 75.84 41.39 75.84 65.62C75.84 89.85 100 89.93 100 89.93Z" fill="url(#paint3_linear_401_2)"/>
+<path d="M100 109.99C100 109.99 75.84 110.07 75.84 134.3C75.84 158.53 87.52 170.21 100 170.21C112.48 170.21 124.16 158.53 124.16 134.3C124.16 110.07 100 109.99 100 109.99Z" fill="url(#paint4_linear_401_2)"/>
+<path d="M74.08 150.01C74.08 150.01 49.92 150.09 49.92 125.86C49.92 101.63 61.6 89.95 74.08 89.95C86.56 89.95 98.24 101.63 98.24 125.86C98.24 150.09 74.08 150.01 74.08 150.01Z" fill="url(#paint5_linear_401_2)"/>
+<path d="M125.84 49.91C125.84 49.91 150 49.83 150 74.06C150 98.29 138.32 109.97 125.84 109.97C113.36 109.97 101.68 98.29 101.68 74.06C101.68 49.83 125.84 49.91 125.84 49.91Z" fill="url(#paint6_linear_401_2)"/>
+</g>
 <defs>
-<linearGradient id="paint0_linear_1_2" x1="75" y1="30" x2="75" y2="155" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_401_2" x1="100" y1="0" x2="100" y2="200" gradientUnits="userSpaceOnUse">
 <stop stop-color="#00A4FF"/>
 <stop offset="1" stop-color="#FF00C7"/>
 </linearGradient>
-<linearGradient id="paint1_linear_1_2" x1="75" y1="63.75" x2="75" y2="115" gradientUnits="userSpaceOnUse">
-<stop stop-color="#FFFFFF"/>
-<stop offset="1" stop-color="#E0E0E0"/>
+<linearGradient id="paint1_linear_401_2" x1="89.93" y1="125.85" x2="150.07" y2="125.85" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00A4FF"/>
+<stop offset="1" stop-color="#FF00C7"/>
 </linearGradient>
+<linearGradient id="paint2_linear_401_2" x1="49.85" y1="74.07" x2="109.99" y2="74.07" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00A4FF"/>
+<stop offset="1" stop-color="#FF00C7"/>
+</linearGradient>
+<linearGradient id="paint3_linear_401_2" x1="75.84" y1="65.62" x2="124.16" y2="65.62" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00A4FF"/>
+<stop offset="1" stop-color="#FF00C7"/>
+</linearGradient>
+<linearGradient id="paint4_linear_401_2" x1="75.84" y1="134.3" x2="124.16" y2="134.3" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00A4FF"/>
+<stop offset="1" stop-color="#FF00C7"/>
+</linearGradient>
+<linearGradient id="paint5_linear_401_2" x1="49.92" y1="125.86" x2="98.24" y2="125.86" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00A4FF"/>
+<stop offset="1" stop-color="#FF00C7"/>
+</linearGradient>
+<linearGradient id="paint6_linear_401_2" x1="101.68" y1="74.06" x2="150" y2="74.06" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00A4FF"/>
+<stop offset="1" stop-color="#FF00C7"/>
+</linearGradient>
+<clipPath id="clip0_401_2">
+<rect width="200" height="200" fill="white"/>
+</clipPath>
 </defs>
 </svg>
