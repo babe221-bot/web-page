@@ -2,16 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 const LogoAnimation = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isFading, setIsFading] = useState(false);
-  const [shouldRender, setShouldRender] = useState(false);
+  const [shouldRender, setShouldRender] = useState(true);
 
   useEffect(() => {
-    setShouldRender(true);
-
     const fadeTimer = setTimeout(() => {
       setIsFading(true);
     }, 4000);
@@ -38,8 +35,8 @@ const LogoAnimation = () => {
       )}
     >
       <div className="w-64 animate-fadeInOut flex flex-col items-center gap-4">
-        <Image
-          src="/logo.svg"
+        <img
+          src="https://storage.googleapis.com/website3324/generated-image%20(6).png"
           alt="DaorsForge AI Systems Logo"
           width={150}
           height={150}
