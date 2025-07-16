@@ -4,21 +4,21 @@ import { Toaster } from '@/components/ui/toaster';
 import BackgroundEffects from '@/components/background-effects';
 import LogoAnimation from '@/components/logo-animation';
 import { cn } from '@/lib/utils';
-import { Orbitron, Montserrat, Chivo_Mono } from 'next/font/google';
+import { Space_Grotesk, Inter, Source_Code_Pro } from 'next/font/google';
 import Script from 'next/script';
 import { GA_TRACKING_ID } from '@/lib/gtag';
 
-const orbitron = Orbitron({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-headline',
 });
 
-const montserrat = Montserrat({
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-body',
 });
 
-const chivoMono = Chivo_Mono({
+const sourceCodePro = Source_Code_Pro({
   subsets: ['latin'],
   variable: '--font-code',
 });
@@ -57,9 +57,9 @@ export default function RootLayout({
       <body
         className={cn(
           'font-body antialiased',
-          orbitron.variable,
-          montserrat.variable,
-          chivoMono.variable
+          spaceGrotesk.variable,
+          inter.variable,
+          sourceCodePro.variable
         )}
       >
         <BackgroundEffects />

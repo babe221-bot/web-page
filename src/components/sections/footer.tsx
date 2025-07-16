@@ -22,7 +22,7 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-4">
               <div>
                 <h4 className="text-lg font-bold font-headline">DaorsForge AI Systems</h4>
-                <p className="text-sm text-foreground/60">Managed by daorsforge.com</p>
+                <p className="text-sm text-foreground/60">Managed by daorsforgealsystems.com</p>
               </div>
             </div>
             <p className="text-foreground/80 mb-6 text-sm">
@@ -30,7 +30,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors">
                 <Globe className="w-5 h-5" />
-                <Link href="https://daorsforge.com">daorsforge.com</Link>
+                <Link href="https://daorsforgealsystems.com">daorsforgealsystems.com</Link>
             </div>
             <div className="flex gap-2 mt-auto">
               <Button variant="ghost" size="icon" asChild>
@@ -50,45 +50,49 @@ const Footer = () => {
 
           {/* Column 2: Services */}
           <div>
-            <h4 className="text-xl font-bold font-headline mb-4 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-12 after:h-0.5 after:bg-gradient-to-r from-primary to-accent">Usluge</h4>
-            <ul className="space-y-3">
-              {[
-                "AI Strategija i Planiranje",
-                "Industrijska Automatizacija",
-                "Integracija Sistema",
-                "Cloud Infrastruktura",
-                "AI Održavanje i Podrška",
-              ].map((service) => (
-                <li key={service}>
-                  <Link href="#services" className="flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors hover:translate-x-1">
-                    <ChevronRight className="w-4 h-4" />
-                    <span>{service}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <h4 id="footer-services" className="text-xl font-bold font-headline mb-4 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-12 after:h-0.5 after:bg-gradient-to-r from-primary to-accent">Usluge</h4>
+            <nav aria-labelledby="footer-services">
+              <ul className="space-y-3">
+                {[
+                  "AI Strategija i Planiranje",
+                  "Industrijska Automatizacija",
+                  "Integracija Sistema",
+                  "Cloud Infrastruktura",
+                  "AI Održavanje i Podrška",
+                ].map((service) => (
+                  <li key={service}>
+                    <Link href="#services" className="flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors hover:translate-x-1">
+                      <ChevronRight className="w-4 h-4" />
+                      <span>{service}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
           {/* Column 3: Industries */}
           <div>
-            <h4 className="text-xl font-bold font-headline mb-4 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-12 after:h-0.5 after:bg-gradient-to-r from-primary to-accent">Industrije</h4>
-            <ul className="space-y-3">
-              {[
-                "Muzička i Video",
-                "Kamenoklesarstvo",
-                "Vinarije",
-                "Automobilska",
-                "Hemijska",
-                "Elektronika",
-              ].map((industry) => (
-                <li key={industry}>
-                  <Link href="#industries" className="flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors hover:translate-x-1">
-                    <ChevronRight className="w-4 h-4" />
-                    <span>{industry}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <h4 id="footer-industries" className="text-xl font-bold font-headline mb-4 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-12 after:h-0.5 after:bg-gradient-to-r from-primary to-accent">Industrije</h4>
+            <nav aria-labelledby="footer-industries">
+              <ul className="space-y-3">
+                {[
+                  "Muzička i Video",
+                  "Kamenoklesarstvo",
+                  "Vinarije",
+                  "Automobilska",
+                  "Hemijska",
+                  "Elektronika",
+                ].map((industry) => (
+                  <li key={industry}>
+                    <Link href="#industries" className="flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors hover:translate-x-1">
+                      <ChevronRight className="w-4 h-4" />
+                      <span>{industry}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
           
           {/* Column 4: Contact */}
@@ -97,8 +101,8 @@ const Footer = () => {
             <div className="space-y-4 text-foreground/80">
               <p className="flex items-start gap-3"><MapPin className="w-5 h-5 text-primary mt-1 shrink-0" /><span>Stolac, BiH 88360</span></p>
               <p className="flex items-start gap-3"><Mail className="w-5 h-5 text-primary mt-1 shrink-0" />
-                <a href="mailto:bakir@daorsforge.com" className="hover:text-primary transition-colors">
-                  bakir@daorsforge.com
+                <a href="mailto:bakir@daorsforgealsystems.com" className="hover:text-primary transition-colors">
+                  bakir@daorsforgealsystems.com
                 </a>
               </p>
             </div>

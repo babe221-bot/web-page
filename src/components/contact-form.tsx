@@ -68,7 +68,7 @@ export default function ContactForm({ onSubmitSuccess }: ContactFormProps) {
                 <FormItem>
                   <FormLabel>Ime i Prezime</FormLabel>
                   <FormControl>
-                    <Input placeholder="Npr. Petar Petrović" {...field} />
+                    <Input placeholder="Npr. Petar Petrović" {...field} aria-label="Ime i Prezime" aria-required="true" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -81,7 +81,7 @@ export default function ContactForm({ onSubmitSuccess }: ContactFormProps) {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="vas.email@primjer.com" {...field} />
+                    <Input type="email" placeholder="vas.email@primjer.com" {...field} aria-label="Email" aria-required="true" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -94,7 +94,7 @@ export default function ContactForm({ onSubmitSuccess }: ContactFormProps) {
                 <FormItem>
                   <FormLabel>Kompanija</FormLabel>
                   <FormControl>
-                    <Input placeholder="Ime Vaše Kompanije" {...field} />
+                    <Input placeholder="Ime Vaše Kompanije" {...field} aria-label="Kompanija" aria-required="true" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -107,7 +107,7 @@ export default function ContactForm({ onSubmitSuccess }: ContactFormProps) {
                 <FormItem>
                   <FormLabel>Telefon (Opciono)</FormLabel>
                   <FormControl>
-                    <Input type="tel" placeholder="+387 6..." {...field} />
+                    <Input type="tel" placeholder="+387 6..." {...field} aria-label="Telefon" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -123,7 +123,7 @@ export default function ContactForm({ onSubmitSuccess }: ContactFormProps) {
                 <FormLabel>Industrija</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger aria-label="Industrija" aria-required="true">
                       <SelectValue placeholder="Izaberite industriju" />
                     </SelectTrigger>
                   </FormControl>
@@ -152,6 +152,8 @@ export default function ContactForm({ onSubmitSuccess }: ContactFormProps) {
                     placeholder="Opišite vaše trenutne operativne izazove..."
                     rows={4}
                     {...field}
+                    aria-label="Vaši glavni izazovi"
+                    aria-required="true"
                   />
                 </FormControl>
                 <FormMessage />

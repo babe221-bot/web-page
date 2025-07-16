@@ -13,13 +13,14 @@ const Hero = () => {
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      aria-labelledby="hero-heading"
     >
       <div className="absolute inset-0 bg-background/80 z-0"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-headline mb-6 leading-tight">
+            <h1 id="hero-heading" className="text-4xl sm:text-5xl md:text-6xl font-bold font-headline mb-6 leading-tight">
               <span className="gradient-text block">
                 Inteligentna Automatizacija za Industrijsku Proizvodnju
               </span>

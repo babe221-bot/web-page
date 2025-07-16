@@ -42,7 +42,7 @@ const Header = () => {
             
           </Link>
 
-          <nav role="navigation" aria-label="Main navigation" className="hidden lg:flex items-center gap-8">
+          <nav role="navigation" aria-label="Glavna navigacija" className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -59,7 +59,7 @@ const Header = () => {
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" aria-controls="mobile-menu">
                   <Menu className="h-6 w-6" />
-                  <span className="sr-only">Open menu</span>
+                  <span className="sr-only">Otvori meni</span>
                 </Button>
               </SheetTrigger>
               <SheetContent id="mobile-menu" side="left" className="bg-background/90 backdrop-blur-xl border-r-white/10 p-0">
@@ -68,11 +68,11 @@ const Header = () => {
                         <Link href="#home" className="flex items-center gap-2" onClick={() => setIsSheetOpen(false)}>
                             
                         </Link>
-                        <SheetTitle className="sr-only">Main Menu</SheetTitle>
-                        <SheetDescription className="sr-only">A list of navigation links for the page.</SheetDescription>
+                        <SheetTitle className="sr-only">Glavni Meni</SheetTitle>
+                        <SheetDescription className="sr-only">Lista navigacionih linkova za stranicu.</SheetDescription>
                         <Button variant="ghost" size="icon" onClick={() => setIsSheetOpen(false)}>
                             <X className="h-6 w-6" />
-                            <span className="sr-only">Close menu</span>
+                            <span className="sr-only">Zatvori meni</span>
                         </Button>
                     </div>
                     <nav aria-labelledby="mobile-menu-title" className="flex-1 flex flex-col items-start gap-6 p-6">
