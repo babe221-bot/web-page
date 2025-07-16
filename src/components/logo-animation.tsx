@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 const LogoAnimation = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -38,7 +37,7 @@ const LogoAnimation = () => {
       )}
     >
       <div className="w-64 animate-fadeInOut flex flex-col items-center gap-4">
-        <Image
+        <img
           src="https://storage.googleapis.com/website3324/generated-image%20(6).png"
           width={128}
           height={128}
