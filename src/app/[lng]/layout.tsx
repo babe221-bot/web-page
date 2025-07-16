@@ -9,6 +9,7 @@ import Script from 'next/script';
 import { GA_TRACKING_ID } from '@/lib/gtag';
 import { dir } from 'i18next'
 import { locales } from '../i18n/settings'
+import { Providers } from '@/components/providers';
 
 export async function generateStaticParams() {
   return locales.map((lng: string) => ({ lng }))
@@ -74,10 +75,12 @@ export default function RootLayout({
           sourceCodePro.variable
         )}
       >
-        <BackgroundEffects />
-        <LogoAnimation />
-        <div className="relative z-10">{children}</div>
-        <Toaster />
+        <Providers>
+          <BackgroundEffects />
+          <LogoAnimation />
+          <div className="relative z-10">{children}</div>
+          <Toaster />
+        </Providers>
       </body>
     </html>
   );

@@ -6,6 +6,12 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "_next"
+      }
+    ],
     "webFrameworks": {
       "region": "europe-west1"
     }

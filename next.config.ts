@@ -1,8 +1,7 @@
-const { i18n } = require('./next-i18next.config.js');
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  i18n,
+  output: 'standalone',
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -25,15 +24,15 @@ const nextConfig: NextConfig = {
         pathname: '/daorsmusic-app.firebasestorage.app/**',
       },
       {
-        protocol: 'https' ,
+        protocol: 'https',
         hostname: 'storage.googleapis.com',
         port: '',
         pathname: '/website3324/**',
       },
       {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      }
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
   },
 };

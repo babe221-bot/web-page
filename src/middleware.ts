@@ -1,18 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { i18n } from '../next-i18next.config';
+
+const locales = ['sr', 'en'];
+const defaultLocale = 'sr';
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
-  const { locales, defaultLocale } = i18n;
 
   const pathnameHasLocale = locales.some(
-    (locale: string) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
   if (pathnameHasLocale) return;
 
-  const locale = defaultLocale;
-  req.nextUrl.pathname = `/${locale}${pathname}`;
+  req.nextUrl.pathname = `/${defaultLocale}${pathname}`;
   return NextResponse.redirect(req.nextUrl);
 }
 
