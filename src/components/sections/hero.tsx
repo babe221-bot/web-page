@@ -33,30 +33,41 @@ const Hero = ({ lng }: { lng: string }) => {
     e.preventDefault();
     setChatOpen(true);
   };
+  
+  const getPointerPosition = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
+    if ('touches' in e) {
+      return { clientX: e.touches[0].clientX, clientY: e.touches[0].clientY };
+    }
+    return { clientX: e.clientX, clientY: e.clientY };
+  };
 
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleDragStart = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
     if (dragRef.current) {
       setIsDragging(true);
+      const { clientX, clientY } = getPointerPosition(e);
       setOffset({
-        x: e.clientX - dragRef.current.offsetLeft,
-        y: e.clientY - dragRef.current.offsetTop,
+        x: clientX - dragRef.current.offsetLeft,
+        y: clientY - dragRef.current.offsetTop,
       });
-      e.preventDefault();
+      // Prevent default behavior for touch events to avoid scrolling
+      if (e.cancelable) {
+        e.preventDefault();
+      }
     }
   };
 
-  const handleMouseUp = () => {
+  const handleDragEnd = () => {
     setIsDragging(false);
   };
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleDragMove = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
     if (isDragging && dragRef.current) {
       const parentRect = dragRef.current.parentElement?.getBoundingClientRect();
       if(parentRect) {
-        let newX = e.clientX - offset.x;
-        let newY = e.clientY - offset.y;
+        const { clientX, clientY } = getPointerPosition(e);
+        let newX = clientX - offset.x;
+        let newY = clientY - offset.y;
 
-        // Constrain movement within the parent
         const maxX = parentRect.width - dragRef.current.offsetWidth;
         const maxY = parentRect.height - dragRef.current.offsetHeight;
 
@@ -67,16 +78,35 @@ const Hero = ({ lng }: { lng: string }) => {
       }
     }
   };
-
+  
   useEffect(() => {
-    const handleMouseUpGlobal = () => setIsDragging(false);
-    if(isDragging) {
-      window.addEventListener('mouseup', handleMouseUpGlobal);
+    if (isDragging) {
+      const moveHandler = (e: MouseEvent | TouchEvent) => {
+        // We create a synthetic event to pass to handleDragMove
+        const syntheticEvent = {
+          ...e,
+          preventDefault: () => e.preventDefault(),
+          cancelable: true,
+          touches: (e as TouchEvent).touches,
+          clientX: (e as MouseEvent).clientX,
+          clientY: (e as MouseEvent).clientY,
+        } as unknown as React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>;
+        handleDragMove(syntheticEvent);
+      };
+      
+      window.addEventListener('mousemove', moveHandler);
+      window.addEventListener('touchmove', moveHandler, { passive: false });
+      window.addEventListener('mouseup', handleDragEnd);
+      window.addEventListener('touchend', handleDragEnd);
+
+      return () => {
+        window.removeEventListener('mousemove', moveHandler);
+        window.removeEventListener('touchmove', moveHandler);
+        window.removeEventListener('mouseup', handleDragEnd);
+        window.removeEventListener('touchend', handleDragEnd);
+      };
     }
-    return () => {
-      window.removeEventListener('mouseup', handleMouseUpGlobal);
-    }
-  }, [isDragging]);
+  }, [isDragging, offset]);
 
 
   return (
@@ -84,8 +114,6 @@ const Hero = ({ lng }: { lng: string }) => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
       aria-labelledby="hero-heading"
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
     >
       <video
         autoPlay
@@ -146,12 +174,13 @@ const Hero = ({ lng }: { lng: string }) => {
               </Button>
             </div>
           </div>
-          <div className="hidden md:flex items-center justify-center relative h-full">
+          <div className="flex items-center justify-center relative h-full min-h-[300px] md:min-h-0">
              <div 
                 ref={dragRef}
                 className="glass-card flex flex-col items-center p-4 gap-4 absolute cursor-move"
                 style={{ top: position.y, left: position.x }}
-                onMouseDown={handleMouseDown}
+                onMouseDown={handleDragStart}
+                onTouchStart={handleDragStart}
              >
                 <Image
                     src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/Whisk_gif_tezymyzztc.gif?alt=media&token=89e35203-1292-472b-89bb-607bee2a6fbb"
@@ -172,6 +201,7 @@ const Hero = ({ lng }: { lng: string }) => {
                         )}
                         aria-label={isPlaying ? 'Pauziraj radio' : 'Pusti radio'}
                         onMouseDown={(e) => e.stopPropagation()}
+                        onTouchStart={(e) => e.stopPropagation()}
                     >
                         {isPlaying ? (
                             <Music className="h-6 w-6" />
@@ -186,6 +216,7 @@ const Hero = ({ lng }: { lng: string }) => {
                         className='rounded-full h-12 w-12 bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white hover:text-primary transition-all duration-300 cursor-pointer'
                         aria-label="Otvori chatbot"
                         onMouseDown={(e) => e.stopPropagation()}
+                        onTouchStart={(e) => e.stopPropagation()}
                     >
                         <MessageSquare className="h-6 w-6" />
                     </Button>
