@@ -10,12 +10,12 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const navLinks = [
-  { href: "/", label: "Početna", icon: Home },
-  { href: "/#services", label: "Usluge", icon: Settings },
-  { href: "/#industries", label: "Industrije", icon: Factory },
-  { href: "/#methodology", label: "Metodologija", icon: Waypoints },
+  { href: "/", label: "početna", icon: Home },
+  { href: "/#services", label: "usluge", icon: Settings },
+  { href: "/#industries", label: "industrije", icon: Factory },
+  { href: "/#methodology", label: "metodologija", icon: Waypoints },
   { href: "/small-business-solutions", label: "smallBusiness", icon: Briefcase },
-  { href: "/#contact", label: "Kontakt", icon: Mail },
+  { href: "/#contact", label: "kontakt", icon: Mail },
 ];
 
 const Header = ({ lng }: { lng: string }) => {
@@ -70,7 +70,7 @@ const Header = ({ lng }: { lng: string }) => {
                 href={getLinkHref(link.href)}
                 className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
               >
-                {t(`nav.${link.label.toLowerCase()}`)}
+                {t(`nav.${link.label}`)}
               </Link>
             ))}
           </nav>
@@ -113,7 +113,7 @@ const Header = ({ lng }: { lng: string }) => {
                             className="flex items-center gap-4 text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
                         >
                             <link.icon className="h-5 w-5" />
-                            {t(`nav.${link.label.toLowerCase()}`)}
+                            {t(`nav.${link.label}`)}
                         </Link>
                         ))}
                     </nav>
