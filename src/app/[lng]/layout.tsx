@@ -10,6 +10,7 @@ import { GA_TRACKING_ID } from '@/lib/gtag';
 import { dir } from 'i18next'
 import { locales } from '../i18n/settings'
 import { Providers } from '@/components/providers';
+import JazzRadioPlayer from '@/components/jazz-radio-player';
 
 export async function generateStaticParams() {
   return locales.map((lng: string) => ({ lng }))
@@ -76,6 +77,7 @@ export default async function RootLayout({
         )}
       >
         <Providers>
+          <JazzRadioPlayer />
           <BackgroundEffects />
           <LogoAnimation />
           <div className="relative z-10">{children}</div>
