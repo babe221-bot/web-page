@@ -22,7 +22,7 @@ interface FooterProps {
 const Footer = ({ lng }: FooterProps) => {
   const { t } = useTranslation(lng, 'common');
 
-  const services = t('smallBusinessSolutions.services', { returnObjects: true }) as { title: string }[];
+  const services = t('smallBusinessSolutions.services', { returnObjects: true }) as { id: string; title: string }[];
   const industries = t('industries', { returnObjects: true }) as Record<string, { title: string }>;
 
   return (
@@ -66,7 +66,7 @@ const Footer = ({ lng }: FooterProps) => {
             <nav aria-labelledby="footer-services">
               <ul className="space-y-3">
                 {services.map((service) => (
-                  <li key={service.title}>
+                  <li key={service.id}>
                     <Link href={`/${lng}#small-business-solutions`} className="flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors hover:translate-x-1">
                       <ChevronRight className="w-4 h-4" />
                       <span>{service.title}</span>

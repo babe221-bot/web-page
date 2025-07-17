@@ -17,21 +17,42 @@
     "button": "Započnite Transformaciju",
     "servicesButton": "Naše Usluge"
   },
+  "industries": {
+    "title": "Industrije Koje Poslužujemo",
+    "manufacturing": {
+      "title": "Proizvodnja",
+      "description": "Optimizacija proizvodnih linija pomoću prediktivnog održavanja i kontrole kvaliteta vođenih veštačkom inteligencijom."
+    },
+    "logistics": {
+      "title": "Logistika i Lanac Snabdevanja",
+      "description": "Pojednostavljivanje operacija od upravljanja zalihama do isporuke uz inteligentnu automatizaciju."
+    },
+    "energy": {
+      "title": "Energetika i Komunalne Usluge",
+      "description": "Poboljšanje stabilnosti mreže i upravljanja resursima putem pametne analitike."
+    },
+    "automotive": {
+      "title": "Automobilska Industrija",
+      "description": "Unapređenje automobilske proizvodnje i dizajna uz pomoć veštačke inteligencije i robotike."
+    }
+  },
   "smallBusinessSolutions": {
     "title": "Rešenja za Lične i Male Biznis Veb-sajtove",
     "subtitle": "Kreiramo personalizovane veb stranice i automatizovana rešenja prilagođena vašim potrebama, bilo da ste pojedinac ili mali biznis.",
     "services": [
       {
+        "id": "website-development",
         "title": "Izrada Personalnih i Poslovnih Veb Stranica",
         "description": "Profesionalna izrada modernih, responsivnih i funkcionalnih veb stranica koje efikasno predstavljaju vas ili vaš posao na internetu.",
         "features": [
           "Dizajn prilagođen klijentu",
           "SEO optimizacija",
-          "Integracija društvenih mreža",
+          "Integracija društvenih mrežama",
           "Mobilna responsivnost"
         ]
       },
       {
+        "id": "av-production",
         "title": "Audio i Video Produkcija",
         "description": "Kompletna usluga audio i video produkcije za vaše veb stranice, marketing kampanje ili lične projekte, od koncepta do finalne obrade.",
         "features": [
@@ -42,6 +63,7 @@
         ]
       },
       {
+        "id": "web-chatbots",
         "title": "Web Chatbotovi",
         "description": "Implementacija inteligentnih veb chatbotova koji poboljšavaju korisničku podršku, automatizuju odgovore i prikupljaju informacije 24/7.",
         "features": [
@@ -52,6 +74,7 @@
         ]
       },
       {
+        "id": "small-automations",
         "title": "Male Automatizacije u Svakodnevnom Poslovanju",
         "description": "Razvoj malih, ali moćnih automatizacija koje smanjuju rutinske zadatke i povećavaju efikasnost vašeg poslovanja.",
         "features": [

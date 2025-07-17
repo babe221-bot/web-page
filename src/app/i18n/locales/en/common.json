@@ -17,11 +17,31 @@
     "button": "Start Transformation",
     "servicesButton": "Our Services"
   },
+  "industries": {
+    "title": "Industries We Serve",
+    "manufacturing": {
+      "title": "Manufacturing",
+      "description": "Optimizing production lines with AI-driven predictive maintenance and quality control."
+    },
+    "logistics": {
+      "title": "Logistics & Supply Chain",
+      "description": "Streamlining operations from inventory management to delivery with intelligent automation."
+    },
+    "energy": {
+      "title": "Energy & Utilities",
+      "description": "Enhancing grid stability and resource management through smart analytics."
+    },
+    "automotive": {
+      "title": "Automotive",
+      "description": "Advancing automotive manufacturing and design with AI and robotics."
+    }
+  },
   "smallBusinessSolutions": {
     "title": "Solutions for Personal and Small Business Websites",
     "subtitle": "We create personalized websites and automated solutions tailored to your needs, whether you are an individual or a small business.",
     "services": [
       {
+        "id": "website-development",
         "title": "Development of Personal and Business Websites",
         "description": "Professional development of modern, responsive, and functional websites that effectively represent you or your business on the internet.",
         "features": [
@@ -32,6 +52,7 @@
         ]
       },
       {
+        "id": "av-production",
         "title": "Audio and Video Production",
         "description": "Complete audio and video production services for your websites, marketing campaigns, or personal projects, from concept to final processing.",
         "features": [
@@ -42,6 +63,7 @@
         ]
       },
       {
+        "id": "web-chatbots",
         "title": "Web Chatbots",
         "description": "Implementation of intelligent web chatbots that improve customer support, automate responses, and collect information 24/7.",
         "features": [
@@ -52,6 +74,7 @@
         ]
       },
       {
+        "id": "small-automations",
         "title": "Small Automations in Daily Business",
         "description": "Development of small but powerful automations that reduce routine tasks and increase the efficiency of your business.",
         "features": [
