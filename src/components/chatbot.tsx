@@ -28,7 +28,7 @@ export default function Chatbot() {
       setMessages([
         {
           role: 'model',
-          content: 'Zdravo! Ja sam DaorsForge AI asistent. Kako vam mogu pomoći danas?',
+          content: 'Zdravo! Ja sam DaorsChatBot. Kako vam mogu pomoći danas?',
         },
       ]);
     }
@@ -88,7 +88,7 @@ export default function Chatbot() {
                     style={{ height: "auto" }}
                     unoptimized
                 />
-                <SheetTitle className="text-lg font-bold font-headline gradient-text">DaorsForge AI Asistent</SheetTitle>
+                <SheetTitle className="text-lg font-bold font-headline gradient-text">DaorsChatBot</SheetTitle>
              </div>
              <Button variant="ghost" size="icon" onClick={() => setChatOpen(false)}>
                 <X className="h-6 w-6" />

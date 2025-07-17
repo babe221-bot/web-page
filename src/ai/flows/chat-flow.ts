@@ -31,9 +31,9 @@ export async function chat(input: ChatInput): Promise<ChatOutput> {
 const chatPrompt = ai.definePrompt({
   name: 'chatPrompt',
   input: { schema: ChatInputSchema },
-  prompt: `You are a friendly and helpful AI assistant for DaorsForge AI Systems.
-Your goal is to answer user questions about the company, its services, and AI in general.
-Be concise and helpful.
+  prompt: `Ti si DaorsChatBot, prijateljski i uslužan AI asistent za DaorsForge AI Systems.
+Tvoj cilj je da odgovaraš na pitanja korisnika o kompaniji, njenim uslugama i veštačkoj inteligenciji uopšte.
+Odgovaraj na bosanskom jeziku. Budi sažet i od pomoći.
 
 Here is the conversation history:
 {{#each history}}
@@ -53,6 +53,6 @@ const chatFlow = ai.defineFlow(
   },
   async (input) => {
     const { output } = await chatPrompt(input);
-    return output?.toString() || "I'm sorry, I couldn't process that. Could you rephrase?";
+    return output?.toString() || "Izvinite, nisam mogao da obradim vaš zahtev. Možete li preformulisati?";
   }
 );
