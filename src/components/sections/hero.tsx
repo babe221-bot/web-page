@@ -7,10 +7,16 @@ import { trackCTAClick } from '@/lib/analytics';
 import Image from 'next/image';
 import { useRadio } from '@/context/RadioContext';
 import { cn } from '@/lib/utils';
+import React, { useState, useRef, useEffect } from 'react';
 
 const Hero = ({ lng }: { lng: string }) => {
   const { t } = useTranslation(lng, 'common');
   const { isPlaying, togglePlay } = useRadio();
+
+  const dragRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   const handleCTAClick = (ctaName: string) => {
     trackCTAClick(ctaName);
@@ -21,11 +27,58 @@ const Hero = ({ lng }: { lng: string }) => {
     togglePlay();
   };
 
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (dragRef.current) {
+      setIsDragging(true);
+      setOffset({
+        x: e.clientX - dragRef.current.offsetLeft,
+        y: e.clientY - dragRef.current.offsetTop,
+      });
+      e.preventDefault();
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isDragging && dragRef.current) {
+      const parentRect = dragRef.current.parentElement?.getBoundingClientRect();
+      if(parentRect) {
+        let newX = e.clientX - offset.x;
+        let newY = e.clientY - offset.y;
+
+        // Constrain movement within the parent
+        const maxX = parentRect.width - dragRef.current.offsetWidth;
+        const maxY = parentRect.height - dragRef.current.offsetHeight;
+
+        newX = Math.max(0, Math.min(newX, maxX));
+        newY = Math.max(0, Math.min(newY, maxY));
+        
+        setPosition({ x: newX, y: newY });
+      }
+    }
+  };
+
+  useEffect(() => {
+    const handleMouseUpGlobal = () => setIsDragging(false);
+    if(isDragging) {
+      window.addEventListener('mouseup', handleMouseUpGlobal);
+    }
+    return () => {
+      window.removeEventListener('mouseup', handleMouseUpGlobal);
+    }
+  }, [isDragging]);
+
+
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
       aria-labelledby="hero-heading"
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
     >
       <video
         autoPlay
@@ -43,7 +96,7 @@ const Hero = ({ lng }: { lng: string }) => {
 
       <div className="absolute inset-0 bg-background/70 z-10"></div>
 
-      <div className="container mx-auto px-4 relative z-20">
+      <div className="container mx-auto px-4 relative z-20 h-full">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h1
@@ -86,14 +139,19 @@ const Hero = ({ lng }: { lng: string }) => {
               </Button>
             </div>
           </div>
-          <div className="hidden md:flex items-center justify-center">
-             <div className="glass-card flex flex-col items-center p-4 gap-4">
+          <div className="hidden md:flex items-center justify-center relative h-full">
+             <div 
+                ref={dragRef}
+                className="glass-card flex flex-col items-center p-4 gap-4 absolute cursor-move"
+                style={{ top: position.y, left: position.x }}
+                onMouseDown={handleMouseDown}
+             >
                 <Image
                     src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/Whisk_gif_tezymyzztc.gif?alt=media&token=89e35203-1292-472b-89bb-607bee2a6fbb"
                     alt="AI and automation technology"
-                    width={300}
-                    height={300}
-                    className="rounded-lg"
+                    width={250}
+                    height={250}
+                    className="rounded-lg pointer-events-none"
                     unoptimized
                 />
                 <div className="flex gap-4">
@@ -102,10 +160,11 @@ const Hero = ({ lng }: { lng: string }) => {
                         variant="ghost"
                         onClick={handleRadioToggle}
                         className={cn(
-                            'rounded-full h-12 w-12 bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white hover:text-primary transition-all duration-300',
+                            'rounded-full h-12 w-12 bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white hover:text-primary transition-all duration-300 cursor-pointer',
                             isPlaying && 'text-primary'
                         )}
                         aria-label={isPlaying ? 'Pauziraj radio' : 'Pusti radio'}
+                        onMouseDown={(e) => e.stopPropagation()}
                     >
                         {isPlaying ? (
                             <Music className="h-6 w-6" />
@@ -116,8 +175,9 @@ const Hero = ({ lng }: { lng: string }) => {
                     <Button
                         size="icon"
                         variant="ghost"
-                        className='rounded-full h-12 w-12 bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white hover:text-primary transition-all duration-300'
+                        className='rounded-full h-12 w-12 bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white hover:text-primary transition-all duration-300 cursor-pointer'
                         aria-label="Otvori chatbot"
+                        onMouseDown={(e) => e.stopPropagation()}
                     >
                         <MessageSquare className="h-6 w-6" />
                     </Button>
