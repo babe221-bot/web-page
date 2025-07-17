@@ -8,10 +8,12 @@ import Image from 'next/image';
 import { useRadio } from '@/context/RadioContext';
 import { cn } from '@/lib/utils';
 import React, { useState, useRef, useEffect } from 'react';
+import { useChatbot } from '@/context/ChatbotContext';
 
 const Hero = ({ lng }: { lng: string }) => {
   const { t } = useTranslation(lng, 'common');
   const { isPlaying, togglePlay } = useRadio();
+  const { setChatOpen } = useChatbot();
 
   const dragRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -25,6 +27,11 @@ const Hero = ({ lng }: { lng: string }) => {
   const handleRadioToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     togglePlay();
+  };
+  
+  const handleChatbotToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setChatOpen(true);
   };
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -175,6 +182,7 @@ const Hero = ({ lng }: { lng: string }) => {
                     <Button
                         size="icon"
                         variant="ghost"
+                        onClick={handleChatbotToggle}
                         className='rounded-full h-12 w-12 bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white hover:text-primary transition-all duration-300 cursor-pointer'
                         aria-label="Otvori chatbot"
                         onMouseDown={(e) => e.stopPropagation()}
