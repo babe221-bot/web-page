@@ -2,7 +2,8 @@
   "hero": {
     "title": "Unapređujemo Vaše Poslovanje Kroz Inovativne Tehnologije",
     "subtitle": "Vaš partner za digitalnu transformaciju - nudimo vrhunska rešenja za web, mobilne aplikacije i digitalni marketing.",
-    "button": "Zakažite Konsultacije"
+    "button": "Zakažite Konsultacije",
+    "servicesButton": "Pogledajte Usluge"
   },
   "nav": {
     "početna": "Početna",

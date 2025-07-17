@@ -51,11 +51,11 @@ const Hero = ({ lng }: { lng: string }) => {
                 variant="secondary"
                 className="bg-white/10 border-white/20 hover:bg-white/20"
                 asChild
-                onClick={() => handleCTAClick("Pogledajte Usluge")}
+                onClick={() => handleCTAClick(t("hero.servicesButton"))}
               >
-                <Link href="#services" aria-label="Pogledajte naše usluge">
+                <Link href="#services" aria-label={t("hero.servicesButton") || ""}>
                   <Briefcase className="mr-2 h-5 w-5" />
-                  Pogledajte Usluge
+                  {t("hero.servicesButton")}
                 </Link>
               </Button>
             </div>
