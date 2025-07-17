@@ -82,8 +82,8 @@ const Footer = ({ lng }: FooterProps) => {
             <h4 id="footer-industries" className="text-xl font-bold font-headline mb-4 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-12 after:h-0.5 after:bg-gradient-to-r from-primary to-accent">{t('industries.title')}</h4>
             <nav aria-labelledby="footer-industries">
               <ul className="space-y-3">
-                {Object.values(industries).map((industry) => (
-                  <li key={industry.title}>
+                {Object.entries(industries).map(([key, industry]) => (
+                  <li key={key}>
                     <Link href={`/${lng}#industries`} className="flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors hover:translate-x-1">
                       <ChevronRight className="w-4 h-4" />
                       <span>{industry.title}</span>
