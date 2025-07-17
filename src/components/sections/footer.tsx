@@ -30,7 +30,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors">
                 <Globe className="w-5 h-5" />
-                <Link href="https://daors.com">daors.com</Link>
+                <Link href="https://www.daorsforgealsystems.com">www.daorsforgealsystems.com</Link>
             </div>
             <div className="flex gap-2 mt-auto">
               <Button variant="ghost" size="icon" asChild>
