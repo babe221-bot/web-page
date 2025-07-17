@@ -42,11 +42,11 @@ export default function RootLayout({
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{
+  params: {
     lng: string;
-  }>;
+  };
 }) {
-  const { lng } = React.use(params);
+  const { lng } = params;
 
   return (
     <html lang={lng} dir={dir(lng)}>
