@@ -7,6 +7,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "www.daorsforgealsystems.com",
+        "destination": "https://daorsforgealsystems.com",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "**",
