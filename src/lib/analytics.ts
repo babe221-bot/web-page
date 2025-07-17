@@ -50,7 +50,7 @@ export const trackCTAClick = (ctaName: string) => {
  * @param eventData - The data associated with the event.
  */
 export const logServerEvent = (eventName: string, eventData: { category: string; label: string; }) => {
-    console.log(`Analytics: Server event '${eventName}'`, JSON.stringify(eventData, null, 2));
+    console.log(`Analytics: Server event '${eventName}'`, eventData);
     event({
         action: eventName,
         category: eventData.category,
