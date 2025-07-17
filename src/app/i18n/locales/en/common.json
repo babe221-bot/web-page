@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "početna": "Home",
+    "usluge": "Services",
+    "industrije": "Industries",
+    "metodologija": "Methodology",
+    "kontakt": "Contact",
+    "smallBusiness": "Small Business",
+    "openMenu": "Open menu",
+    "mainMenu": "Main menu",
+    "menuDescription": "Navigation links for the main sections of the site.",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "title": "Forging the Future of Production",
+    "subtitle": "We eliminate bottlenecks, automate complexity, and unlock the full potential of your industry through advanced AI solutions.",
+    "button": "Start Transformation",
+    "servicesButton": "Our Services"
+  },
+  "smallBusinessSolutions": {
+    "title": "Solutions for Personal and Small Business Websites",
+    "subtitle": "We create personalized websites and automated solutions tailored to your needs, whether you are an individual or a small business.",
+    "services": [
+      {
+        "title": "Development of Personal and Business Websites",
+        "description": "Professional development of modern, responsive, and functional websites that effectively represent you or your business on the internet.",
+        "features": [
+          "Client-tailored design",
+          "SEO optimization",
+          "Social media integration",
+          "Mobile responsiveness"
+        ]
+      },
+      {
+        "title": "Audio and Video Production",
+        "description": "Complete audio and video production services for your websites, marketing campaigns, or personal projects, from concept to final processing.",
+        "features": [
+          "Recording and editing",
+          "Animations and effects",
+          "Web optimization",
+          "Audio engineering"
+        ]
+      },
+      {
+        "title": "Web Chatbots",
+        "description": "Implementation of intelligent web chatbots that improve customer support, automate responses, and collect information 24/7.",
+        "features": [
+          "Automated responses",
+          "Client information collection",
+          "24/7 availability",
+          "Integration with existing systems"
+        ]
+      },
+      {
+        "title": "Small Automations in Daily Business",
+        "description": "Development of small but powerful automations that reduce routine tasks and increase the efficiency of your business.",
+        "features": [
+          "Email communication automation",
+          "Automatic report generation",
+          "Calendar and meeting management",
+          "Connecting different applications"
+        ]
+      }
+    ]
+  }
+}

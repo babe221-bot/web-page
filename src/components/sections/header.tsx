@@ -5,16 +5,17 @@ import Link from "next/link";
 import { useTranslation } from "@/app/i18n/client";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
-import { Menu, Home, Settings, Factory, Waypoints, Mail, X } from "lucide-react";
+import { Menu, Home, Settings, Factory, Waypoints, Mail, X, Briefcase } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const navLinks = [
-  { href: "#home", label: "Početna", icon: Home },
-  { href: "#services", label: "Usluge", icon: Settings },
-  { href: "#industries", label: "Industrije", icon: Factory },
-  { href: "#methodology", label: "Metodologija", icon: Waypoints },
-  { href: "#contact", label: "Kontakt", icon: Mail },
+  { href: "/", label: "Početna", icon: Home },
+  { href: "/#services", label: "Usluge", icon: Settings },
+  { href: "/#industries", label: "Industrije", icon: Factory },
+  { href: "/#methodology", label: "Metodologija", icon: Waypoints },
+  { href: "/small-business-solutions", label: "smallBusiness", icon: Briefcase },
+  { href: "/#contact", label: "Kontakt", icon: Mail },
 ];
 
 const Header = ({ lng }: { lng: string }) => {
@@ -29,6 +30,17 @@ const Header = ({ lng }: { lng: string }) => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
+  const getLinkHref = (href: string) => {
+    if (href === '/') {
+      return `/${lng}`;
+    }
+    if (href.startsWith('/#')) {
+      return `/${lng}${href.slice(1)}`;
+    }
+    return `/${lng}${href}`;
+  }
+
 
   return (
     <header
@@ -39,7 +51,7 @@ const Header = ({ lng }: { lng: string }) => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
-          <Link href="#home" className="flex items-center gap-3">
+          <Link href={`/${lng}`} className="flex items-center gap-3">
             <Image
               src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/generated-image%20(6).png?alt=media&token=5db267db-a5ee-482e-8fea-b7cbeb1a3589"
               alt="DaorsForge AI Systems Logo"
@@ -55,7 +67,7 @@ const Header = ({ lng }: { lng: string }) => {
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                href={getLinkHref(link.href)}
                 className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
               >
                 {t(`nav.${link.label.toLowerCase()}`)}
@@ -74,7 +86,7 @@ const Header = ({ lng }: { lng: string }) => {
               <SheetContent id="mobile-menu" side="left" className="bg-background/90 backdrop-blur-xl border-r-white/10 p-0">
                  <div className="flex flex-col h-full">
                     <div className="p-4 flex justify-between items-center border-b border-white/10">
-                        <Link href="#home" className="flex items-center gap-2" onClick={() => setIsSheetOpen(false)}>
+                        <Link href={getLinkHref('/')} className="flex items-center gap-2" onClick={() => setIsSheetOpen(false)}>
                             <Image
                               src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/generated-image%20(6).png?alt=media&token=5db267db-a5ee-482e-8fea-b7cbeb1a3589"
                               alt="DaorsForge AI Systems Logo"
@@ -96,7 +108,7 @@ const Header = ({ lng }: { lng: string }) => {
                         {navLinks.map((link) => (
                         <Link
                             key={link.href}
-                            href={link.href}
+                            href={getLinkHref(link.href)}
                             onClick={() => setIsSheetOpen(false)}
                             className="flex items-center gap-4 text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
                         >

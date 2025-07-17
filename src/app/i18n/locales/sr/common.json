@@ -5,6 +5,7 @@
     "industrije": "Industrije",
     "metodologija": "Metodologija",
     "kontakt": "Kontakt",
+    "smallBusiness": "Mali Biznis",
     "openMenu": "Otvori meni",
     "mainMenu": "Glavni meni",
     "menuDescription": "Navigacioni linkovi za glavne sekcije sajta.",
@@ -13,6 +14,53 @@
   "hero": {
     "title": "Kujemo Budućnost Proizvodnje",
     "subtitle": "Eliminišemo uska grla, automatizujemo kompleksnost i otključavamo puni potencijal vaše industrije kroz napredna AI rješenja.",
-    "button": "Započnite Transformaciju"
+    "button": "Započnite Transformaciju",
+    "servicesButton": "Naše Usluge"
+  },
+  "smallBusinessSolutions": {
+    "title": "Rešenja za Lične i Male Biznis Veb-sajtove",
+    "subtitle": "Kreiramo personalizovane veb stranice i automatizovana rešenja prilagođena vašim potrebama, bilo da ste pojedinac ili mali biznis.",
+    "services": [
+      {
+        "title": "Izrada Personalnih i Poslovnih Veb Stranica",
+        "description": "Profesionalna izrada modernih, responsivnih i funkcionalnih veb stranica koje efikasno predstavljaju vas ili vaš posao na internetu.",
+        "features": [
+          "Dizajn prilagođen klijentu",
+          "SEO optimizacija",
+          "Integracija društvenih mreža",
+          "Mobilna responsivnost"
+        ]
+      },
+      {
+        "title": "Audio i Video Produkcija",
+        "description": "Kompletna usluga audio i video produkcije za vaše veb stranice, marketing kampanje ili lične projekte, od koncepta do finalne obrade.",
+        "features": [
+          "Snimanje i montaža",
+          "Animacije i efekti",
+          "Optimizacija za veb",
+          "Audio inženjering"
+        ]
+      },
+      {
+        "title": "Web Chatbotovi",
+        "description": "Implementacija inteligentnih veb chatbotova koji poboljšavaju korisničku podršku, automatizuju odgovore i prikupljaju informacije 24/7.",
+        "features": [
+          "Automatski odgovori",
+          "Prikupljanje informacija o klijentima",
+          "24/7 dostupnost",
+          "Integracija sa postojećim sistemima"
+        ]
+      },
+      {
+        "title": "Male Automatizacije u Svakodnevnom Poslovanju",
+        "description": "Razvoj malih, ali moćnih automatizacija koje smanjuju rutinske zadatke i povećavaju efikasnost vašeg poslovanja.",
+        "features": [
+          "Automatizacija email komunikacije",
+          "Automatsko generisanje izvještaja",
+          "Upravljanje kalendarom i sastancima",
+          "Povezivanje različitih aplikacija"
+        ]
+      }
+    ]
   }
 }
