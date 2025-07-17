@@ -101,8 +101,8 @@ const Footer = () => {
             <div className="space-y-4 text-foreground/80">
               <p className="flex items-start gap-3"><MapPin className="w-5 h-5 text-primary mt-1 shrink-0" /><span>Stolac, BiH 88360</span></p>
               <p className="flex items-start gap-3"><Mail className="w-5 h-5 text-primary mt-1 shrink-0" />
-                <a href="mailto:bakir@daors.com" className="hover:text-primary transition-colors">
-                  bakir@daors.com
+                <a href="mailto:bakir@daorsforgealsystems.com" className="hover:text-primary transition-colors">
+                  bakir@daorsforgealsystems.com
                 </a>
               </p>
             </div>
