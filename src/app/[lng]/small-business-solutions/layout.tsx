@@ -23,8 +23,8 @@ const sourceCodePro = Source_Code_Pro({
 });
 
 export const metadata = {
-  title: 'Mala Rešenja za Biznis - DaorsForge AI',
-  description: 'Nudimo izradu veb stranica, audio/video produkciju, chatbotove i automatizacije za male biznise i lične potrebe.',
+  title: 'Rješenja za Male Biznise - DaorsForge AI',
+  description: 'Nudimo izradu web stranica, audio/video produkciju, chatbotove i automatizacije za male biznise i lične potrebe.',
 };
 
 export default function SmallBusinessLayout({

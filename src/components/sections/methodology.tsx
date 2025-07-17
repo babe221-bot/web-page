@@ -9,12 +9,12 @@ const steps = [
   {
     step: 2,
     title: "Dizajn",
-    description: "Arhitektiranje sveobuhvatnog blueprint-a rješenja sa tehničkom arhitekturom i jasnim roadmap-om. Definišemo KPI-je i metodologiju mjerenja uspjeha.",
+    description: "Arhitektiranje sveobuhvatnog blueprint-a rješenja sa tehničkom arhitekturom i jasnim roadmap-om. Definiramo KPI-jeve i metodologiju mjerenja uspjeha.",
   },
   {
     step: 3,
     title: "Razvoj",
-    description: "Elitni inženjerski tim gradi, testira i usavršava vaš prilagođeni automatizacijski i integracijski motor. Koristimo agile metodologiju sa kratkim iteracijama.",
+    description: "Elitni inženjerski tim gradi, testira i usavršava vaš prilagođeni automatizacijski i integracijski motor. Koristimo agilnu metodologiju sa kratkim iteracijama.",
   },
   {
     step: 4,

@@ -8,12 +8,12 @@
     "smallBusiness": "Mali Biznis",
     "openMenu": "Otvori meni",
     "mainMenu": "Glavni meni",
-    "menuDescription": "Navigacioni linkovi za glavne sekcije sajta.",
+    "menuDescription": "Navigacioni linkovi za glavne sekcije stranice.",
     "closeMenu": "Zatvori meni"
   },
   "hero": {
     "title": "Kujemo Budućnost Proizvodnje",
-    "subtitle": "Eliminišemo uska grla, automatizujemo kompleksnost i otključavamo puni potencijal vaše industrije kroz napredna AI rješenja.",
+    "subtitle": "Eliminišemo uska grla, automatiziramo kompleksnost i otključavamo puni potencijal vaše industrije kroz napredna AI rješenja.",
     "button": "Započnite Transformaciju",
     "servicesButton": "Naše Usluge"
   },
@@ -21,10 +21,10 @@
     "title": "Industrije Koje Poslužujemo",
     "manufacturing": {
       "title": "Proizvodnja",
-      "description": "Optimizacija proizvodnih linija pomoću prediktivnog održavanja i kontrole kvaliteta vođenih veštačkom inteligencijom."
+      "description": "Optimizacija proizvodnih linija pomoću prediktivnog održavanja i kontrole kvaliteta vođenih vještačkom inteligencijom."
     },
     "logistics": {
-      "title": "Logistika i Lanac Snabdevanja",
+      "title": "Logistika i Lanac Snabdijevanja",
       "description": "Pojednostavljivanje operacija od upravljanja zalihama do isporuke uz inteligentnu automatizaciju."
     },
     "energy": {
@@ -33,39 +33,39 @@
     },
     "automotive": {
       "title": "Automobilska Industrija",
-      "description": "Unapređenje automobilske proizvodnje i dizajna uz pomoć veštačke inteligencije i robotike."
+      "description": "Unapređenje automobilske proizvodnje i dizajna uz pomoć vještačke inteligencije i robotike."
     }
   },
   "smallBusinessSolutions": {
-    "title": "Rešenja za Lične i Male Biznis Veb-sajtove",
-    "subtitle": "Kreiramo personalizovane veb stranice i automatizovana rešenja prilagođena vašim potrebama, bilo da ste pojedinac ili mali biznis.",
+    "title": "Rješenja za Lične i Male Biznis Web Stranice",
+    "subtitle": "Kreiramo personalizirane web stranice i automatizirana rješenja prilagođena vašim potrebama, bilo da ste pojedinac ili mali biznis.",
     "services": [
       {
         "id": "website-development",
-        "title": "Izrada Personalnih i Poslovnih Veb Stranica",
-        "description": "Profesionalna izrada modernih, responsivnih i funkcionalnih veb stranica koje efikasno predstavljaju vas ili vaš posao na internetu.",
+        "title": "Izrada Personalnih i Poslovnih Web Stranica",
+        "description": "Profesionalna izrada modernih, responzivnih i funkcionalnih web stranica koje efikasno predstavljaju vas ili vaš posao na internetu.",
         "features": [
           "Dizajn prilagođen klijentu",
           "SEO optimizacija",
-          "Integracija društvenih mrežama",
-          "Mobilna responsivnost"
+          "Integracija društvenih mreža",
+          "Mobilna responzivnost"
         ]
       },
       {
         "id": "av-production",
         "title": "Audio i Video Produkcija",
-        "description": "Kompletna usluga audio i video produkcije za vaše veb stranice, marketing kampanje ili lične projekte, od koncepta do finalne obrade.",
+        "description": "Kompletna usluga audio i video produkcije za vaše web stranice, marketing kampanje ili lične projekte, od koncepta do finalne obrade.",
         "features": [
           "Snimanje i montaža",
           "Animacije i efekti",
-          "Optimizacija za veb",
+          "Optimizacija za web",
           "Audio inženjering"
         ]
       },
       {
         "id": "web-chatbots",
         "title": "Web Chatbotovi",
-        "description": "Implementacija inteligentnih veb chatbotova koji poboljšavaju korisničku podršku, automatizuju odgovore i prikupljaju informacije 24/7.",
+        "description": "Implementacija inteligentnih web chatbotova koji poboljšavaju korisničku podršku, automatiziraju odgovore i prikupljaju informacije 24/7.",
         "features": [
           "Automatski odgovori",
           "Prikupljanje informacija o klijentima",
@@ -85,5 +85,11 @@
         ]
       }
     ]
+  },
+  "footer": {
+    "allRightsReserved": "Sva prava zadržana.",
+    "contact": {
+        "title": "Kontakt"
+    }
   }
 }

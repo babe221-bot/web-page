@@ -2,7 +2,7 @@
 
 import { useTranslation } from '@/app/i18n/client';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Lightbulb, Laptop, MessageCircle, Bot, Film, CheckCircle2 } from 'lucide-react';
+import { Lightbulb, Laptop, Bot, Film, CheckCircle2 } from 'lucide-react';
 import Header from '@/components/sections/header';
 import Footer from '@/components/sections/footer';
 

@@ -33,8 +33,8 @@ export const industriesData = [
     dataAiHint: "winery production",
     features: [
       "Prediktivna analiza zrelosti grožđa",
-      "Automatizovana kontrola fermentacije",
-      "Optimizacija mješanja sorti",
+      "Automatizirana kontrola fermentacije",
+      "Optimizacija miješanja sorti",
       "Praćenje uslova u podrumu",
     ],
   },

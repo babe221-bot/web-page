@@ -8,19 +8,19 @@ const services = [
     icon: BrainCircuit,
     title: "AI Strategija i Implementacija",
     description: "Projektujemo i implementiramo napredne AI modele koji automatiziraju složene proizvodne procese, smanjujući troškove do 35% i povećavajući efikasnost. Naši sistemi uče i prilagođavaju se promjenama u realnom vremenu.",
-    ariaLabel: "AI Strategy and Implementation Service"
+    ariaLabel: "Usluga AI strategije i implementacije"
   },
   {
     icon: LinkIcon,
     title: "Prilagođena Integracija Sistema",
     description: "Povezujemo vaše postojeće sisteme (MES, SCADA, ERP) u jedinstven, inteligentni ekosistem koji omogućava donošenje odluka u realnom vremenu. Eliminišemo silose podataka i stvaramo jedinstven izvor istine.",
-    ariaLabel: "Custom System Integration Service"
+    ariaLabel: "Usluga prilagođene integracije sistema"
   },
   {
     icon: Cloud,
     title: "Cloud Infrastruktura",
     description: "Dizajniramo skalabilnu cloud arhitekturu optimizovanu za industrijske AI/ML aplikacije sa 99.9% uptime garancijom. Sigurna, visoko dostupna infrastruktura koja raste uz vaše poslovne potrebe.",
-    ariaLabel: "Cloud Infrastructure Service"
+    ariaLabel: "Usluga Cloud infrastrukture"
   },
 ];
 
