@@ -93,7 +93,7 @@ const Hero = ({ lng }: { lng: string }) => {
                     alt="AI and automation technology"
                     width={300}
                     height={300}
-                    className="rounded-lg mix-blend-screen"
+                    className="rounded-lg"
                     unoptimized
                 />
                 <div className="flex gap-4">
