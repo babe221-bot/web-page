@@ -10,8 +10,8 @@ const JazzRadioPlayer = () => {
   useEffect(() => {
     const audio = audioRef.current;
     if (audio) {
-      // Postavljamo jačinu zvuka na 50%
-      audio.volume = 0.5;
+      // Postavljamo jačinu zvuka na 35%
+      audio.volume = 0.35;
       
       // Pokušavamo da pokrenemo reprodukciju
       const playPromise = audio.play();
