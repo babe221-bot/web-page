@@ -92,7 +92,7 @@ const Hero = ({ lng }: { lng: string }) => {
               alt="AI and automation technology"
               width={400}
               height={300}
-              className="rounded-lg shadow-2xl"
+              className="rounded-lg shadow-2xl mix-blend-screen"
               unoptimized
             />
             <Button
