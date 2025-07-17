@@ -19,9 +19,22 @@ const Hero = ({ lng }: { lng: string }) => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
       aria-labelledby="hero-heading"
     >
-      <div className="absolute inset-0 bg-background/80 z-0"></div>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
+        // Kada dodate video, zamenite src atribut
+        // src="https://firebasestorage.googleapis.com/v0/b/your-bucket/o/your-video.mp4?alt=media"
+      >
+        {/* <source src="/path-to-your/video.webm" type="video/webm" /> */}
+        {/* <source src="/path-to-your/video.mp4" type="video/mp4" /> */}
+      </video>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="absolute inset-0 bg-background/80 z-10"></div>
+
+      <div className="container mx-auto px-4 relative z-20">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h1 id="hero-heading" className="text-4xl sm:text-5xl md:text-6xl font-bold font-headline mb-6 leading-tight">
@@ -60,13 +73,14 @@ const Hero = ({ lng }: { lng: string }) => {
               </Button>
             </div>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="hidden md:flex items-center justify-center">
+            {/* Ovdje mozete zadrzati GIF ili ga ukloniti po potrebi */}
             <Image
               src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/Whisk_gif_tezymyzztc.gif?alt=media&token=89e35203-1292-472b-89bb-607bee2a6fbb"
               alt="AI and automation technology"
               width={600}
               height={400}
-              className="rounded-lg shadow-2xl"
+              className="rounded-lg shadow-2xl opacity-0" // Sakriveno da ne smeta videu
               unoptimized
             />
           </div>
