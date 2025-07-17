@@ -38,9 +38,8 @@ const LogoAnimation = () => {
         <Image
           src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/generated-image%20(6).png?alt=media&token=5db267db-a5ee-482e-8fea-b7cbeb1a3589"
           alt="DaorsForge AI Systems Logo"
-          width={150}
-          height={150}
-          className="filter brightness-0 invert"
+          width={200}
+          height={200}
           style={{ height: "auto" }}
           unoptimized
         />

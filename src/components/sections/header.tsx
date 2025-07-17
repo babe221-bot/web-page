@@ -45,7 +45,6 @@ const Header = ({ lng }: { lng: string }) => {
               alt="DaorsForge AI Systems Logo"
               width={40}
               height={40}
-              className="filter brightness-0 invert"
               style={{ height: "auto" }}
               unoptimized
             />
@@ -81,7 +80,6 @@ const Header = ({ lng }: { lng: string }) => {
                               alt="DaorsForge AI Systems Logo"
                               width={32}
                               height={32}
-                              className="filter brightness-0 invert"
                               style={{ height: "auto" }}
                               unoptimized
                             />
