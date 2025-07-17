@@ -6,7 +6,8 @@ import { Lightbulb, Laptop, Bot, Film, CheckCircle2 } from 'lucide-react';
 import Header from '@/components/sections/header';
 import Footer from '@/components/sections/footer';
 
-export default function SmallBusinessSolutionsPage({ params: { lng } }: { params: { lng: string } }) {
+export default function SmallBusinessSolutionsPage({ params }: { params: { lng: string } }) {
+  const { lng } = params;
   const { t } = useTranslation(lng, 'common');
 
   const services = t('smallBusinessSolutions.services', { returnObjects: true }) as { title: string; description: string; features: string[]; }[];
