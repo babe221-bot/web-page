@@ -12,6 +12,7 @@ import { locales } from '@/app/i18n/settings'
 import { Providers } from '@/components/providers';
 import JazzRadioPlayer from '@/components/jazz-radio-player';
 import React from 'react';
+import { RadioProvider } from '@/context/RadioContext';
 
 export async function generateStaticParams() {
   return locales.map((lng: string) => ({ lng }))
@@ -76,11 +77,13 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <JazzRadioPlayer />
-          <BackgroundEffects />
-          <LogoAnimation />
-          <div className="relative z-10">{children}</div>
-          <Toaster />
+          <RadioProvider>
+            <JazzRadioPlayer />
+            <BackgroundEffects />
+            <LogoAnimation />
+            <div className="relative z-10">{children}</div>
+            <Toaster />
+          </RadioProvider>
         </Providers>
       </body>
     </html>

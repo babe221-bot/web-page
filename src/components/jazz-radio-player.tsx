@@ -1,32 +1,12 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRadio } from '@/context/RadioContext';
 
 const JazzRadioPlayer = () => {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  // URL javnog jazz radio streama
-  const streamUrl = 'http://stream.srg-ssr.ch/m/rsj/mp3_128';
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (audio) {
-      // Postavljamo jačinu zvuka na 35%
-      audio.volume = 0.35;
-      
-      // Pokušavamo da pokrenemo reprodukciju
-      const playPromise = audio.play();
-
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          // Autoplay je spriječen od strane browsera.
-          // Ovo je očekivano ponašanje u mnogim slučajevima.
-          console.log("Automatska reprodukcija je spriječena:", error);
-        });
-      }
-    }
-  }, []); // Prazan niz osigurava da se ovaj efekat izvrši samo jednom
-
-  return <audio ref={audioRef} src={streamUrl} loop />;
+  // Logika je premeštena u RadioProvider
+  // Ova komponenta sada služi samo da osigura da se audio element renderuje
+  const { audioRef } = useRadio();
+  return <audio ref={audioRef} src="http://stream.srg-ssr.ch/m/rsj/mp3_128" loop />;
 };
 
 export default JazzRadioPlayer;
