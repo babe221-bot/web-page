@@ -42,7 +42,7 @@ export default function SmallBusinessLayout({
         'font-body antialiased',
         spaceGrotesk.variable,
         inter.variable,
-        sourceCode_Pro.variable
+        sourceCodePro.variable
       )}
     >
       {children}
