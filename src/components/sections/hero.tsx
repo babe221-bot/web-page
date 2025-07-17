@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Briefcase } from "lucide-react";
 import Link from "next/link";
 import { trackCTAClick } from "@/lib/analytics";
+import Image from "next/image";
 
 const Hero = ({ lng }: { lng: string }) => {
   const { t } = useTranslation(lng, "common");
@@ -60,7 +61,14 @@ const Hero = ({ lng }: { lng: string }) => {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            
+            <Image
+              src="https://placehold.co/600x400.png"
+              alt="AI and automation technology"
+              width={600}
+              height={400}
+              className="rounded-lg shadow-2xl"
+              data-ai-hint="technology abstract"
+            />
           </div>
         </div>
       </div>
