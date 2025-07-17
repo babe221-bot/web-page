@@ -25,11 +25,9 @@ const Hero = ({ lng }: { lng: string }) => {
         muted
         playsInline
         className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
-        // Kada dodate video, zamenite src atribut
-        // src="https://firebasestorage.googleapis.com/v0/b/your-bucket/o/your-video.mp4?alt=media"
       >
-        {/* <source src="/path-to-your/video.webm" type="video/webm" /> */}
-        {/* <source src="/path-to-your/video.mp4" type="video/mp4" /> */}
+        <source src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/Logo_to_Robot_Video_Ready.mp4?alt=media&token=f9e7e336-f23e-4cbc-8068-d2929f70bc41" type="video/mp4" />
+        Vaš pretraživač ne podržava video tag.
       </video>
 
       <div className="absolute inset-0 bg-background/80 z-10"></div>
