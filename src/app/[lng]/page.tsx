@@ -6,7 +6,8 @@ import Industries from "@/components/sections/industries";
 import Methodology from "@/components/sections/methodology";
 import ContactSection from "@/components/sections/contact-section";
 
-export default function Home({ params: { lng } }: { params: { lng: string } }) {
+export default function Home({ params }: { params: { lng: string } }) {
+  const { lng } = params;
   return (
     <main className="flex min-h-screen flex-col">
       <Header lng={lng} />
