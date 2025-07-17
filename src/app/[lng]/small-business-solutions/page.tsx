@@ -71,7 +71,7 @@ export default function SmallBusinessSolutionsPage({ params: { lng } }: { params
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer lng={lng} />
     </>
   );
 }
