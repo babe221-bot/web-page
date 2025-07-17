@@ -12,10 +12,10 @@ export default function Home({ params }: { params: { lng: string } }) {
     <main className="flex min-h-screen flex-col">
       <Header lng={lng} />
       <Hero lng={lng} />
-      <Services lng={lng} />
-      <Industries lng={lng} />
-      <Methodology lng={lng} />
-      <ContactSection lng={lng} />
+      <Services />
+      <Industries />
+      <Methodology />
+      <ContactSection />
       <Footer lng={lng} />
     </main>
   );
