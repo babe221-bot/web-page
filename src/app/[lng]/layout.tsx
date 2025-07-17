@@ -11,6 +11,7 @@ import { dir } from 'i18next'
 import { locales } from '../i18n/settings'
 import { Providers } from '@/components/providers';
 import JazzRadioPlayer from '@/components/jazz-radio-player';
+import React from 'react';
 
 export async function generateStaticParams() {
   return locales.map((lng: string) => ({ lng }))
@@ -38,15 +39,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params: {
-    lng
-  }
+  params
 }: {
   children: React.ReactNode;
-  params: {
+  params: Promise<{
     lng: string;
-  }
+  }>;
 }) {
+  const { lng } = React.use(params);
 
   return (
     <html lang={lng} dir={dir(lng)}>
