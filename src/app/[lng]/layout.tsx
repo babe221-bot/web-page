@@ -8,7 +8,7 @@ import { Space_Grotesk, Inter, Source_Code_Pro } from 'next/font/google';
 import Script from 'next/script';
 import { GA_TRACKING_ID } from '@/lib/gtag';
 import { dir } from 'i18next'
-import { locales } from '../i18n/settings'
+import { locales } from '../../i18n/settings'
 import { Providers } from '@/components/providers';
 import JazzRadioPlayer from '@/components/jazz-radio-player';
 import React from 'react';
@@ -39,14 +39,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params
+  params: { lng }
 }: {
   children: React.ReactNode;
   params: {
     lng: string;
   };
 }) {
-  const { lng } = params;
 
   return (
     <html lang={lng} dir={dir(lng)}>
