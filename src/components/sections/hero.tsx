@@ -62,12 +62,12 @@ const Hero = ({ lng }: { lng: string }) => {
           </div>
           <div className="flex items-center justify-center">
             <Image
-              src="https://placehold.co/600x400.png"
+              src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/Whisk_gif_tezymyzztc.gif?alt=media&token=89e35203-1292-472b-89bb-607bee2a6fbb"
               alt="AI and automation technology"
               width={600}
               height={400}
               className="rounded-lg shadow-2xl"
-              data-ai-hint="technology abstract"
+              unoptimized
             />
           </div>
         </div>
