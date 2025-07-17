@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   description: "Pružamo napredna AI rješenja za optimizaciju proizvodnje, automatizaciju procesa i kontrolu kvaliteta u klesarskoj, muzičkoj i klasičnoj industriji.",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
   params: {
     lng
