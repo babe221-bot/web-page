@@ -1,7 +1,7 @@
 'use client';
 import { useTranslation } from '@/app/i18n/client';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Briefcase, Music, Music2 } from 'lucide-react';
+import { ArrowRight, Briefcase, Music, Music2, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 import { trackCTAClick } from '@/lib/analytics';
 import Image from 'next/image';
@@ -86,31 +86,43 @@ const Hero = ({ lng }: { lng: string }) => {
               </Button>
             </div>
           </div>
-          <div className="hidden md:flex items-center justify-center relative">
-            <Image
-              src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/Whisk_gif_tezymyzztc.gif?alt=media&token=89e35203-1292-472b-89bb-607bee2a6fbb"
-              alt="AI and automation technology"
-              width={400}
-              height={300}
-              className="rounded-lg shadow-2xl mix-blend-screen"
-              unoptimized
-            />
-            <Button
-              size="icon"
-              variant="ghost"
-              onClick={handleRadioToggle}
-              className={cn(
-                'absolute bottom-4 right-4 rounded-full h-12 w-12 bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white hover:text-primary transition-all duration-300',
-                isPlaying && 'text-primary'
-              )}
-              aria-label={isPlaying ? 'Pauziraj radio' : 'Pusti radio'}
-            >
-              {isPlaying ? (
-                <Music className="h-6 w-6" />
-              ) : (
-                <Music2 className="h-6 w-6" />
-              )}
-            </Button>
+          <div className="hidden md:flex items-center justify-center">
+             <div className="glass-card flex flex-col items-center p-4 gap-4">
+                <Image
+                    src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/Whisk_gif_tezymyzztc.gif?alt=media&token=89e35203-1292-472b-89bb-607bee2a6fbb"
+                    alt="AI and automation technology"
+                    width={300}
+                    height={300}
+                    className="rounded-lg mix-blend-screen"
+                    unoptimized
+                />
+                <div className="flex gap-4">
+                    <Button
+                        size="icon"
+                        variant="ghost"
+                        onClick={handleRadioToggle}
+                        className={cn(
+                            'rounded-full h-12 w-12 bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white hover:text-primary transition-all duration-300',
+                            isPlaying && 'text-primary'
+                        )}
+                        aria-label={isPlaying ? 'Pauziraj radio' : 'Pusti radio'}
+                    >
+                        {isPlaying ? (
+                            <Music className="h-6 w-6" />
+                        ) : (
+                            <Music2 className="h-6 w-6" />
+                        )}
+                    </Button>
+                    <Button
+                        size="icon"
+                        variant="ghost"
+                        className='rounded-full h-12 w-12 bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white hover:text-primary transition-all duration-300'
+                        aria-label="Otvori chatbot"
+                    >
+                        <MessageSquare className="h-6 w-6" />
+                    </Button>
+                </div>
+            </div>
           </div>
         </div>
       </div>
