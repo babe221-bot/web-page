@@ -10,6 +10,7 @@
 
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
+import { browseTool } from '../tools/browse';
 
 const MessageSchema = z.object({
   role: z.enum(['user', 'model']),
@@ -100,8 +101,10 @@ DaorsForge AI Systems
 const chatPrompt = ai.definePrompt({
   name: 'chatPrompt',
   input: { schema: ChatInputSchema },
-  prompt: `Ti si DaorsChatBot, prijateljski i uslužan AI asistent za DaorsForge AI Systems.
+  tools: [browseTool],
+  system: `Ti si DaorsChatBot, prijateljski i uslužan AI asistent za DaorsForge AI Systems.
 Tvoj cilj je da odgovaraš na pitanja korisnika o kompaniji, njenim uslugama i veštačkoj inteligenciji uopšte.
+Ako korisnik pošalje URL, koristi 'browse' alat da preuzmeš sadržaj stranice i odgovoriš na osnovu tog sadržaja.
 Koristiš sledeću bazu znanja da odgovoriš na pitanja:
 ${knowledgeBase}
 
