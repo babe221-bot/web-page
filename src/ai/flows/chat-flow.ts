@@ -74,7 +74,7 @@ DaorsForge AI Systems
 - AI-dizajn klesarskih elemenata
 - Optimizacija materijala
 - Kontrola kvaliteta kompjuterskim vidom
-- Napredni upravljački programi
+- Napravni upravljački programi
 
 ### Vinarije
 
@@ -124,7 +124,7 @@ const chatFlow = ai.defineFlow(
     outputSchema: z.string(),
   },
   async (input) => {
-    const { output } = await chatPrompt(input);
-    return output?.text ?? "Izvinite, nisam mogao da obradim vaš zahtev. Možete li preformulisati?";
+    const response = await chatPrompt(input);
+    return response.text ?? "Izvinite, nisam mogao da obradim vaš zahtev. Možete li preformulisati?";
   }
 );
