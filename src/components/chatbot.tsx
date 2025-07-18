@@ -28,7 +28,7 @@ export default function Chatbot() {
       setMessages([
         {
           role: 'model',
-          content: 'Zdravo! Ja sam DaorsChatBot. Kako vam mogu pomoći danas?',
+          content: 'Zdravo! Ja sam DaorsChatBot. Postavite mi pitanje o našim uslugama.',
         },
       ]);
     }
