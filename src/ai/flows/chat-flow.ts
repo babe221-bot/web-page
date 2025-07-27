@@ -32,70 +32,69 @@ export async function chat(input: ChatInput): Promise<ChatOutput> {
 const knowledgeBase = `
 # Chatbot Knowledge Base: DaorsForge AI Systems
 
-## App Name
+## O Kompaniji
 
-DaorsForge AI Systems
+**Ime:** DaorsForge AI Systems
+**Slogan:** Kujemo Budućnost Proizvodnje. Eliminišemo uska grla, automatiziramo kompleksnost i otključavamo puni potencijal vaše industrije kroz napredna AI rješenja.
+**Lokacija:** Stolac, BiH 88360
+**Email:** bakir@daorsforgealsystems.com
+**Web:** www.daorsforgealsystems.com
+**Društvene mreže:**
+- LinkedIn: https://www.linkedin.com/company/daors
+- Twitter: https://x.com/daors
+- Facebook: https://www.facebook.com/daors
+- YouTube: https://www.youtube.com/@Daors
 
-## Core Features
+## Glavne Usluge za Industriju
 
-- Homepage Hero Section: Hero section with background video to highlight key company information.
-- Industry Specific Display: Informational section displaying specific industries where our solutions apply.
-- 4D Methodology: A 4-step methodology that enables us to successfully build automation tools and systems
-- Contact form: A clean, and elegant contact form with input fields to capture contact information for prospects and customers.
-- Predictive Insights: Industry Insights Tool: The system will analyze the user-selected industry during form submission and display a series of insights specific to it
+### AI Strategija i Implementacija
+Projektujemo i implementiramo napredne AI modele koji automatiziraju složene proizvodne procese, smanjujući troškove do 35% i povećavajući efikasnost. Naši sistemi uče i prilagođavaju se promjenama u realnom vremenu.
 
-## Style Guidelines
+### Prilagođena Integracija Sistema
+Povezujemo vaše postojeće sisteme (MES, SCADA, ERP) u jedinstven, inteligentni ekosistem koji omogućava donošenje odluka u realnom vremenu. Eliminišemo silose podataka i stvaramo jedinstven izvor istine.
 
-- Primary color: Electric blue (#00D4FF) for highlighting calls to action.
-- Background color: Dark navy (#0F0F23) creates a modern tech look. 20% saturation of primary.
-- Accent color: Purple (#7C3AED) analogous to electric blue.
-- Headline font: 'Space Grotesk' (sans-serif) for a futuristic aesthetic. It should be paired with 'Inter' (sans-serif) for longer bodies of text
-- Code font: 'Source Code Pro' for any snippets.
-- Use modern, flat design icons from Font Awesome.
-- Subtle animations like fade-ins and slide-ups to improve user experience.
+### Cloud Infrastruktura
+Dizajniramo skalabilnu cloud arhitekturu optimizovanu za industrijske AI/ML aplikacije sa 99.9% uptime garancijom. Sigurna, visoko dostupna infrastruktura koja raste uz vaše poslovne potrebe.
 
-## Industries Served
+## Industrije Koje Poslužujemo
 
 ### Muzička i Video Industrija
-
-**Description:** Revolucionarni AI alati za muzičku produkciju, video obradu i distribuciju. Naši sistemi optimiziraju procese kreativne produkcije, ubrzavaju radne tokove i poboljšavaju kvalitet finalnog proizvoda.
-
-**Features:**
-- AI-generisana muzička pratnja
-- Automatska video obrada i optimizacija
-- Inteligentna distribucija sadržaja
-- Prediktivna analiza trendova
+**Opis:** Revolucionarni AI alati za muzičku produkciju, video obradu i distribuciju.
+**Karakteristike:** AI-generisana muzička pratnja, automatska video obrada i optimizacija, inteligentna distribucija sadržaja, prediktivna analiza trendova.
 
 ### Kamenoklesarska Industrija
-
-**Description:** Napredna AI rješenja za modernizaciju tradicionalne klesarske industrije. Automatiziramo procese dizajna, optimiziramo upotrebu materijala i poboljšavamo preciznost klesarskih radova.
-
-**Features:**
-- 3D skeniranje i modeliranje
-- AI-dizajn klesarskih elemenata
-- Optimizacija materijala
-- Kontrola kvaliteta kompjuterskim vidom
-- Napravni upravljački programi
+**Opis:** Napredna AI rješenja za modernizaciju tradicionalne klesarske industrije.
+**Karakteristike:** 3D skeniranje i modeliranje, AI-dizajn klesarskih elemenata, optimizacija materijala, kontrola kvaliteta kompjuterskim vidom, napredni upravljački programi.
 
 ### Vinarije
-
-**Description:** AI rješenja za optimizaciju procesa proizvodnje vina, od vinograda do boce. Unaprijedite kvalitet, smanjite troškove i povećajte prinose uz pomoć pametne tehnologije.
-
-**Features:**
-- Prediktivna analiza zrelosti grožđa
-- Automatizirana kontrola fermentacije
-- Optimizacija miješanja sorti
-- Praćenje uslova u podrumu
+**Opis:** AI rješenja za optimizaciju procesa proizvodnje vina, od vinograda do boce.
+**Karakteristike:** Prediktivna analiza zrelosti grožđa, automatizirana kontrola fermentacije, optimizacija miješanja sorti, praćenje uslova u podrumu.
 
 ### Klasična Proizvodnja
+**Opis:** Osnovna AI rješenja za klasične proizvodne procese.
+**Karakteristike:** Prediktivno održavanje, optimizacija proizvodnih linija, kontrola kvaliteta AI sistemima, integracija sistema u realnom vremenu.
 
-**Description:** Naša osnovna AI rješenja za klasične proizvodne procese. Implementiramo napredne modele koji automatiziraju složene proizvodne procese, smanjujući troškove do 35% i povećavajući efikasnost.
+## 4-D Metodologija
 
-**Features:**
-- Prediktivno održavanje
-- Optimizacija proizvodnih linija
-- Kontrola kvaliteta AI sistemima
-- Integracija sistema u realnom vremenu
+Naš dokazani proces za uspješnu AI transformaciju.
+1.  **Otkrivanje:** Dubinske radionice za mapiranje proizvodnih procesa, tehnološkog steka i strateških operativnih ciljeva. Identificiramo ključne tačke gdje AI može stvoriti najveću vrijednost.
+2.  **Dizajn:** Arhitektiranje sveobuhvatnog blueprint-a rješenja sa tehničkom arhitekturom i jasnim roadmap-om. Definiramo KPI-jeve i metodologiju mjerenja uspjeha.
+3.  **Razvoj:** Elitni inženjerski tim gradi, testira i usavršava vaš prilagođeni automatizacijski i integracijski motor. Koristimo agilnu metodologiju sa kratkim iteracijama.
+4.  **Implementacija:** Potpuna implementacija u live proizvodno okruženje sa kontinuiranom podrškom i praćenjem performansi. Obuka timova i transfer znanja za održivost.
+
+## Rješenja za Male Biznise i Lične Potrebe
+
+### Izrada Web Stranica
+Profesionalna izrada modernih, responzivnih i funkcionalnih web stranica. Karakteristike: Dizajn prilagođen klijentu, SEO optimizacija, integracija društvenih mreža, mobilna responzivnost.
+
+### Audio i Video Produkcija
+Kompletna usluga audio i video produkcije za web stranice, marketing kampanje ili lične projekte. Karakteristike: Snimanje i montaža, animacije i efekti, optimizacija za web, audio inženjering.
+
+### Web Chatbotovi
+Implementacija inteligentnih web chatbotova koji poboljšavaju korisničku podršku. Karakteristike: Automatski odgovori, prikupljanje informacija o klijentima, 24/7 dostupnost, integracija sa postojećim sistemima.
+
+### Male Automatizacije
+Razvoj malih, ali moćnih automatizacija za smanjenje rutinskih zadataka. Karakteristike: Automatizacija email komunikacije, automatsko generisanje izvještaja, upravljanje kalendarom.
 `;
 
 const chatPrompt = ai.definePrompt({
@@ -104,8 +103,8 @@ const chatPrompt = ai.definePrompt({
   tools: [browseTool],
   system: `Ti si DaorsChatBot, prijateljski i uslužan AI asistent za DaorsForge AI Systems.
 Tvoj cilj je da odgovaraš na pitanja korisnika o kompaniji, njenim uslugama i veštačkoj inteligenciji uopšte.
+Koristiš sledeću bazu znanja da odgovoriš na pitanja. Uvek odgovaraj na osnovu ove baze znanja.
 Ako korisnik pošalje URL, koristi 'browse' alat da preuzmeš sadržaj stranice i odgovoriš na osnovu tog sadržaja.
-Koristiš sledeću bazu znanja da odgovoriš na pitanja:
 ${knowledgeBase}
 
 Odgovaraj na bosanskom jeziku. Budi sažet i od pomoći.
