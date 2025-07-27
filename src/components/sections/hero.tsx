@@ -188,6 +188,7 @@ const Hero = ({ lng }: { lng: string }) => {
                     width={250}
                     height={250}
                     className="rounded-lg pointer-events-none"
+                    style={{ height: "auto" }}
                     unoptimized
                 />
                 <div className="flex gap-4">
