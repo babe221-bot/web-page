@@ -22,13 +22,14 @@ export default function Chatbot() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const welcomeMessage = 'Zdravo! Ja sam DaorsChatBot. Postavite mi pitanje o našim uslugama.';
 
   useEffect(() => {
     if (isChatOpen && messages.length === 0) {
       setMessages([
         {
           role: 'model',
-          content: 'Zdravo! Ja sam DaorsChatBot. Postavite mi pitanje o našim uslugama.',
+          content: welcomeMessage,
         },
       ]);
     }
@@ -50,16 +51,24 @@ export default function Chatbot() {
     if (!input.trim() || isLoading) return;
   
     const userMessage: Message = { role: 'user', content: input };
-    const newMessages = [...messages, userMessage];
-    setMessages(newMessages);
+    const currentMessages = [...messages, userMessage];
+    setMessages(currentMessages);
     setInput('');
     setIsLoading(true);
     
     try {
+      const historyForAI = currentMessages
+        .filter(m => m.content !== welcomeMessage) // Filter out the initial welcome message
+        .map(m => ({
+            role: m.role,
+            content: [{text: m.content}],
+        }));
+
       const chatInput: ChatInput = {
-        history: newMessages.slice(0, -1),
+        history: historyForAI.slice(0, -1),
         message: input,
       };
+
       const response = await chat(chatInput);
       const modelMessage: Message = { role: 'model', content: response };
       setMessages((prev) => [...prev, modelMessage]);

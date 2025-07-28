@@ -11,14 +11,22 @@
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
 import { browseTool } from '../tools/browse';
+import { Content, Message } from 'genkit';
 
 const MessageSchema = z.object({
   role: z.enum(['user', 'model']),
   content: z.string(),
 });
+const HistorySchema = z.array(MessageSchema);
+
 
 const ChatInputSchema = z.object({
-  history: z.array(MessageSchema).describe('The conversation history.'),
+  history: z.array(z.object({
+    role: z.enum(['user', 'model']),
+    content: z.array(z.object({
+      text: z.string(),
+    })),
+  })).describe('The conversation history.'),
   message: z.string().describe('The latest message from the user.'),
 });
 export type ChatInput = z.infer<typeof ChatInputSchema>;
@@ -97,11 +105,18 @@ Implementacija inteligentnih web chatbotova koji poboljšavaju korisničku podr�
 Razvoj malih, ali moćnih automatizacija za smanjenje rutinskih zadataka. Karakteristike: Automatizacija email komunikacije, automatsko generisanje izvještaja, upravljanje kalendarom.
 `;
 
-const chatPrompt = ai.definePrompt({
-  name: 'chatPrompt',
-  input: { schema: ChatInputSchema },
-  tools: [browseTool],
-  system: `Ti si DaorsChatBot, prijateljski i uslužan AI asistent za DaorsForge AI Systems.
+
+const chatFlow = ai.defineFlow(
+  {
+    name: 'chatFlow',
+    inputSchema: ChatInputSchema,
+    outputSchema: z.string(),
+  },
+  async ({ history, message }) => {
+    const response = await ai.generate({
+      model: 'googleai/gemini-1.5-flash-latest',
+      tools: [browseTool],
+      system: `Ti si DaorsChatBot, prijateljski i uslužan AI asistent za DaorsForge AI Systems.
 Tvoj cilj je da odgovaraš na pitanja korisnika o kompaniji, njenim uslugama i veštačkoj inteligenciji uopšte.
 
 **Uputstva za konverzaciju:**
@@ -117,25 +132,10 @@ Ako korisnik pošalje URL, koristi 'browse' alat da preuzmeš sadržaj stranice 
 ${knowledgeBase}
 
 Odgovaraj na bosanskom jeziku. Budi sažet i od pomoći.
-
-Here is the conversation history:
-{{#each history}}
-- {{role}}: {{content}}
-{{/each}}
-
-New user message:
-- user: {{message}}
 `,
-});
-
-const chatFlow = ai.defineFlow(
-  {
-    name: 'chatFlow',
-    inputSchema: ChatInputSchema,
-    outputSchema: z.string(),
-  },
-  async (input) => {
-    const response = await chatPrompt(input);
+      history: history.map(h => new Message(h.role, h.content as Content[])),
+      prompt: message,
+    });
     
     if (!response) {
       return "Izvinite, desila se neočekivana greška. Molimo pokušajte ponovo.";
