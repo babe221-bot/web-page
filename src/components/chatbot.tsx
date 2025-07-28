@@ -57,7 +57,7 @@ export default function Chatbot() {
     
     try {
       const chatInput: ChatInput = {
-        history: messages,
+        history: newMessages.slice(0, -1),
         message: input,
       };
       const response = await chat(chatInput);
