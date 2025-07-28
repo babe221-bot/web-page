@@ -38,6 +38,11 @@ const sourceCodePro = Source_Code_Pro({
 export const metadata: Metadata = {
   title: "DaorsForge AI - Inovativna AI Rješenja za Industriju",
   description: "Pružamo napredna AI rješenja za optimizaciju proizvodnje, automatizaciju procesa i kontrolu kvaliteta u klesarskoj, muzičkoj i klasičnoj industriji.",
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico'
+  }
 };
 
 export default async function RootLayout({
@@ -54,6 +59,9 @@ export default async function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)}>
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         {GA_TRACKING_ID && (
           <>
             <Script
