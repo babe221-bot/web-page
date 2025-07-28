@@ -136,6 +136,6 @@ const chatFlow = ai.defineFlow(
   },
   async (input) => {
     const response = await chatPrompt(input);
-    return response.text ?? "Izvinite, nisam mogao da obradim vaš zahtev. Možete li preformulisati?";
+    return response.text() ?? "Izvinite, nisam mogao da obradim vaš zahtev. Možete li preformulisati?";
   }
 );
