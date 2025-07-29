@@ -42,7 +42,6 @@ const Hero = ({ lng }: { lng: string }) => {
         x: clientX - dragRef.current.offsetLeft,
         y: clientY - dragRef.current.offsetTop,
       });
-      // Prevent default behavior for touch events to avoid scrolling
       if (e.cancelable) {
         e.preventDefault();
       }
@@ -75,7 +74,6 @@ const Hero = ({ lng }: { lng: string }) => {
   useEffect(() => {
     if (isDragging) {
       const moveHandler = (e: MouseEvent | TouchEvent) => {
-        // We create a synthetic event to pass to handleDragMove
         const syntheticEvent = {
           ...e,
           preventDefault: () => e.preventDefault(),
@@ -121,7 +119,6 @@ const Hero = ({ lng }: { lng: string }) => {
         />
         Your browser does not support the video tag.
       </video>
-
       <div className="absolute inset-0 bg-black/50 z-10"></div>
 
       <div className="container mx-auto px-4 relative z-20 h-full">
