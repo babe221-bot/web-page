@@ -1,3 +1,4 @@
+import Chatbot from "@/components/chatbot";
 import Footer from "@/components/sections/footer";
 import Header from "@/components/sections/header";
 import Hero from "@/components/sections/hero";
@@ -17,6 +18,7 @@ export default async function Home({ params }: { params: { lng: string } }) {
       <Methodology />
       <ContactSection />
       <Footer lng={lng} />
+      <Chatbot />
     </main>
   );
 }
