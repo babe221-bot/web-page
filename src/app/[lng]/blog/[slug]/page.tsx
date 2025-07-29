@@ -1,7 +1,8 @@
 // src/app/[lng]/blog/[slug]/page.tsx
 import { notFound } from 'next/navigation';
 import { FC } from 'react';
-import { Post, posts } from '@/lib/blog';
+import { getPost } from '@/lib/blog';
+import { Post } from '@/lib/types';
 import { languages, fallbackLng } from '@/app/i18n/settings';
 
 interface BlogPostPageProps {
@@ -11,15 +12,19 @@ interface BlogPostPageProps {
   };
 }
 
-const BlogPostPage: FC<BlogPostPageProps> = ({ params: { lng, slug } }) => {
+const BlogPostPage: FC<BlogPostPageProps> = async ({ params: { lng, slug } }) => {
   if (languages.indexOf(lng) < 0) {
     notFound();
   }
-  if (!posts[lng]) {
-    lng = fallbackLng;
-  }
 
-  const post = posts[lng].find((p: Post) => p.slug === slug);
+  let post = await getPost(slug, lng);
+
+  if (!post) {
+    post = await getPost(slug, fallbackLng);
+    if (post) {
+      lng = fallbackLng;
+    }
+  }
 
   if (!post) {
     notFound();
