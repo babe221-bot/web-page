@@ -145,14 +145,14 @@ export default function Chatbot() {
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Otvori chatbot"
       >
-        <Image src="/chatbot-icon.png" alt="Chatbot" width={40} height={40} className="rounded-full" />
+        <Image src="/chatbot-icon.png" alt="Chatbot" width={40} height={40} className="rounded-full object-cover" />
       </Button>
 
       {isOpen && (
         <div className="fixed bottom-24 right-6 w-full md:max-w-md bg-background/90 backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl flex flex-col z-50">
           <header className="p-4 border-b border-white/10 flex justify-between items-center">
             <h2 className="flex items-center gap-2 font-headline text-lg gradient-text">
-              <Image src="/chatbot-icon.png" alt="Chatbot" width={24} height={24} className="rounded-full" />
+              <Image src="/chatbot-icon.png" alt="Chatbot" width={24} height={24} className="rounded-full object-cover" />
               DaorsChatBot
             </h2>
             <Button
@@ -177,7 +177,7 @@ export default function Chatbot() {
                 >
                   {message.role === "model" && (
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shrink-0">
-                      <Image src="/chatbot-icon.png" alt="Chatbot" width={20} height={20} className="rounded-full" />
+                      <Image src="/chatbot-icon.png" alt="Chatbot" width={24} height={24} className="rounded-full object-cover" />
                     </div>
                   )}
                   <div
@@ -201,7 +201,7 @@ export default function Chatbot() {
                {isLoading && (
                 <div className="flex items-start gap-3 justify-start">
                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shrink-0">
-                      <Image src="/chatbot-icon.png" alt="Chatbot" width={20} height={20} className="rounded-full" />
+                      <Image src="/chatbot-icon.png" alt="Chatbot" width={24} height={24} className="rounded-full object-cover" />
                     </div>
                     <div className="p-3 rounded-lg bg-white/10 flex items-center gap-2">
                         <Loader2 className="h-4 w-4 animate-spin"/>
