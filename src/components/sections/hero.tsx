@@ -113,16 +113,16 @@ const Hero = ({ lng }: { lng: string }) => {
         loop
         muted
         playsInline
-        className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
       >
         <source
           src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/Logo_to__Robot_Video_Ready.mp4?alt=media&token=f9e7e336-f23e-4cbc-8068-d2929f70bc41"
           type="video/mp4"
         />
-        Vaš pretraživač ne podržava video tag.
+        Your browser does not support the video tag.
       </video>
 
-      <div className="absolute inset-0 bg-background/70 z-10"></div>
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
 
       <div className="container mx-auto px-4 relative z-20 h-full">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
