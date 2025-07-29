@@ -1,10 +1,11 @@
 'use server';
 /**
- * @fileOverview A Genkit flow for handling chatbot conversations using Perplexity AI.
+ * @fileOverview A Genkit flow for handling chatbot conversations using Gemini.
  */
 
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
+import { Message } from 'genkit/ai';
 
 const HistorySchema = z.object({
   role: z.enum(['user', 'model']),
@@ -22,14 +23,7 @@ export async function chat(input: ChatInput): Promise<string> {
   return chatFlow(input);
 }
 
-const chatFlow = ai.defineFlow(
-  {
-    name: 'chatFlow',
-    inputSchema: ChatInputSchema,
-    outputSchema: z.string(),
-  },
-  async ({ history, message }) => {
-    const systemPrompt = `You are DaorsChatBot, a serious and professional AI assistant for DaorsForge AI Systems.
+const systemPrompt = `You are DaorsChatBot, a serious and professional AI assistant for DaorsForge AI Systems.
 Your primary language is Bosnian.
 You must answer user questions based on the knowledge provided below.
 If you cannot find an answer, politely say that you don't have that information.
@@ -75,51 +69,35 @@ Here is the knowledge base about DaorsForge AI Systems:
 - **Socials**: LinkedIn, Twitter(X), Facebook, YouTube - all with the handle "daors" or "@Daors".
 `;
 
-    const messages = [
-      {
-        role: 'system',
-        content: systemPrompt,
-      },
-      ...history.map(h => ({
-        role: h.role === 'model' ? 'assistant' : 'user',
-        content: h.content,
-      })),
-      {
-        role: 'user',
-        content: message,
-      },
-    ];
 
+const chatPrompt = ai.definePrompt(
+  {
+    name: 'chatPrompt',
+    system: systemPrompt,
+    input: { schema: ChatInputSchema },
+    output: { schema: z.string() },
+  },
+  async ({ history, message }) => {
+    const messages: Message[] = [];
+    history.forEach(h => messages.push({ role: h.role, content: h.content }));
+    messages.push({ role: 'user', content: message });
+    return { messages };
+  }
+);
+
+
+const chatFlow = ai.defineFlow(
+  {
+    name: 'chatFlow',
+    inputSchema: ChatInputSchema,
+    outputSchema: z.string(),
+  },
+  async (input) => {
     try {
-      const response = await fetch('https://api.perplexity.ai/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${process.env.PERPLEXITY_API_KEY}`,
-        },
-        body: JSON.stringify({
-          model: 'llama-3-sonar-large-32k-chat',
-          messages: messages,
-        }),
-      });
-
-      if (!response.ok) {
-        const errorBody = await response.text();
-        console.error('Perplexity API Error:', response.status, errorBody);
-        throw new Error(`Perplexity API request failed with status ${response.status}`);
-      }
-
-      const data = await response.json();
-      const botResponse = data.choices[0]?.message?.content;
-      
-      if (!botResponse) {
-        throw new Error('No response content from Perplexity API.');
-      }
-      
-      return botResponse;
-
+      const result = await chatPrompt(input);
+      return result.output ?? "Nisam siguran kako da odgovorim na to.";
     } catch (error) {
-      console.error('Error calling Perplexity API:', error);
+      console.error('Error calling Gemini API:', error);
       return "Izvinite, došlo je do greške u komunikaciji sa AI asistentom. Molimo pokušajte ponovo kasnije.";
     }
   }
