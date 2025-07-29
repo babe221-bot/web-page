@@ -187,7 +187,7 @@ export default function Chatbot() {
                         : "bg-white/10"
                     )}
                   >
-                    {message.content}
+                    {message.content && <div>{message.content}</div>}
                     {renderChart(message)}
                   </div>
                    {message.role === "user" && (
