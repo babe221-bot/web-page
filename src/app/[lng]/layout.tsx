@@ -13,8 +13,6 @@ import { Providers } from '@/components/providers';
 import JazzRadioPlayer from '@/components/jazz-radio-player';
 import React from 'react';
 import { RadioProvider } from '@/context/RadioContext';
-import { ChatbotProvider } from '@/context/ChatbotContext';
-import Chatbot from '@/components/chatbot';
 
 export async function generateStaticParams() {
   return locales.map((lng: string) => ({ lng }))
@@ -86,14 +84,11 @@ export default async function RootLayout({
       >
         <Providers>
           <RadioProvider>
-            <ChatbotProvider>
-              <JazzRadioPlayer />
-              <BackgroundEffects />
-              <LogoAnimation />
-              <div className="relative z-10">{children}</div>
-              <Chatbot />
-              <Toaster />
-            </ChatbotProvider>
+            <JazzRadioPlayer />
+            <BackgroundEffects />
+            <LogoAnimation />
+            <div className="relative z-10">{children}</div>
+            <Toaster />
           </RadioProvider>
         </Providers>
       </body>

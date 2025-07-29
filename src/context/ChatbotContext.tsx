@@ -1,10 +1,11 @@
 'use client';
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, 'react';
+import { createContext, useContext, useState } from 'react';
 
 interface ChatbotContextType {
-  isChatOpen: boolean;
-  setChatOpen: (isOpen: boolean) => void;
+  isOpen: boolean;
+  toggleChatbot: () => void;
 }
 
 const ChatbotContext = createContext<ChatbotContextType | undefined>(undefined);
@@ -17,17 +18,13 @@ export const useChatbot = () => {
   return context;
 };
 
-interface ChatbotProviderProps {
-  children: ReactNode;
-}
+export const ChatbotProvider = ({ children }: { children: React.ReactNode }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleChatbot = () => setIsOpen(!isOpen);
 
-export const ChatbotProvider: React.FC<ChatbotProviderProps> = ({ children }) => {
-  const [isChatOpen, setChatOpen] = useState(false);
-
-  const value = {
-    isChatOpen,
-    setChatOpen,
-  };
-
-  return <ChatbotContext.Provider value={value}>{children}</ChatbotContext.Provider>;
+  return (
+    <ChatbotContext.Provider value={{ isOpen, toggleChatbot }}>
+      {children}
+    </ChatbotContext.Provider>
+  );
 };
