@@ -24,12 +24,14 @@ interface Message {
   };
 }
 
+const initialBotMessage = "Zdravo! Ja sam DaorsChatBot. Postavite mi pitanje o našim uslugama.";
+
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "model",
-      content: "Zdravo! Ja sam DaorsChatBot. Postavite mi pitanje o našim uslugama.",
+      content: initialBotMessage,
     },
   ]);
   const [input, setInput] = useState("");
@@ -59,9 +61,11 @@ export default function Chatbot() {
     setIsLoading(true);
 
     try {
-      const history = messages.filter(m => m.role !== 'model' || m.content !== "Zdravo! Ja sam DaorsChatBot. Postavite mi pitanje o našim uslugama.").map(m => ({
-        role: m.role,
-        content: m.content || ''
+      const history = messages
+        .filter(m => m.content !== initialBotMessage)
+        .map(m => ({
+          role: m.role,
+          content: m.content || ''
       }));
 
       const chatInput: ChatInput = {

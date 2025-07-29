@@ -78,13 +78,14 @@ const chatFlow = ai.defineFlow(
   async (input) => {
     try {
       const messages: Message[] = [
-        { role: 'system', content: systemPrompt },
-        ...input.history.map((h) => ({ role: h.role, content: h.content })),
+        ...input.history.map((h) => ({ role: h.role, content: h.content as string })),
         { role: 'user', content: input.message },
       ];
 
       const { output } = await ai.generate({
-        prompt: { messages },
+        model: 'googleai/gemini-1.5-flash-latest',
+        system: systemPrompt,
+        prompt: messages,
         output: { schema: z.string() },
       });
 
