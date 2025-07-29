@@ -7,8 +7,8 @@ import Industries from "@/components/sections/industries";
 import Methodology from "@/components/sections/methodology";
 import ContactSection from "@/components/sections/contact-section";
 
-export default async function Home({ params }: { params: { lng: string } }) {
-  const { lng } = params;
+export default async function Home({ params }: { params: Promise<{ lng: string }> }) {
+  const { lng } = await params;
   return (
     <main className="flex min-h-screen flex-col">
       <Header lng={lng} />

@@ -48,11 +48,11 @@ export default async function RootLayout({
   params
 }: {
   children: React.ReactNode;
-  params: {
+  params: Promise<{
     lng: string;
-  };
+  }>;
 }) {
-  const { lng } = params;
+  const { lng } = await params;
 
   return (
     <html lang={lng} dir={dir(lng)}>
