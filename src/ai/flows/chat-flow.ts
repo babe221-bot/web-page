@@ -69,23 +69,6 @@ Here is the knowledge base about DaorsForge AI Systems:
 - **Socials**: LinkedIn, Twitter(X), Facebook, YouTube - all with the handle "daors" or "@Daors".
 `;
 
-
-const chatPrompt = ai.definePrompt(
-  {
-    name: 'chatPrompt',
-    system: systemPrompt,
-    input: { schema: ChatInputSchema },
-    output: { schema: z.string() },
-  },
-  async ({ history, message }) => {
-    const messages: Message[] = [];
-    history.forEach(h => messages.push({ role: h.role, content: h.content }));
-    messages.push({ role: 'user', content: message });
-    return { messages };
-  }
-);
-
-
 const chatFlow = ai.defineFlow(
   {
     name: 'chatFlow',
@@ -94,8 +77,20 @@ const chatFlow = ai.defineFlow(
   },
   async (input) => {
     try {
-      const result = await chatPrompt(input);
-      return result.output ?? "Nisam siguran kako da odgovorim na to.";
+      const messages: Message[] = [
+        { role: 'system', content: systemPrompt },
+        ...input.history.map((h) => ({ role: h.role, content: h.content })),
+        { role: 'user', content: input.message },
+      ];
+
+      const { output } = await ai.generate({
+        prompt: { messages },
+        output: { schema: z.string() },
+      });
+
+      if (!output) throw new Error('Failed to generate chat response');
+
+      return output;
     } catch (error) {
       console.error('Error calling Gemini API:', error);
       return "Izvinite, došlo je do greške u komunikaciji sa AI asistentom. Molimo pokušajte ponovo kasnije.";
