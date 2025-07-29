@@ -5,7 +5,7 @@ export const ai = genkit({
   plugins: [
     googleAI({
       // Get your key from https://makersuite.google.com/app/apikey
-      apiKey: process.env.AIzaSyBLsHYDr9uBnVZQ_4gOyITdPeSz7s5ckkE,
+      apiKey: process.env.GOOGLE_API_KEY,
     }),
   ],
   model: 'googleai/gemini-1.5-flash-latest',
