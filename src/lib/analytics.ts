@@ -43,6 +43,20 @@ export const trackCTAClick = (ctaName: string) => {
   });
 };
 
+/**
+ * Tracks a chatbot interaction.
+ * @param message - The user's message.
+ * @param response - The chatbot's response.
+ */
+export const trackChatbotInteraction = (message: string, response: string) => {
+  console.log(`Analytics: Chatbot interaction - User: "${message}", Bot: "${response}"`);
+  event({
+    action: 'chatbot_interaction',
+    category: 'Chatbot',
+    label: `User: ${message} | Bot: ${response}`,
+    value: 1,
+  });
+};
 
 /**
  * Logs a generic server-side event.
