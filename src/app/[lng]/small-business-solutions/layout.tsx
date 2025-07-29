@@ -28,7 +28,6 @@ export const metadata = {
 
 export default function SmallBusinessLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
   params: {

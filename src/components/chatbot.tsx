@@ -9,7 +9,7 @@ import { Send, User, X, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { chat } from "@/ai/flows/chat-flow";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
-import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart';
+import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
 
 interface ChartData {
   [key: string]: string | number;

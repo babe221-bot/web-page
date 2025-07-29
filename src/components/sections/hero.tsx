@@ -7,7 +7,7 @@ import { trackCTAClick } from '@/lib/analytics';
 import Image from 'next/image';
 import { useRadio } from '@/context/RadioContext';
 import { cn } from '@/lib/utils';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 
 const Hero = ({ lng }: { lng: string }) => {
   const { t } = useTranslation(lng, 'common');
@@ -53,7 +53,7 @@ const Hero = ({ lng }: { lng: string }) => {
     setIsDragging(false);
   };
 
-  const handleDragMove = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
+  const handleDragMove = useCallback((e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
     if (isDragging && dragRef.current) {
       const parentRect = dragRef.current.parentElement?.getBoundingClientRect();
       if(parentRect) {
@@ -70,7 +70,7 @@ const Hero = ({ lng }: { lng: string }) => {
         setPosition({ x: newX, y: newY });
       }
     }
-  };
+  }, [isDragging, offset]);
   
   useEffect(() => {
     if (isDragging) {
@@ -99,7 +99,7 @@ const Hero = ({ lng }: { lng: string }) => {
         window.removeEventListener('touchend', handleDragEnd);
       };
     }
-  }, [isDragging, offset, handleDragMove]);
+  }, [isDragging, handleDragMove]);
 
 
   return (
@@ -116,7 +116,7 @@ const Hero = ({ lng }: { lng: string }) => {
         className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
       >
         <source
-          src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/Logo_to_Robot_Video_Ready.mp4?alt=media&token=f9e7e336-f23e-4cbc-8068-d2929f70bc41"
+          src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/Logo_to__Robot_Video_Ready.mp4?alt=media&token=f9e7e336-f23e-4cbc-8068-d2929f70bc41"
           type="video/mp4"
         />
         Vaš pretraživač ne podržava video tag.
