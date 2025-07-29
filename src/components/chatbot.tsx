@@ -8,10 +8,16 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Bot, Send, User, X, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { chat } from "@/ai/flows/chat-flow";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
+import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
 
 interface Message {
   role: "user" | "model";
-  content: string;
+  content?: string;
+  chart?: {
+    chartType: 'bar' | 'line' | 'pie';
+    data: any[];
+  };
 }
 
 export default function Chatbot() {
@@ -51,16 +57,22 @@ export default function Chatbot() {
     try {
       const history = messages.map(m => ({
         role: m.role,
-        content: m.content
+        content: m.content || ''
       }));
 
       const botResponse = await chat({
         history: history,
         message: input,
       });
-      
-      const botMessage: Message = { role: 'model', content: botResponse };
-      setMessages((prev) => [...prev, botMessage]);
+
+      if (typeof botResponse === 'string') {
+        const botMessage: Message = { role: 'model', content: botResponse };
+        setMessages((prev) => [...prev, botMessage]);
+      } else if (botResponse.chart) {
+        const botMessage: Message = { role: 'model', chart: botResponse.chart };
+        setMessages((prev) => [...prev, botMessage]);
+      }
+
     } catch (error) {
       console.error("Chatbot error:", error);
       const errorMessage: Message = {
@@ -70,6 +82,58 @@ export default function Chatbot() {
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
+    }
+  };
+  
+  const renderChart = (message: Message) => {
+    if (!message.chart) return null;
+
+    const { chartType, data } = message.chart;
+    const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+
+    switch (chartType) {
+      case 'bar':
+        return (
+          <ChartContainer config={{}} className="min-h-[200px] w-full">
+            <BarChart data={data}>
+              <CartesianGrid vertical={false} />
+              <XAxis dataKey="month" />
+              <YAxis />
+              <Tooltip content={<ChartTooltipContent />} />
+              <Legend />
+              <Bar dataKey="savings" fill="var(--color-savings)" radius={4} />
+            </BarChart>
+          </ChartContainer>
+        );
+      case 'line':
+        return (
+          <ChartContainer config={{}} className="min-h-[200px] w-full">
+            <LineChart data={data}>
+              <CartesianGrid vertical={false} />
+              <XAxis dataKey="month" />
+              <YAxis />
+              <Tooltip content={<ChartTooltipContent />} />
+              <Legend />
+              <Line type="monotone" dataKey="efficiency" stroke="var(--color-efficiency)" />
+            </LineChart>
+          </ChartContainer>
+        );
+      case 'pie':
+        return (
+          <ChartContainer config={{}} className="min-h-[200px] w-full">
+            <PieChart>
+              <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} fill="#8884d8" label>
+                {data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+              <Tooltip content={<ChartTooltipContent />} />
+              <Legend />
+            </PieChart>
+          </ChartContainer>
+        );
+      default:
+        return null;
     }
   };
 
@@ -132,6 +196,7 @@ export default function Chatbot() {
                     )}
                   >
                     {message.content}
+                    {renderChart(message)}
                   </div>
                    {message.role === "user" && (
                     <div className="w-8 h-8 rounded-full bg-foreground/10 flex items-center justify-center shrink-0">
