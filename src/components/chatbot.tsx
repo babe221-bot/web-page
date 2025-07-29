@@ -11,12 +11,16 @@ import { chat } from "@/ai/flows/chat-flow";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
 import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
 
+interface ChartData {
+  [key: string]: string | number;
+}
+
 interface Message {
   role: "user" | "model";
   content?: string;
   chart?: {
     chartType: 'bar' | 'line' | 'pie';
-    data: any[];
+    data: ChartData[];
   };
 }
 
@@ -145,14 +149,14 @@ export default function Chatbot() {
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Otvori chatbot"
       >
-        <Image src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/generated-image%20(6).png?alt=media&token=5db267db-a5ee-482e-8fea-b7cbeb1a3589" alt="Chatbot" width={40} height={40} className="rounded-full object-cover" unoptimized/>
+        <Image src="/chatbot-icon.png" alt="Chatbot" width={40} height={40} className="rounded-full object-cover" />
       </Button>
 
       {isOpen && (
         <div className="fixed bottom-24 right-6 w-full md:max-w-md bg-background/90 backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl flex flex-col z-50">
           <header className="p-4 border-b border-white/10 flex justify-between items-center">
             <h2 className="flex items-center gap-2 font-headline text-lg gradient-text">
-              <Image src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/generated-image%20(6).png?alt=media&token=5db267db-a5ee-482e-8fea-b7cbeb1a3589" alt="Chatbot" width={24} height={24} className="rounded-full object-cover" unoptimized/>
+              <Image src="/chatbot-icon.png" alt="Chatbot" width={24} height={24} className="rounded-full object-cover" />
               DaorsChatBot
             </h2>
             <Button
@@ -177,7 +181,7 @@ export default function Chatbot() {
                 >
                   {message.role === "model" && (
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shrink-0">
-                      <Image src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/generated-image%20(6).png?alt=media&token=5db267db-a5ee-482e-8fea-b7cbeb1a3589" alt="Chatbot" width={24} height={24} className="rounded-full object-cover" unoptimized/>
+                      <Image src="/chatbot-icon.png" alt="Chatbot" width={24} height={24} className="rounded-full object-cover" />
                     </div>
                   )}
                   <div
@@ -201,7 +205,7 @@ export default function Chatbot() {
                {isLoading && (
                 <div className="flex items-start gap-3 justify-start">
                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shrink-0">
-                      <Image src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/generated-image%20(6).png?alt=media&token=5db267db-a5ee-482e-8fea-b7cbeb1a3589" alt="Chatbot" width={24} height={24} className="rounded-full object-cover" unoptimized />
+                      <Image src="/chatbot-icon.png" alt="Chatbot" width={24} height={24} className="rounded-full object-cover" />
                     </div>
                     <div className="p-3 rounded-lg bg-white/10 flex items-center gap-2">
                         <Loader2 className="h-4 w-4 animate-spin"/>
