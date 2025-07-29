@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect, FormEvent } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter } from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Bot, Send, User, X, Loader2 } from "lucide-react";
@@ -142,37 +141,30 @@ export default function Chatbot() {
       <Button
         size="icon"
         className="fixed bottom-6 right-6 h-16 w-16 rounded-full bg-gradient-to-br from-primary to-accent shadow-2xl z-50 transition-transform hover:scale-110"
-        onClick={() => setIsOpen(true)}
+        onClick={() => setIsOpen(!isOpen)}
         aria-label="Otvori chatbot"
       >
         <Bot className="h-8 w-8" />
       </Button>
 
-      <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetContent
-          side="right"
-          className="w-full md:max-w-md bg-background/90 backdrop-blur-xl border-l-white/10 p-0 flex flex-col"
-        >
-          <SheetHeader className="p-4 border-b border-white/10">
-            <SheetTitle className="flex items-center gap-2 font-headline text-lg gradient-text">
+      {isOpen && (
+        <div className="fixed bottom-24 right-6 w-full md:max-w-md bg-background/90 backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl flex flex-col z-50">
+          <header className="p-4 border-b border-white/10 flex justify-between items-center">
+            <h2 className="flex items-center gap-2 font-headline text-lg gradient-text">
               <Bot />
               DaorsChatBot
-            </SheetTitle>
-            <SheetDescription className="sr-only">
-              Prozor za razgovor sa AI asistentom
-            </SheetDescription>
+            </h2>
             <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsOpen(false)}
-                className="absolute right-2 top-2"
                 aria-label="Zatvori chat"
             >
                 <X className="h-6 w-6" />
             </Button>
-          </SheetHeader>
+          </header>
 
-          <ScrollArea className="flex-1" ref={scrollAreaRef}>
+          <ScrollArea className="flex-1 h-96" ref={scrollAreaRef}>
             <div className="p-4 space-y-6">
               {messages.map((message, index) => (
                 <div
@@ -219,7 +211,7 @@ export default function Chatbot() {
             </div>
           </ScrollArea>
           
-          <SheetFooter className="p-4 border-t border-white/10">
+          <footer className="p-4 border-t border-white/10">
             <form onSubmit={handleSubmit} className="flex gap-2 w-full">
               <Input
                 value={input}
@@ -233,9 +225,9 @@ export default function Chatbot() {
                 <span className="sr-only">Pošalji</span>
               </Button>
             </form>
-          </SheetFooter>
-        </SheetContent>
-      </Sheet>
+          </footer>
+        </div>
+      )}
     </>
   );
 }
