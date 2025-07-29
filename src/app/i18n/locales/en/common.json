@@ -1,95 +1,72 @@
 {
   "nav": {
-    "početna": "Početna",
-    "usluge": "Usluge",
-    "industrije": "Industrije",
-    "metodologija": "Metodologija",
-    "kontakt": "Kontakt",
-    "smallBusiness": "Mali Biznis",
-    "openMenu": "Otvori meni",
-    "mainMenu": "Glavni meni",
-    "menuDescription": "Navigacioni linkovi za glavne sekcije stranice.",
-    "closeMenu": "Zatvori meni"
+    "početna": "Home",
+    "usluge": "Services",
+    "industrije": "Industries",
+    "metodologija": "Methodology",
+    "kontakt": "Contact",
+    "smallBusiness": "Small Business",
+    "openMenu": "Open menu",
+    "mainMenu": "Main menu",
+    "menuDescription": "Navigation links to the main sections of the page.",
+    "closeMenu": "Close menu"
   },
   "hero": {
-    "title": "Kujemo Budućnost Proizvodnje",
-    "subtitle": "Eliminišemo uska grla, automatiziramo kompleksnost i otključavamo puni potencijal vaše industrije kroz napredna AI rješenja.",
-    "button": "Započnite Transformaciju",
-    "servicesButton": "Naše Usluge"
+    "title": "Forging the Future of Manufacturing",
+    "subtitle": "We eliminate bottlenecks, automate complexity, and unlock your industry’s full potential through advanced AI solutions.",
+    "button": "Start the Transformation",
+    "servicesButton": "Our Services",
+    "heroImageAlt": "Hero image"
   },
   "industries": {
-    "title": "Industrije Koje Poslužujemo",
+    "title": "Industries We Serve",
     "manufacturing": {
-      "title": "Proizvodnja",
-      "description": "Optimizacija proizvodnih linija pomoću prediktivnog održavanja i kontrole kvaliteta vođenih vještačkom inteligencijom."
+      "title": "Manufacturing",
+      "description": "Optimization of production lines using predictive maintenance and AI-driven quality control."
     },
     "logistics": {
-      "title": "Logistika i Lanac Snabdijevanja",
-      "description": "Pojednostavljivanje operacija od upravljanja zalihama do isporuke uz inteligentnu automatizaciju."
+      "title": "Logistics and Supply Chain",
+      "description": "Streamlining operations from inventory management to delivery with intelligent automation."
     },
     "energy": {
-      "title": "Energetika i Komunalne Usluge",
-      "description": "Poboljšanje stabilnosti mreže i upravljanja resursima putem pametne analitike."
+      "title": "Energy and Utilities",
+      "description": "Improving grid stability and resource management through smart analytics."
     },
     "automotive": {
-      "title": "Automobilska Industrija",
-      "description": "Unapređenje automobilske proizvodnje i dizajna uz pomoć vještačke inteligencije i robotike."
+      "title": "Automotive Industry",
+      "description": "Advancing automotive manufacturing and design with AI and robotics."
     }
   },
   "smallBusinessSolutions": {
-    "title": "Rješenja za Lične i Male Biznis Web Stranice",
-    "subtitle": "Kreiramo personalizirane web stranice i automatizirana rješenja prilagođena vašim potrebama, bilo da ste pojedinac ili mali biznis.",
+    "title": "Solutions for Personal and Small Business Websites",
+    "subtitle": "We create personalized websites and automated solutions tailored to your needs, whether you are an individual or a small business.",
     "services": [
       {
         "id": "website-development",
-        "title": "Izrada Personalnih i Poslovnih Web Stranica",
-        "description": "Profesionalna izrada modernih, responzivnih i funkcionalnih web stranica koje efikasno predstavljaju vas ili vaš posao na internetu.",
-        "features": [
-          "Dizajn prilagođen klijentu",
-          "SEO optimizacija",
-          "Integracija društvenih mreža",
-          "Mobilna responzivnost"
-        ]
+        "title": "Personal and Business Website Development",
+        "description": "Professional development of modern, responsive, and functional websites that effectively represent you or your business online."
       },
       {
         "id": "av-production",
-        "title": "Audio i Video Produkcija",
-        "description": "Kompletna usluga audio i video produkcije za vaše web stranice, marketing kampanje ili lične projekte, od koncepta do finalne obrade.",
-        "features": [
-          "Snimanje i montaža",
-          "Animacije i efekti",
-          "Optimizacija za web",
-          "Audio inženjering"
-        ]
+        "title": "Audio and Video Production",
+        "description": "Complete audio and video production services for your websites, marketing campaigns, or personal projects, from concept to final processing."
       },
       {
         "id": "web-chatbots",
-        "title": "Web Chatbotovi",
-        "description": "Implementacija inteligentnih web chatbotova koji poboljšavaju korisničku podršku, automatiziraju odgovore i prikupljaju informacije 24/7.",
-        "features": [
-          "Automatski odgovori",
-          "Prikupljanje informacija o klijentima",
-          "24/7 dostupnost",
-          "Integracija sa postojećim sistemima"
-        ]
+        "title": "Web Chatbots",
+        "description": "Implementation of intelligent web chatbots that improve customer support, automate responses, and collect information 24/7."
       },
       {
         "id": "small-automations",
-        "title": "Male Automatizacije u Svakodnevnom Poslovanju",
-        "description": "Razvoj malih, ali moćnih automatizacija koje smanjuju rutinske zadatke i povećavaju efikasnost vašeg poslovanja.",
-        "features": [
-          "Automatizacija email komunikacije",
-          "Automatsko generisanje izvještaja",
-          "Upravljanje kalendarom i sastancima",
-          "Povezivanje različitih aplikacija"
-        ]
+        "title": "Small Automations in Daily Business",
+        "description": "Development of small but powerful automations that reduce routine tasks and increase the efficiency of your business."
       }
     ]
   },
   "footer": {
-    "allRightsReserved": "Sva prava zadržana.",
+    "allRightsReserved": "All rights reserved.",
     "contact": {
-        "title": "Kontakt"
+      "title": "Contact"
     }
   }
 }
