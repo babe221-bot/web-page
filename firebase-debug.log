@@ -178,3 +178,6 @@ Import trace for requested module:
   type: 'Error'
 }
 
+[debug] [2025-07-29T21:09:34.114Z] Error: ENOENT: no such file or directory, open '/home/user/studio/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
