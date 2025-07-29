@@ -1,4 +1,3 @@
-import { dir } from 'i18next';
 import { locales } from '../../i18n/settings';
 import { cn } from '@/lib/utils';
 import { Space_Grotesk, Inter, Source_Code_Pro } from 'next/font/google';
@@ -29,7 +28,7 @@ export const metadata = {
 
 export default function SmallBusinessLayout({
   children,
-  params: { lng },
+  params,
 }: {
   children: React.ReactNode;
   params: {

@@ -2,7 +2,6 @@
 import { notFound } from 'next/navigation';
 import { FC } from 'react';
 import { getPost } from '@/lib/blog';
-import { Post } from '@/lib/types';
 import { languages, fallbackLng } from '@/app/i18n/settings';
 
 interface BlogPostPageProps {

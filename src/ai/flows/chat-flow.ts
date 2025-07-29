@@ -6,7 +6,7 @@
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
 import { browseTool } from '../tools/browse';
-import { History, Message } from 'genkit/ai';
+import { Message } from 'genkit/ai';
 
 const HistorySchema = z.object({
   role: z.enum(['user', 'model']),

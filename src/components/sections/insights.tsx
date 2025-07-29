@@ -1,5 +1,3 @@
-"use client";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { industriesData } from "@/lib/data";
 import { CheckCircle, Zap, DollarSign, BrainCircuit } from "lucide-react";
@@ -10,10 +8,10 @@ interface InsightsProps {
 }
 
 const featureIcons = [
-  <Zap className="w-8 h-8 text-primary" />,
-  <DollarSign className="w-8 h-8 text-primary" />,
-  <BrainCircuit className="w-8 h-8 text-primary" />,
-  <CheckCircle className="w-8 h-8 text-primary" />,
+  <Zap key="zap" className="w-8 h-8 text-primary" />,
+  <DollarSign key="dollar" className="w-8 h-8 text-primary" />,
+  <BrainCircuit  key="brain"className="w-8 h-8 text-primary" />,
+  <CheckCircle key="check" className="w-8 h-8 text-primary" />,
 ];
 
 const Insights = ({ industry }: InsightsProps) => {
