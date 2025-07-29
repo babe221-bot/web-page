@@ -1,21 +1,14 @@
 'use server';
 /**
- * @fileOverview A Genkit flow for handling chatbot conversations.
+ * @fileOverview A Genkit flow for handling chatbot conversations using Perplexity AI.
  */
 
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
-import { browseTool } from '../tools/browse';
-import { Message } from 'genkit/ai';
 
 const HistorySchema = z.object({
   role: z.enum(['user', 'model']),
   content: z.string(),
-});
-
-const ChartDataSchema = z.object({
-  chartType: z.enum(['bar', 'line', 'pie']),
-  data: z.array(z.record(z.any())),
 });
 
 const ChatInputSchema = z.object({
@@ -25,67 +18,22 @@ const ChatInputSchema = z.object({
 
 export type ChatInput = z.infer<typeof ChatInputSchema>;
 
-export async function chat(input: ChatInput): Promise<string | { chart: z.infer<typeof ChartDataSchema> }> {
+export async function chat(input: ChatInput): Promise<string> {
   return chatFlow(input);
 }
 
-const generateChartTool = ai.defineTool(
+const chatFlow = ai.defineFlow(
   {
-    name: 'generateChart',
-    description: 'Generates chart data to visualize benefits.',
-    input: {
-      schema: z.object({
-        topic: z.string().describe('The topic of the chart, e.g., "cost savings"'),
-      }),
-    },
-    output: { schema: ChartDataSchema },
+    name: 'chatFlow',
+    inputSchema: ChatInputSchema,
+    outputSchema: z.string(),
   },
-  async ({ topic }) => {
-    // In a real application, you would fetch data from a database
-    // or an external API to generate the chart data.
-    // For this example, we'll use mock data.
-    if (topic.toLowerCase().includes('cost savings')) {
-      return {
-        chartType: 'bar',
-        data: [
-          { month: 'January', savings: 1000 },
-          { month: 'February', savings: 1500 },
-          { month: 'March', savings: 2000 },
-          { month: 'April', savings: 2500 },
-        ],
-      };
-    } else if (topic.toLowerCase().includes('efficiency')) {
-      return {
-        chartType: 'line',
-        data: [
-          { month: 'January', efficiency: 60 },
-          { month: 'February', efficiency: 70 },
-          { month: 'March', efficiency: 80 },
-          { month: 'April', efficiency: 90 },
-        ],
-      };
-    }
-    return {
-      chartType: 'pie',
-      data: [
-        { name: 'With AI', value: 75 },
-        { name: 'Without AI', value: 25 },
-      ],
-    };
-  }
-);
-
-const chatPrompt = ai.definePrompt({
-    name: 'chatPrompt',
-    input: { schema: ChatInputSchema },
-    output: { schema: z.union([z.string(), z.object({ chart: ChartDataSchema })]) },
-    system: `You are DaorsChatBot, a serious and professional AI assistant for DaorsForge AI Systems.
+  async ({ history, message }) => {
+    const systemPrompt = `You are DaorsChatBot, a serious and professional AI assistant for DaorsForge AI Systems.
 Your primary language is Bosnian.
 You must answer user questions based on the knowledge provided below.
-If the user asks something not covered in your knowledge base, you can use the browse tool to search for information, but prioritize the given information.
 If you cannot find an answer, politely say that you don't have that information.
 Maintain a professional tone, but you can occasionally tell a joke in the style of Herzegovinian humor.
-If the user asks for a chart or visualization of benefits, use the generateChart tool.
 
 Here is the knowledge base about DaorsForge AI Systems:
 
@@ -125,38 +73,54 @@ Here is the knowledge base about DaorsForge AI Systems:
 - **Email**: bakir@daorsforgealsystems.com
 - **Website**: www.daorsforgealsystems.com
 - **Socials**: LinkedIn, Twitter(X), Facebook, YouTube - all with the handle "daors" or "@Daors".
-`,
-  tools: [browseTool, generateChartTool],
-});
+`;
 
+    const messages = [
+      {
+        role: 'system',
+        content: systemPrompt,
+      },
+      ...history.map(h => ({
+        role: h.role === 'model' ? 'assistant' : 'user',
+        content: h.content,
+      })),
+      {
+        role: 'user',
+        content: message,
+      },
+    ];
 
-const chatFlow = ai.defineFlow(
-  {
-    name: 'chatFlow',
-    inputSchema: ChatInputSchema,
-    outputSchema: z.union([z.string(), z.object({ chart: ChartDataSchema })]),
-  },
-  async ({ history, message }) => {
-    const historyMessages: Message[] = history.map(h => ({
-      role: h.role,
-      content: [{ text: h.content }],
-    }));
-    
-    const { response } = await chatPrompt({
-        history: historyMessages,
-        message: message,
-    });
-    
-    if (response.toolRequests) {
-      const chartRequest = response.toolRequests.find(
-        (request) => request.tool.name === 'generateChart'
-      );
-      if (chartRequest) {
-        const chartData = await generateChartTool(chartRequest.input);
-        return { chart: chartData };
+    try {
+      const response = await fetch('https://api.perplexity.ai/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${process.env.PERPLEXITY_API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: 'llama-3-sonar-large-32k-chat',
+          messages: messages,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorBody = await response.text();
+        console.error('Perplexity API Error:', response.status, errorBody);
+        throw new Error(`Perplexity API request failed with status ${response.status}`);
       }
-    }
 
-    return response.text;
+      const data = await response.json();
+      const botResponse = data.choices[0]?.message?.content;
+      
+      if (!botResponse) {
+        throw new Error('No response content from Perplexity API.');
+      }
+      
+      return botResponse;
+
+    } catch (error) {
+      console.error('Error calling Perplexity API:', error);
+      return "Izvinite, došlo je do greške u komunikaciji sa AI asistentom. Molimo pokušajte ponovo kasnije.";
+    }
   }
 );

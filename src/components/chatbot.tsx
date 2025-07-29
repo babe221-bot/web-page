@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Send, User, X, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { chat } from "@/ai/flows/chat-flow";
+import { chat, ChatInput } from "@/ai/flows/chat-flow";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
 import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
 
@@ -59,23 +59,20 @@ export default function Chatbot() {
     setIsLoading(true);
 
     try {
-      const history = messages.map(m => ({
+      const history = messages.filter(m => m.role !== 'model' || m.content !== "Zdravo! Ja sam DaorsChatBot. Postavite mi pitanje o našim uslugama.").map(m => ({
         role: m.role,
         content: m.content || ''
       }));
 
-      const botResponse = await chat({
+      const chatInput: ChatInput = {
         history: history,
         message: input,
-      });
+      };
 
-      if (typeof botResponse === 'string') {
-        const botMessage: Message = { role: 'model', content: botResponse };
-        setMessages((prev) => [...prev, botMessage]);
-      } else if (botResponse.chart) {
-        const botMessage: Message = { role: 'model', chart: botResponse.chart };
-        setMessages((prev) => [...prev, botMessage]);
-      }
+      const botResponse = await chat(chatInput);
+      
+      const botMessage: Message = { role: 'model', content: botResponse };
+      setMessages((prev) => [...prev, botMessage]);
 
     } catch (error) {
       console.error("Chatbot error:", error);
@@ -90,55 +87,8 @@ export default function Chatbot() {
   };
   
   const renderChart = (message: Message) => {
-    if (!message.chart) return null;
-
-    const { chartType, data } = message.chart;
-    const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
-
-    switch (chartType) {
-      case 'bar':
-        return (
-          <ChartContainer config={{}} className="min-h-[200px] w-full">
-            <BarChart data={data}>
-              <CartesianGrid vertical={false} />
-              <XAxis dataKey="month" />
-              <YAxis />
-              <Tooltip content={<ChartTooltipContent />} />
-              <Legend />
-              <Bar dataKey="savings" fill="var(--color-savings)" radius={4} />
-            </BarChart>
-          </ChartContainer>
-        );
-      case 'line':
-        return (
-          <ChartContainer config={{}} className="min-h-[200px] w-full">
-            <LineChart data={data}>
-              <CartesianGrid vertical={false} />
-              <XAxis dataKey="month" />
-              <YAxis />
-              <Tooltip content={<ChartTooltipContent />} />
-              <Legend />
-              <Line type="monotone" dataKey="efficiency" stroke="var(--color-efficiency)" />
-            </LineChart>
-          </ChartContainer>
-        );
-      case 'pie':
-        return (
-          <ChartContainer config={{}} className="min-h-[200px] w-full">
-            <PieChart>
-              <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} fill="#8884d8" label>
-                {data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip content={<ChartTooltipContent />} />
-              <Legend />
-            </PieChart>
-          </ChartContainer>
-        );
-      default:
-        return null;
-    }
+    // Chart functionality is disabled with Perplexity API integration for now
+    return null;
   };
 
   return (
