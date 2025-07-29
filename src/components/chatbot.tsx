@@ -109,14 +109,6 @@ export default function Chatbot() {
               <Image src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/generated-image%20(6).png?alt=media&token=5db267db-a5ee-482e-8fea-b7cbeb1a3589" alt="Chatbot" width={24} height={24} className="rounded-full object-cover" unoptimized />
               DaorsChatBot
             </h2>
-            <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsOpen(false)}
-                aria-label="Zatvori chat"
-            >
-                <X className="h-6 w-6" />
-            </Button>
           </header>
 
           <ScrollArea className="flex-1 h-96" ref={scrollAreaRef}>
