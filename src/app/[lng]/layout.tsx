@@ -13,6 +13,7 @@ import { Providers } from '@/components/providers';
 import JazzRadioPlayer from '@/components/jazz-radio-player';
 import React from 'react';
 import { RadioProvider } from '@/context/RadioContext';
+import NotificationButton from '@/components/NotificationButton';
 
 export async function generateStaticParams() {
   return locales.map((lng: string) => ({ lng }))
@@ -87,6 +88,7 @@ export default async function RootLayout({
             <JazzRadioPlayer />
             <BackgroundEffects />
             <LogoAnimation />
+            <NotificationButton />
             <div className="relative z-10">{children}</div>
             <Toaster />
           </RadioProvider>
