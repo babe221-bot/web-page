@@ -55,9 +55,6 @@ const BackgroundEffects = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full -z-50 overflow-hidden">
-      {/* Static gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background to-indigo-900/20"></div>
-
       {/* Floating particles */}
       {particles.map(p => (
         <div
