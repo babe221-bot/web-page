@@ -99,7 +99,7 @@ const Hero = ({ lng }: { lng: string }) => {
         window.removeEventListener('touchend', handleDragEnd);
       };
     }
-  }, [isDragging, offset]);
+  }, [isDragging, offset, handleDragMove]);
 
 
   return (
