@@ -30,7 +30,7 @@ const LogoAnimation = () => {
   return (
     <div
       className={cn(
-        "fixed inset-0 z-50 flex items-center justify-center bg-background transition-opacity duration-1000",
+        "fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-1000",
         isFading ? "opacity-0" : "opacity-100"
       )}
     >
