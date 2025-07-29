@@ -1,37 +1,37 @@
-[debug] [2025-07-29T21:07:47.922Z] ----------------------------------------------------------------------
-[debug] [2025-07-29T21:07:47.926Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /home/user/.global_modules/bin/firebase deploy --only hosting
-[debug] [2025-07-29T21:07:47.927Z] CLI Version:   14.10.1
-[debug] [2025-07-29T21:07:47.928Z] Platform:      linux
-[debug] [2025-07-29T21:07:47.928Z] Node Version:  v20.19.1
-[debug] [2025-07-29T21:07:47.928Z] Time:          Tue Jul 29 2025 21:07:47 GMT+0000 (Coordinated Universal Time)
-[debug] [2025-07-29T21:07:47.929Z] ----------------------------------------------------------------------
+[debug] [2025-07-29T21:44:25.329Z] ----------------------------------------------------------------------
+[debug] [2025-07-29T21:44:25.332Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /home/user/.global_modules/bin/firebase deploy
+[debug] [2025-07-29T21:44:25.333Z] CLI Version:   14.11.1
+[debug] [2025-07-29T21:44:25.333Z] Platform:      linux
+[debug] [2025-07-29T21:44:25.333Z] Node Version:  v20.19.1
+[debug] [2025-07-29T21:44:25.333Z] Time:          Tue Jul 29 2025 21:44:25 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-07-29T21:44:25.334Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2025-07-29T21:07:48.451Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2025-07-29T21:07:48.452Z] > authorizing via signed-in user (bakirbehmen@gmail.com)
-[debug] [2025-07-29T21:07:48.452Z] [iam] checking project website-5a18c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2025-07-29T21:07:48.454Z] Checked if tokens are valid: true, expires at: 1753826705262
-[debug] [2025-07-29T21:07:48.454Z] Checked if tokens are valid: true, expires at: 1753826705262
-[debug] [2025-07-29T21:07:48.456Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions [none]
-[debug] [2025-07-29T21:07:48.456Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions x-goog-quota-user=projects/website-5a18c
-[debug] [2025-07-29T21:07:48.456Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2025-07-29T21:07:49.172Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions 200
-[debug] [2025-07-29T21:07:49.172Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2025-07-29T21:07:49.173Z] Checked if tokens are valid: true, expires at: 1753826705262
-[debug] [2025-07-29T21:07:49.179Z] Checked if tokens are valid: true, expires at: 1753826705262
-[debug] [2025-07-29T21:07:49.180Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/website-5a18c [none]
-[debug] [2025-07-29T21:07:49.443Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/website-5a18c 200
-[debug] [2025-07-29T21:07:49.444Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/website-5a18c {"projectId":"website-5a18c","projectNumber":"636702053767","displayName":"website","name":"projects/website-5a18c","resources":{"hostingSite":"website-5a18c"},"state":"ACTIVE","etag":"1_dd181e2d-60f5-4daf-9a46-3cddd2663bc1"}
-[debug] [2025-07-29T21:07:56.308Z] defaultcredentials: writing to file /home/user/.config/firebase/bakirbehmen_gmail_com_application_default_credentials.json
-[debug] [2025-07-29T21:07:56.334Z] Checked if tokens are valid: true, expires at: 1753826705262
-[debug] [2025-07-29T21:07:56.334Z] Checked if tokens are valid: true, expires at: 1753826705262
-[debug] [2025-07-29T21:07:56.336Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites pageToken=&pageSize=10
-[debug] [2025-07-29T21:07:57.280Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites 200
-[debug] [2025-07-29T21:07:57.280Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites {"sites":[{"name":"projects/website-5a18c/sites/website-5a18c","defaultUrl":"https://website-5a18c.web.app","appId":"1:636702053767:web:98f03ebfa3c6665ebd6f22","type":"DEFAULT_SITE"}]}
-[debug] [2025-07-29T21:07:57.280Z] Checked if tokens are valid: true, expires at: 1753826705262
-[debug] [2025-07-29T21:07:57.281Z] Checked if tokens are valid: true, expires at: 1753826705262
-[debug] [2025-07-29T21:07:57.283Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:636702053767:web:98f03ebfa3c6665ebd6f22/config [none]
-[debug] [2025-07-29T21:07:57.734Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:636702053767:web:98f03ebfa3c6665ebd6f22/config 200
-[debug] [2025-07-29T21:07:57.734Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:636702053767:web:98f03ebfa3c6665ebd6f22/config {"projectId":"website-5a18c","appId":"1:636702053767:web:98f03ebfa3c6665ebd6f22","storageBucket":"website-5a18c.firebasestorage.app","apiKey":"AIzaSyDxwAQf6RX8UHlbjPpnjMVX-0jS85K3bvw","authDomain":"website-5a18c.firebaseapp.com","messagingSenderId":"636702053767","measurementId":"G-LF6ZR9N3RX"}
+[debug] [2025-07-29T21:44:25.907Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-29T21:44:25.908Z] > authorizing via signed-in user (bakirbehmen@gmail.com)
+[debug] [2025-07-29T21:44:25.908Z] [iam] checking project website-5a18c for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-07-29T21:44:25.910Z] Checked if tokens are valid: true, expires at: 1753826705262
+[debug] [2025-07-29T21:44:25.910Z] Checked if tokens are valid: true, expires at: 1753826705262
+[debug] [2025-07-29T21:44:25.912Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions [none]
+[debug] [2025-07-29T21:44:25.913Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions x-goog-quota-user=projects/website-5a18c
+[debug] [2025-07-29T21:44:25.913Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-07-29T21:44:26.705Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions 200
+[debug] [2025-07-29T21:44:26.706Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/website-5a18c:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-07-29T21:44:26.708Z] Checked if tokens are valid: true, expires at: 1753826705262
+[debug] [2025-07-29T21:44:26.708Z] Checked if tokens are valid: true, expires at: 1753826705262
+[debug] [2025-07-29T21:44:26.708Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/website-5a18c [none]
+[debug] [2025-07-29T21:44:26.941Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/website-5a18c 200
+[debug] [2025-07-29T21:44:26.941Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/website-5a18c {"projectId":"website-5a18c","projectNumber":"636702053767","displayName":"website","name":"projects/website-5a18c","resources":{"hostingSite":"website-5a18c"},"state":"ACTIVE","etag":"1_dd181e2d-60f5-4daf-9a46-3cddd2663bc1"}
+[debug] [2025-07-29T21:44:33.970Z] defaultcredentials: writing to file /home/user/.config/firebase/bakirbehmen_gmail_com_application_default_credentials.json
+[debug] [2025-07-29T21:44:33.983Z] Checked if tokens are valid: true, expires at: 1753826705262
+[debug] [2025-07-29T21:44:33.985Z] Checked if tokens are valid: true, expires at: 1753826705262
+[debug] [2025-07-29T21:44:33.986Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites pageToken=&pageSize=10
+[debug] [2025-07-29T21:44:34.943Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites 200
+[debug] [2025-07-29T21:44:34.944Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites {"sites":[{"name":"projects/website-5a18c/sites/website-5a18c","defaultUrl":"https://website-5a18c.web.app","appId":"1:636702053767:web:98f03ebfa3c6665ebd6f22","type":"DEFAULT_SITE"}]}
+[debug] [2025-07-29T21:44:34.946Z] Checked if tokens are valid: true, expires at: 1753826705262
+[debug] [2025-07-29T21:44:34.947Z] Checked if tokens are valid: true, expires at: 1753826705262
+[debug] [2025-07-29T21:44:34.951Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:636702053767:web:98f03ebfa3c6665ebd6f22/config [none]
+[debug] [2025-07-29T21:44:35.580Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:636702053767:web:98f03ebfa3c6665ebd6f22/config 200
+[debug] [2025-07-29T21:44:35.580Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:636702053767:web:98f03ebfa3c6665ebd6f22/config {"projectId":"website-5a18c","appId":"1:636702053767:web:98f03ebfa3c6665ebd6f22","storageBucket":"website-5a18c.firebasestorage.app","apiKey":"AIzaSyDxwAQf6RX8UHlbjPpnjMVX-0jS85K3bvw","authDomain":"website-5a18c.firebaseapp.com","messagingSenderId":"636702053767","measurementId":"G-LF6ZR9N3RX"}
 [info] 
    Thank you for trying our early preview of Next.js support on Firebase Hosting.
    During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
@@ -43,141 +43,47 @@
 
    We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
 
-[debug] [2025-07-29T21:08:15.663Z] Checked if tokens are valid: true, expires at: 1753826705262
-[debug] [2025-07-29T21:08:15.667Z] Checked if tokens are valid: true, expires at: 1753826705262
-[debug] [2025-07-29T21:08:15.672Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites/website-5a18c [none]
-[debug] [2025-07-29T21:08:16.544Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites/website-5a18c 200
-[debug] [2025-07-29T21:08:16.544Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites/website-5a18c {"name":"projects/website-5a18c/sites/website-5a18c","defaultUrl":"https://website-5a18c.web.app","appId":"1:636702053767:web:98f03ebfa3c6665ebd6f22","type":"DEFAULT_SITE"}
+[debug] [2025-07-29T21:45:01.836Z] Checked if tokens are valid: true, expires at: 1753826705262
+[debug] [2025-07-29T21:45:01.837Z] Checked if tokens are valid: true, expires at: 1753826705262
+[debug] [2025-07-29T21:45:01.837Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites/website-5a18c [none]
+[debug] [2025-07-29T21:45:02.702Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites/website-5a18c 200
+[debug] [2025-07-29T21:45:02.704Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/website-5a18c/sites/website-5a18c {"name":"projects/website-5a18c/sites/website-5a18c","defaultUrl":"https://website-5a18c.web.app","appId":"1:636702053767:web:98f03ebfa3c6665ebd6f22","type":"DEFAULT_SITE"}
 [info]    ▲ Next.js 15.4.4
+   - Environments: .env.local, .env
 
-[info]    - Environments: .env.local, .env
-
+[info] 
 
 [info]    Creating an optimized production build ...
 
-[info]  ⚠ Compiled with warnings in 30.0s
+[info] Failed to compile.
 
-./node_modules/@opentelemetry/sdk-node/build/src/TracerProviderWithEnvExporter.js
-Module not found: Can't resolve '@opentelemetry/exporter-jaeger' in '/home/user/studio/node_modules/@opentelemetry/sdk-node/build/src'
 
-Import trace for requested module:
-./node_modules/@opentelemetry/sdk-node/build/src/TracerProviderWithEnvExporter.js
-./node_modules/@opentelemetry/sdk-node/build/src/sdk.js
-./node_modules/@opentelemetry/sdk-node/build/src/index.js
-./node_modules/@genkit-ai/core/lib/tracing.js
-./node_modules/genkit/lib/tracing.js
-./node_modules/genkit/lib/genkit.js
-./node_modules/genkit/lib/index.mjs
-./src/ai/flows/chat-flow.ts
+[info] ./src/app/[lng]/layout.tsx
+Module not found: Can't resolve '@/components/NotificationButton'
 
-./node_modules/handlebars/lib/index.js
-require.extensions is not supported by webpack. Use a loader instead.
+https://nextjs.org/docs/messages/module-not-found
 
-Import trace for requested module:
-./node_modules/handlebars/lib/index.js
-./node_modules/dotprompt/dist/index.js
-./node_modules/@genkit-ai/core/lib/registry.js
-./node_modules/genkit/lib/registry.js
-./node_modules/genkit/lib/genkit.js
-./node_modules/genkit/lib/index.mjs
-./src/ai/flows/chat-flow.ts
-
-./node_modules/handlebars/lib/index.js
-require.extensions is not supported by webpack. Use a loader instead.
+./src/app/[lng]/page.tsx
+Error:   x `ssr: false` is not allowed with `next/dynamic` in Server Components. Please move it into a Client Component.
+    ,-[/home/user/studio/src/app/[lng]/page.tsx:10:1]
+  7 | import Methodology from "@/components/sections/methodology";
+  8 | import ContactSection from "@/components/sections/contact-section";
+  9 | 
+ 10 | const Chatbot = dynamic(() => import('@/components/chatbot'), { ssr: false });
+    :                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 11 | 
+ 12 | export default async function Home({ params }: { params: Promise<{ lng: string }> }) {
+ 13 |   const { lng } = await params;
+    `----
 
 Import trace for requested module:
-./node_modules/handlebars/lib/index.js
-./node_modules/dotprompt/dist/index.js
-./node_modules/@genkit-ai/core/lib/registry.js
-./node_modules/genkit/lib/registry.js
-./node_modules/genkit/lib/genkit.js
-./node_modules/genkit/lib/index.mjs
-./src/ai/flows/chat-flow.ts
+./src/app/[lng]/page.tsx
 
-./node_modules/handlebars/lib/index.js
-require.extensions is not supported by webpack. Use a loader instead.
-
-Import trace for requested module:
-./node_modules/handlebars/lib/index.js
-./node_modules/dotprompt/dist/index.js
-./node_modules/@genkit-ai/core/lib/registry.js
-./node_modules/genkit/lib/registry.js
-./node_modules/genkit/lib/genkit.js
-./node_modules/genkit/lib/index.mjs
-./src/ai/flows/chat-flow.ts
-
-./src/app/[lng]/blog/[slug]/page.tsx
-Attempted import error: 'languages' is not exported from '@/app/i18n/settings' (imported as 'languages').
-
-Import trace for requested module:
-./src/app/[lng]/blog/[slug]/page.tsx
-
-./src/app/[lng]/blog/[slug]/page.tsx
-Attempted import error: 'fallbackLng' is not exported from '@/app/i18n/settings' (imported as 'fallbackLng').
-
-Import trace for requested module:
-./src/app/[lng]/blog/[slug]/page.tsx
-
-./src/app/[lng]/blog/[slug]/page.tsx
-Attempted import error: 'fallbackLng' is not exported from '@/app/i18n/settings' (imported as 'fallbackLng').
-
-Import trace for requested module:
-./src/app/[lng]/blog/[slug]/page.tsx
-
-./src/app/[lng]/blog/page.tsx
-Attempted import error: 'languages' is not exported from '@/app/i18n/settings' (imported as 'languages').
-
-Import trace for requested module:
-./src/app/[lng]/blog/page.tsx
-
-./src/app/[lng]/blog/page.tsx
-Attempted import error: 'fallbackLng' is not exported from '@/app/i18n/settings' (imported as 'fallbackLng').
-
-Import trace for requested module:
-./src/app/[lng]/blog/page.tsx
-
-./src/app/[lng]/blog/page.tsx
-Attempted import error: 'fallbackLng' is not exported from '@/app/i18n/settings' (imported as 'fallbackLng').
-
-Import trace for requested module:
-./src/app/[lng]/blog/page.tsx
-
-./node_modules/@genkit-ai/core/lib/tracing.js
-Module not found: Can't resolve '@genkit-ai/firebase' in '/home/user/studio/node_modules/@genkit-ai/core/lib'
-
-Import trace for requested module:
-./node_modules/@genkit-ai/core/lib/tracing.js
-./node_modules/genkit/lib/tracing.js
-./node_modules/genkit/lib/genkit.js
-./node_modules/genkit/lib/index.mjs
-./src/ai/flows/chat-flow.ts
-
-
-[info]  ✓ Compiled successfully in 52s
-
-[info]    Skipping validation of types
-   Skipping linting
-
-[info]    Collecting page data ...
-
-[info] [Error: Failed to collect configuration for /[lng]/blog/[slug]] {
-  [cause]: Error: Failed to parse private key: Error: Invalid PEM formatted message.
-      at <unknown> (.next/server/app/[lng]/blog/[slug]/page.js:1:1216) {
-    errorInfo: {
-      code: 'app/invalid-credential',
-      message: 'Failed to parse private key: Error: Invalid PEM formatted message.'
-    },
-    codePrefix: 'app'
-  }
-}
 
 [info] 
-> Build error occurred
 
-[info] [Error: Failed to collect page data for /[lng]/blog/[slug]] {
-  type: 'Error'
-}
+[info] > Build failed because of webpack errors
 
-[debug] [2025-07-29T21:09:34.114Z] Error: ENOENT: no such file or directory, open '/home/user/studio/.next/export-marker.json'
+[debug] [2025-07-29T21:45:25.918Z] Error: ENOENT: no such file or directory, open '/home/user/studio/.next/server/middleware-manifest.json'
 [error] 
 [error] Error: An unexpected error has occurred.
