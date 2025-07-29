@@ -32,8 +32,11 @@ export const browseTool = ai.defineTool(
 
       // Clean up whitespace
       return text.replace(/\s\s+/g, ' ').trim();
-    } catch (e: any) {
-      return `Error: Could not fetch or parse the URL. ${e.message}`;
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        return `Error: Could not fetch or parse the URL. ${e.message}`;
+      }
+      return 'An unknown error occurred while browsing.';
     }
   }
 );

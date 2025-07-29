@@ -2,9 +2,28 @@
 
 import { useState, useEffect } from 'react';
 
+interface Particle {
+  id: number;
+  left: string;
+  top: string;
+  animationDuration: string;
+  animationDelay: string;
+  opacity: number;
+}
+
+interface Orb {
+  id: number;
+  left: string;
+  top: string;
+  size: string;
+  animationDuration: string;
+  animationDelay: string;
+  bg: string;
+}
+
 const BackgroundEffects = () => {
-  const [particles, setParticles] = useState<any[]>([]);
-  const [orbs, setOrbs] = useState<any[]>([]);
+  const [particles, setParticles] = useState<Particle[]>([]);
+  const [orbs, setOrbs] = useState<Orb[]>([]);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
