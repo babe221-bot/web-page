@@ -5,10 +5,12 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 const LogoAnimation = () => {
   const [isFading, setIsFading] = useState(false);
   const router = useRouter();
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     // Start fading out after 2.5 seconds
@@ -18,14 +20,14 @@ const LogoAnimation = () => {
 
     // Redirect after 3.5 seconds (fade duration is 1s)
     const redirectTimer = setTimeout(() => {
-      router.push("/sr");
+      router.push(`/${i18n.language}`);
     }, 3500);
 
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(redirectTimer);
     };
-  }, [router]);
+  }, [router, i18n.language]);
 
 
   return (
