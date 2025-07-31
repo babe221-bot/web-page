@@ -60,8 +60,7 @@ export default function Chatbot() {
         message: input,
       };
       const response = await chat(chatInput);
-      const modelMessage: Message = { role: 'model', content: response };
-      setMessages((prev) => [...prev, modelMessage]);
+      setMessages((prev) => [...prev, response]);
     } catch (error) {
       console.error('Chatbot error:', error);
       const errorMessage: Message = {

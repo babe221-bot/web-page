@@ -23,7 +23,7 @@ const ChatInputSchema = z.object({
 });
 export type ChatInput = z.infer<typeof ChatInputSchema>;
 
-export type ChatOutput = string;
+export type ChatOutput = z.infer<typeof MessageSchema>;
 
 export async function chat(input: ChatInput): Promise<ChatOutput> {
   return chatFlow(input);
@@ -132,10 +132,13 @@ const chatFlow = ai.defineFlow(
   {
     name: 'chatFlow',
     inputSchema: ChatInputSchema,
-    outputSchema: z.string(),
+    outputSchema: MessageSchema,
   },
   async (input) => {
     const response = await chatPrompt(input);
-    return response.text ?? "Izvinite, nisam mogao da obradim vaš zahtev. Možete li preformulisati?";
+    return {
+        role: 'model',
+        content: response.text() ?? "Izvinite, nisam mogao da obradim vaš zahtev. Možete li preformulisati?"
+    };
   }
 );
