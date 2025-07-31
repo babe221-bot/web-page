@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Send, User, X, Loader2 } from "lucide-react";
+import { Send, User, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { chat, ChatInput } from "@/ai/flows/chat-flow";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
