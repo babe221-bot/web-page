@@ -6,6 +6,7 @@ import Industries from "@/components/sections/industries";
 import Methodology from "@/components/sections/methodology";
 import ContactSection from "@/components/sections/contact-section";
 import ChatbotLoader from "@/components/chatbot-loader";
+import Insights from "@/components/sections/insights";
 
 export default async function Home({ params }: { params: Promise<{ lng: string }> }) {
   const { lng } = await params;
@@ -16,6 +17,7 @@ export default async function Home({ params }: { params: Promise<{ lng: string }
       <Services />
       <Industries />
       <Methodology />
+      <Insights industry="music production" />
       <ContactSection />
       <Footer lng={lng} />
       <ChatbotLoader />
