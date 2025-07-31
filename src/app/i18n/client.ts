@@ -5,6 +5,7 @@ import { initReactI18next, useTranslation as useTranslationOrg } from 'react-i18
 import resourcesToBackend from 'i18next-resources-to-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { getOptions } from './settings'
+import { UseTranslationOptions } from 'react-i18next'
 
 //
 i18next
@@ -19,7 +20,7 @@ i18next
     }
   })
 
-export function useTranslation(lng: string, ns: string, options?: any) {
+export function useTranslation(lng: string, ns: string, options?: UseTranslationOptions) {
   if (i18next.resolvedLanguage !== lng) {
     i18next.changeLanguage(lng)
   }

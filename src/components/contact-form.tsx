@@ -46,7 +46,6 @@ export default function ContactForm({ onSubmitSuccess }: ContactFormProps) {
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     trackContactFormSubmission(data);
-    console.log(data);
     toast({
       title: "✓ Uspješno Poslano!",
       description: "Vaš zahtjev je uspješno poslan. Kontaktirat ćemo vas uskoro.",

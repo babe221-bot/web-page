@@ -1,21 +1,15 @@
 import type { Metadata } from 'next';
-import '../../globals.css';
+import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import BackgroundEffects from '@/components/background-effects';
 import { cn } from '@/lib/utils';
 import { Space_Grotesk, Inter, Source_Code_Pro } from 'next/font/google';
 import Script from 'next/script';
 import { GA_TRACKING_ID } from '@/lib/gtag';
-import { dir } from 'i18next'
-import { languages } from '@/app/i18n/settings'
 import { Providers } from '@/components/providers';
-import JazzRadioPlayer from '@/components/jazz-radio-player';
 import React from 'react';
 import { RadioProvider } from '@/context/RadioContext';
-
-export async function generateStaticParams() {
-  return languages.map((lng: string) => ({ lng }))
-}
+import JazzRadioPlayer from '@/components/jazz-radio-player';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -42,36 +36,32 @@ export const metadata: Metadata = {
   }
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params
 }: {
   children: React.ReactNode;
-  params: Promise<{
-    lng: string;
-  }>;
 }) {
-  const { lng } = await params;
-
   return (
-    <>
-      {GA_TRACKING_ID && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${GA_TRACKING_ID}');
-            `}
-          </Script>
-        </>
-      )}
-      <div
+    <html lang="sr">
+      <head>
+        {GA_TRACKING_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_TRACKING_ID}');
+              `}
+            </Script>
+          </>
+        )}
+      </head>
+      <body
         className={cn(
           'font-body antialiased',
           spaceGrotesk.variable,
@@ -87,7 +77,7 @@ export default async function RootLayout({
             <Toaster />
           </RadioProvider>
         </Providers>
-      </div>
-    </>
+      </body>
+    </html>
   );
 }

@@ -1,19 +1,18 @@
+
 'use client';
 import { useTranslation } from '@/app/i18n/client';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Briefcase, Music, Music2, MessageSquare } from 'lucide-react';
+import { ArrowRight, Briefcase, Music, Music2 } from 'lucide-react';
 import Link from 'next/link';
 import { trackCTAClick } from '@/lib/analytics';
 import Image from 'next/image';
 import { useRadio } from '@/context/RadioContext';
 import { cn } from '@/lib/utils';
-import React, { useState, useRef, useEffect } from 'react';
-import { useChatbot } from '@/context/ChatbotContext';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 
 const Hero = ({ lng }: { lng: string }) => {
   const { t } = useTranslation(lng, 'common');
   const { isPlaying, togglePlay } = useRadio();
-  const { setChatOpen } = useChatbot();
 
   const dragRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -27,11 +26,6 @@ const Hero = ({ lng }: { lng: string }) => {
   const handleRadioToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     togglePlay();
-  };
-  
-  const handleChatbotToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    setChatOpen(true);
   };
   
   const getPointerPosition = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
@@ -49,7 +43,6 @@ const Hero = ({ lng }: { lng: string }) => {
         x: clientX - dragRef.current.offsetLeft,
         y: clientY - dragRef.current.offsetTop,
       });
-      // Prevent default behavior for touch events to avoid scrolling
       if (e.cancelable) {
         e.preventDefault();
       }
@@ -60,7 +53,7 @@ const Hero = ({ lng }: { lng: string }) => {
     setIsDragging(false);
   };
 
-  const handleDragMove = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
+  const handleDragMove = useCallback((e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
     if (isDragging && dragRef.current) {
       const parentRect = dragRef.current.parentElement?.getBoundingClientRect();
       if(parentRect) {
@@ -77,12 +70,11 @@ const Hero = ({ lng }: { lng: string }) => {
         setPosition({ x: newX, y: newY });
       }
     }
-  };
+  }, [isDragging, offset]);
   
   useEffect(() => {
     if (isDragging) {
       const moveHandler = (e: MouseEvent | TouchEvent) => {
-        // We create a synthetic event to pass to handleDragMove
         const syntheticEvent = {
           ...e,
           preventDefault: () => e.preventDefault(),
@@ -106,7 +98,7 @@ const Hero = ({ lng }: { lng: string }) => {
         window.removeEventListener('touchend', handleDragEnd);
       };
     }
-  }, [isDragging, offset]);
+  }, [isDragging, handleDragMove]);
 
 
   return (
@@ -120,18 +112,17 @@ const Hero = ({ lng }: { lng: string }) => {
         loop
         muted
         playsInline
-        className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       >
         <source
-          src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/Logo_to_Robot_Video_Ready.mp4?alt=media&token=f9e7e336-f23e-4cbc-8068-d2929f70bc41"
+          src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/Logo_to__Robot_Video_Ready.mp4?alt=media&token=f9e7e336-f23e-4cbc-8068-d2929f70bc41"
           type="video/mp4"
         />
-        Vaš pretraživač ne podržava video tag.
+        Your browser does not support the video tag.
       </video>
+      <div className="absolute inset-0 bg-black/50 z-0"></div>
 
-      <div className="absolute inset-0 bg-background/70 z-10"></div>
-
-      <div className="container mx-auto px-4 relative z-20 h-full">
+      <div className="container mx-auto px-4 relative z-20 h-full animate-fadeIn">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h1
@@ -188,6 +179,7 @@ const Hero = ({ lng }: { lng: string }) => {
                     width={250}
                     height={250}
                     className="rounded-lg pointer-events-none"
+                    style={{ height: "auto" }}
                     unoptimized
                 />
                 <div className="flex gap-4">
@@ -208,17 +200,6 @@ const Hero = ({ lng }: { lng: string }) => {
                         ) : (
                             <Music2 className="h-6 w-6" />
                         )}
-                    </Button>
-                    <Button
-                        size="icon"
-                        variant="ghost"
-                        onClick={handleChatbotToggle}
-                        className='rounded-full h-12 w-12 bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white hover:text-primary transition-all duration-300 cursor-pointer'
-                        aria-label="Otvori chatbot"
-                        onMouseDown={(e) => e.stopPropagation()}
-                        onTouchStart={(e) => e.stopPropagation()}
-                    >
-                        <MessageSquare className="h-6 w-6" />
                     </Button>
                 </div>
             </div>

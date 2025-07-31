@@ -2,9 +2,28 @@
 
 import { useState, useEffect } from 'react';
 
+interface Particle {
+  id: number;
+  left: string;
+  top: string;
+  animationDuration: string;
+  animationDelay: string;
+  opacity: number;
+}
+
+interface Orb {
+  id: number;
+  left: string;
+  top: string;
+  size: string;
+  animationDuration: string;
+  animationDelay: string;
+  bg: string;
+}
+
 const BackgroundEffects = () => {
-  const [particles, setParticles] = useState<any[]>([]);
-  const [orbs, setOrbs] = useState<any[]>([]);
+  const [particles, setParticles] = useState<Particle[]>([]);
+  const [orbs, setOrbs] = useState<Orb[]>([]);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -36,9 +55,6 @@ const BackgroundEffects = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full -z-50 overflow-hidden">
-      {/* Static gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background to-indigo-900/20"></div>
-
       {/* Floating particles */}
       {particles.map(p => (
         <div

@@ -1,51 +1,26 @@
-import { dir } from 'i18next';
-import { locales } from '../../i18n/settings';
-import { cn } from '@/lib/utils';
-import { Space_Grotesk, Inter, Source_Code_Pro } from 'next/font/google';
+'use client';
 
-export function generateStaticParams() {
-  return locales.map((lng: string) => ({ lng }));
-}
+import Header from '@/components/sections/header';
+import Footer from '@/components/sections/footer';
+import React from 'react';
+import { useTranslation } from '@/app/i18n/client';
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-headline',
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-body',
-});
-
-const sourceCodePro = Source_Code_Pro({
-  subsets: ['latin'],
-  variable: '--font-code',
-});
-
-export const metadata = {
-  title: 'Rješenja za Male Biznise - DaorsForge AI',
-  description: 'Nudimo izradu web stranica, audio/video produkciju, chatbotove i automatizacije za male biznise i lične potrebe.',
-};
-
-export default function SmallBusinessLayout({
+export default function SmallBusinessSolutionsLayout({
   children,
-  params: { lng },
+  params,
 }: {
   children: React.ReactNode;
   params: {
     lng: string;
   };
 }) {
+  const { lng } = params;
+
   return (
-    <div
-      className={cn(
-        'font-body antialiased',
-        spaceGrotesk.variable,
-        inter.variable,
-        sourceCodePro.variable
-      )}
-    >
-      {children}
-    </div>
+    <>
+      <Header lng={lng} />
+      <main className="flex-grow">{children}</main>
+      <Footer lng={lng} />
+    </>
   );
 }

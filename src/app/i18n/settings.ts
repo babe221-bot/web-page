@@ -1,12 +1,12 @@
 
-export const locales = ['sr', 'en'];
-export const defaultLocale = 'sr';
+export const languages = ['sr', 'en'];
+export const fallbackLng = 'sr';
 
-export function getOptions(lng = defaultLocale, ns = 'common') {
+export function getOptions(lng = fallbackLng, ns = 'common') {
   return {
     // debug: true,
-    supportedLngs: locales,
-    fallbackLng: defaultLocale,
+    supportedLngs: languages,
+    fallbackLng: fallbackLng,
     lng,
     fallbackNS: 'common',
     defaultNS: 'common',
