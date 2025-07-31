@@ -1,21 +1,15 @@
 import type { Metadata } from 'next';
-import '../globals.css';
+import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import BackgroundEffects from '@/components/background-effects';
 import { cn } from '@/lib/utils';
 import { Space_Grotesk, Inter, Source_Code_Pro } from 'next/font/google';
 import Script from 'next/script';
 import { GA_TRACKING_ID } from '@/lib/gtag';
-import { dir } from 'i18next'
-import { locales } from '@/app/i18n/settings'
 import { Providers } from '@/components/providers';
-import JazzRadioPlayer from '@/components/jazz-radio-player';
 import React from 'react';
 import { RadioProvider } from '@/context/RadioContext';
-
-export async function generateStaticParams() {
-  return locales.map((lng: string) => ({ lng }))
-}
+import JazzRadioPlayer from '@/components/jazz-radio-player';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -42,19 +36,13 @@ export const metadata: Metadata = {
   }
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params
 }: {
   children: React.ReactNode;
-  params: Promise<{
-    lng: string;
-  }>;
 }) {
-  const { lng } = await params;
-
   return (
-    <html lang={lng} dir={dir(lng)}>
+    <html lang="sr">
       <head>
         {GA_TRACKING_ID && (
           <>

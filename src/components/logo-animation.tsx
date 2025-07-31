@@ -3,18 +3,24 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const LogoAnimation = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isFading, setIsFading] = useState(false);
+  const [animationDone, setAnimationDone] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
+    // Start fading out after 4 seconds
     const fadeTimer = setTimeout(() => {
       setIsFading(true);
     }, 4000);
 
+    // Hide the component and mark animation as done after 5 seconds
     const hideTimer = setTimeout(() => {
       setIsVisible(false);
+      setAnimationDone(true);
     }, 5000);
 
     return () => {
@@ -23,6 +29,13 @@ const LogoAnimation = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Redirect once the animation is marked as done
+    if (animationDone) {
+      router.push("/sr");
+    }
+  }, [animationDone, router]);
+
   if (!isVisible) {
     return null;
   }
@@ -30,7 +43,7 @@ const LogoAnimation = () => {
   return (
     <div
       className={cn(
-        "fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-1000",
+        "fixed inset-0 z-50 flex items-center justify-center bg-background transition-opacity duration-1000",
         isFading ? "opacity-0" : "opacity-100"
       )}
     >

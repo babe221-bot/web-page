@@ -4,6 +4,11 @@ import { locales, defaultLocale } from '@/app/i18n/settings';
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
+  // If the request is for the root, let it pass to show the animation page.
+  if (pathname === '/') {
+    return NextResponse.next();
+  }
+
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
