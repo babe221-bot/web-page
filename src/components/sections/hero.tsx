@@ -1,3 +1,4 @@
+
 'use client';
 import { useTranslation } from '@/app/i18n/client';
 import { Button } from '@/components/ui/button';
@@ -111,7 +112,7 @@ const Hero = ({ lng }: { lng: string }) => {
         loop
         muted
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       >
         <source
           src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/Logo_to__Robot_Video_Ready.mp4?alt=media&token=f9e7e336-f23e-4cbc-8068-d2929f70bc41"
@@ -119,9 +120,9 @@ const Hero = ({ lng }: { lng: string }) => {
         />
         Your browser does not support the video tag.
       </video>
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
+      <div className="absolute inset-0 bg-black/50 z-0"></div>
 
-      <div className="container mx-auto px-4 relative z-20 h-full">
+      <div className="container mx-auto px-4 relative z-20 h-full animate-fadeIn">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h1

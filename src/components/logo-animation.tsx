@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -6,48 +7,35 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const LogoAnimation = () => {
-  const [isVisible, setIsVisible] = useState(true);
   const [isFading, setIsFading] = useState(false);
-  const [animationDone, setAnimationDone] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    // Start fading out after 4 seconds
+    // Start fading out after 2.5 seconds
     const fadeTimer = setTimeout(() => {
       setIsFading(true);
-    }, 4000);
+    }, 2500);
 
-    // Hide the component and mark animation as done after 5 seconds
-    const hideTimer = setTimeout(() => {
-      setIsVisible(false);
-      setAnimationDone(true);
-    }, 5000);
+    // Redirect after 3.5 seconds (fade duration is 1s)
+    const redirectTimer = setTimeout(() => {
+      router.push("/sr");
+    }, 3500);
 
     return () => {
       clearTimeout(fadeTimer);
-      clearTimeout(hideTimer);
+      clearTimeout(redirectTimer);
     };
-  }, []);
+  }, [router]);
 
-  useEffect(() => {
-    // Redirect once the animation is marked as done
-    if (animationDone) {
-      router.push("/sr");
-    }
-  }, [animationDone, router]);
-
-  if (!isVisible) {
-    return null;
-  }
 
   return (
     <div
       className={cn(
-        "fixed inset-0 z-50 flex items-center justify-center bg-background transition-opacity duration-1000",
-        isFading ? "opacity-0" : "opacity-100"
+        "fixed inset-0 z-50 flex items-center justify-center bg-background transition-opacity",
+        isFading ? "animate-fadeOut" : "animate-fadeIn"
       )}
     >
-      <div className="w-64 animate-fadeInOut flex flex-col items-center gap-4">
+      <div className="w-64 flex flex-col items-center gap-4">
         <Image
           src="https://firebasestorage.googleapis.com/v0/b/website-5a18c.firebasestorage.app/o/generated-image%20(6).png?alt=media&token=5db267db-a5ee-482e-8fea-b7cbeb1a3589"
           alt="DaorsForge AI Systems Logo"

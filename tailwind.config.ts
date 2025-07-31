@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 const config = {
@@ -90,11 +91,13 @@ const config = {
           '33%': { transform: 'translate(30px, -30px) scale(1.1)' },
           '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
         },
-        fadeInOut: {
-          '0%': { opacity: '0', transform: 'scale(0.5)' },
-          '10%': { opacity: '1', transform: 'scale(1)' },
-          '90%': { opacity: '1', transform: 'scale(1)' },
-          '100%': { opacity: '0', transform: 'scale(1.2)' },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        fadeOut: {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
         },
         rotate: {
           '0%': { transform: 'rotate(0deg)' },
@@ -104,20 +107,16 @@ const config = {
           '0%': { opacity: '0', transform: 'translateX(-20px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         particleFloat: 'particleFloat 20s linear infinite',
         orbFloat: 'orbFloat 15s ease-in-out infinite',
-        fadeInOut: 'fadeInOut 5s forwards',
+        fadeIn: 'fadeIn 1s ease-in forwards',
+        fadeOut: 'fadeOut 1s ease-out forwards',
         rotate: 'rotate 5s linear infinite',
         textReveal: 'textReveal 2s ease-out forwards',
-        fadeIn: 'fadeIn 2s ease-in forwards',
       },
     },
   },
